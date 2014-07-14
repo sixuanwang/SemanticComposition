@@ -1,0 +1,477 @@
+
+centrality decreasing tag list: 
+[service]= -> 0.00997459058434
+[contract]= -> 0.00985758549613
+[number]= -> 0.00933089816413
+[name]= -> 0.00919117465858
+[provider]= -> 0.00916068895879
+[day]= -> 0.00896099539008
+[connection]= -> 0.00892962949974
+[id]= -> 0.00892230966163
+[information]= -> 0.00890532574248
+[week]= -> 0.00888985049457
+[line]= -> 0.00888867391233
+[counter]= -> 0.00888307093532
+[domain]= -> 0.00881616040219
+[dodo]= -> 0.00864895128069
+[month]= -> 0.00861002791593
+[property]= -> 0.0085643363583
+[phone]= -> 0.00855339279298
+[loss]= -> 0.0085530123828
+[detail]= -> 0.00854198095264
+[entrance]= -> 0.00851150425513
+[exchange]= -> 0.0084979081939
+[report]= -> 0.00847027474616
+[request]= -> 0.00843461908869
+[stat]= -> 0.00843383283829
+[block]= -> 0.00842910864699
+[range]= -> 0.0083226637708
+[add-on]= -> 0.00831674412106
+[provision]= -> 0.00830965587565
+[point]= -> 0.00830308819827
+[value]= -> 0.00828646440636
+[transaction]= -> 0.00822878060812
+[Internet]= -> 0.00822502765887
+[country]= -> 0.00821056036155
+[network]= -> 0.00815381727366
+[status]= -> 0.00810928838065
+[user]= -> 0.00810925597921
+[master]= -> 0.00810277539448
+[goal]= -> 0.00808695237479
+[zone]= -> 0.00804684215261
+[method]= -> 0.0080258976607
+[management]= -> 0.0080195385789
+[blog]= -> 0.00799495630645
+[belt]= -> 0.0079785224305
+[hour]= -> 0.00779821718904
+[system]= -> 0.00777706715223
+[forum]= -> 0.00772183640731
+[advice]= -> 0.00771999049041
+[bill]= -> 0.00760948414715
+[task]= -> 0.00751663146825
+[e-mail]= -> 0.00751644034265
+[doc]= -> 0.00746910632649
+[message]= -> 0.00746884571392
+[session]= -> 0.00746766355695
+[key]= -> 0.00746432715114
+[info]= -> 0.0074341271698
+[tag]= -> 0.00738355883719
+[document]= -> 0.00736191788431
+[image]= -> 0.00724241843079
+[friend]= -> 0.00723024085259
+[student]= -> 0.00722958400633
+[handle]= -> 0.00722276194965
+[code]= -> 0.00719001471289
+[region]= -> 0.00716402602869
+[space]= -> 0.00713031746987
+[format]= -> 0.00711531399881
+[URL]= -> 0.00711482597874
+[file]= -> 0.00708424986172
+[folder]= -> 0.00704084564648
+[club]= -> 0.00700585973308
+[location]= -> 0.00696790026876
+[photo]= -> 0.00696280390458
+[net]= -> 0.00693658263203
+[client]= -> 0.00693273708875
+[date]= -> 0.00692692379641
+[gain]= -> 0.00689620154257
+[test]= -> 0.0068584676266
+[telco]= -> 0.00685402132593
+[resource]= -> 0.00683351905222
+[event]= -> 0.00683195811951
+[version]= -> 0.00679551358412
+[simular]= -> 0.00677768132124
+[locator]= -> 0.00675741645545
+[avatar]= -> 0.00667035087581
+[top]= -> 0.00666755184555
+[wholesale]= -> 0.00666476748385
+[op]= -> 0.00646234338051
+[object]= -> 0.00645166593411
+[measurement]= -> 0.00644570523174
+[group]= -> 0.00642780311666
+[layer]= -> 0.00639011807851
+[dit]= -> 0.00638060016492
+[end]= -> 0.00637668977749
+[monitor]= -> 0.00636325154073
+[churn]= -> 0.00630770758858
+[site]= -> 0.00629642718575
+[protocol]= -> 0.00628112602612
+[hypertext]= -> 0.00627197331965
+[markup]= -> 0.00623174871701
+[minority]= -> 0.00622108586117
+[Web]= -> 0.00620048172627
+[are]= -> 0.00619062323481
+[rejection]= -> 0.00616560110858
+[host]= -> 0.00615559718258
+[identification]= -> 0.00615383556165
+[calling]= -> 0.00615197472156
+[simulator]= -> 0.0061516800698
+[permission]= -> 0.00614686317978
+[template]= -> 0.00613931514874
+[achievement]= -> 0.00613495766663
+[equipment]= -> 0.00612533741659
+[association]= -> 0.00611863145583
+[type]= -> 0.00610867369124
+[toe]= -> 0.00609504388763
+[signature]= -> 0.00608198837943
+[web]= -> 0.00608041422474
+[American]= -> 0.00601230495592
+[interface]= -> 0.00600774756258
+[thread]= -> 0.0059654057728
+[category]= -> 0.00590685887963
+[stay]= -> 0.00590468682635
+[language]= -> 0.00588542547719
+[job]= -> 0.00586572285007
+[reference]= -> 0.00584194392119
+[screen]= -> 0.0058173054249
+[delivery]= -> 0.00580392114715
+[description]= -> 0.00576454112482
+[copy]= -> 0.00573586794538
+[entry]= -> 0.00569288959561
+[van]= -> 0.00567674421837
+[comment]= -> 0.00564795319984
+[grid]= -> 0.00559645797187
+[acknowledgment]= -> 0.00558457335326
+[shortening]= -> 0.00557008073545
+[process]= -> 0.00553824407289
+[HTML]= -> 0.00551396052747
+[cloud]= -> 0.00551055098728
+[account]= -> 0.00549913882825
+[use]= -> 0.00548367814746
+[token]= -> 0.00539717212879
+[life]= -> 0.00538382531234
+[time]= -> 0.00537974512154
+[generator]= -> 0.00530605521143
+[attribute]= -> 0.00530554859553
+[performance]= -> 0.00529877477209
+[bookmark]= -> 0.00528956144516
+[parameter]= -> 0.00524520942256
+[string]= -> 0.00519011714802
+[page]= -> 0.005152677583
+[completion]= -> 0.00514560075513
+[need]= -> 0.00511621434271
+[don't]= -> 0.00506713674775
+[receipt]= -> 0.0050560248426
+[highlight]= -> 0.00480767746825
+[visitor]= -> 0.00478200500803
+[word]= -> 0.00474975350084
+[demand]= -> 0.00473959032056
+[revision]= -> 0.00473081504145
+[setting]= -> 0.00470645594516
+[license]= -> 0.00468850142143
+[health]= -> 0.00467378644697
+[standard]= -> 0.00467361442912
+[album]= -> 0.00467248722021
+[analysis]= -> 0.00465558423438
+[map]= -> 0.0046549392504
+[base]= -> 0.00465407856285
+[traffic]= -> 0.00464908216709
+[community]= -> 0.00461533199196
+[progress]= -> 0.00460706563012
+[week
+]= -> 0.00459769945134
+[book]= -> 0.00457581402945
+[guest]= -> 0.00457005086373
+[aspect]= -> 0.00454478338723
+[pair]= -> 0.00454350083937
+[thumbnail]= -> 0.00451316618719
+[home]= -> 0.00450840903097
+[trigger]= -> 0.00450643763186
+[lookup]= -> 0.0044979783518
+[hello]= -> 0.00445789916072
+[topic]= -> 0.00445554534869
+[procedure]= -> 0.00444012295025
+[custom]= -> 0.00443202728599
+[biography]= -> 0.00442556006345
+[article]= -> 0.00442484974338
+[validation]= -> 0.00442121532605
+[organization]= -> 0.00441761511214
+[voice]= -> 0.00440631740987
+[sample]= -> 0.00440224667631
+[widget]= -> 0.00440071859456
+[facilitation]= -> 0.00439867660389
+[employment]= -> 0.00436288161931
+[preference]= -> 0.00435819569487
+[domain
+]= -> 0.00435752952854
+[implement]= -> 0.0043447527225
+[header]= -> 0.00432224510838
+[landing]= -> 0.00432132764918
+[rating]= -> 0.00431346643316
+[ear]= -> 0.00430405758766
+[customer]= -> 0.00430263984329
+[publication]= -> 0.00429846095749
+[byte]= -> 0.00429839693096
+[liter]= -> 0.00429747331866
+[output]= -> 0.00429412212234
+[member]= -> 0.00429258902309
+[video]= -> 0.00428991752972
+[building]= -> 0.00428056051686
+[ping]= -> 0.00427556941642
+[platform]= -> 0.00426145491396
+[Italian]= -> 0.00425867425053
+[beta]= -> 0.00425770386526
+[password]= -> 0.0042444453197
+[link]= -> 0.00423011880952
+[occupation]= -> 0.00420276123897
+[infrastructure]= -> 0.00420122511473
+[level]= -> 0.00419917083084
+[notification]= -> 0.00418694375641
+[application]= -> 0.00418263506295
+[function]= -> 0.0041799466926
+[check]= -> 0.004179048357
+[feedback]= -> 0.00415486745565
+[marketplace]= -> 0.00415304054533
+[pharmacy]= -> 0.00413217441054
+[database]= -> 0.00411606220464
+[verification]= -> 0.00411419158368
+[minute]= -> 0.00410864595646
+[scale]= -> 0.00406625139931
+[Norwegian]= -> 0.00403509605865
+[fact]= -> 0.00403256509858
+[collection]= -> 0.00402737769315
+[share]= -> 0.00402093899227
+[coverage]= -> 0.00394670106489
+[route]= -> 0.00383851461371
+[metric]= -> 0.0037211525246
+[company]= -> 0.00360739459185
+[asset]= -> 0.00346229206729
+[server]= -> 0.00281408936869
+[production]= -> 0.00263464530666
+similarity: 0.04395604 | tag: contract | tagto:  service
+similarity: 0.05000000 | tag: number | tagto:  service
+similarity: 0.11666667 | tag: name | tagto:  service
+similarity: 0.07142857 | tag: provider | tagto:  contract
+similarity: 0.03809524 | tag: day | tagto:  provider
+similarity: 0.06250000 | tag: connection | tagto:  service
+similarity: 0.06250000 | tag: id | tagto:  contract
+similarity: 0.08730159 | tag: information | tagto:  contract
+similarity: 0.01162791 | tag: week | tagto:  day
+similarity: 0.05194805 | tag: line | tagto:  contract
+similarity: 0.01724138 | tag: counter | tagto:  day
+similarity: 0.02916667 | tag: domain | tagto:  counter
+similarity: 0.07142857 | tag: dodo | tagto:  contract
+similarity: 0.02083333 | tag: month | tagto:  day
+similarity: 0.03571429 | tag: property | tagto:  counter
+similarity: 0.06000000 | tag: phone | tagto:  number
+similarity: 0.08163265 | tag: loss | tagto:  contract
+similarity: 0.08333333 | tag: detail | tagto:  contract
+similarity: 0.02941176 | tag: entrance | tagto:  week
+similarity: 0.05000000 | tag: exchange | tagto:  number
+similarity: 0.10000000 | tag: report | tagto:  dodo
+similarity: 0.16666667 | tag: request | tagto:  id
+similarity: 0.02777778 | tag: stat | tagto:  week
+similarity: 0.09523810 | tag: block | tagto:  contract
+similarity: 0.10000000 | tag: range | tagto:  number
+similarity: 0.10000000 | tag: add-on | tagto:  service
+similarity: 0.09375000 | tag: provision | tagto:  contract
+similarity: 0.03846154 | tag: point | tagto:  day
+similarity: 0.04166667 | tag: value | tagto:  counter
+similarity: 0.07857143 | tag: transaction | tagto:  number
+similarity: 0.09523810 | tag: Internet | tagto:  service
+similarity: 0.06250000 | tag: country | tagto:  week
+similarity: 0.09722222 | tag: network | tagto:  service
+similarity: 0.04861111 | tag: status | tagto:  request
+similarity: 0.11111111 | tag: user | tagto:  property
+similarity: 0.11428571 | tag: master | tagto:  contract
+similarity: 0.05000000 | tag: goal | tagto:  week
+similarity: 0.11666667 | tag: zone | tagto:  service
+similarity: 0.08333333 | tag: method | tagto:  request
+similarity: 0.11111111 | tag: management | tagto:  service
+similarity: 0.08333333 | tag: blog | tagto:  user
+similarity: 0.11428571 | tag: belt | tagto:  contract
+similarity: 0.07142857 | tag: hour | tagto:  day
+similarity: 0.12500000 | tag: system | tagto:  domain
+similarity: 0.08333333 | tag: forum | tagto:  user
+similarity: 0.12500000 | tag: advice | tagto:  loss
+similarity: 0.16666667 | tag: bill | tagto:  contract
+similarity: 0.09375000 | tag: task | tagto:  provision
+similarity: 0.10000000 | tag: e-mail | tagto:  user
+similarity: 0.10000000 | tag: doc | tagto:  status
+similarity: 0.11666667 | tag: message | tagto:  user
+similarity: 0.05833333 | tag: session | tagto:  method
+similarity: 0.09722222 | tag: key | tagto:  counter
+similarity: 0.12500000 | tag: info | tagto:  name
+similarity: 0.07142857 | tag: tag | tagto:  user
+similarity: 0.08333333 | tag: document | tagto:  method
+similarity: 0.06250000 | tag: image | tagto:  method
+similarity: 0.08333333 | tag: friend | tagto:  e-mail
+similarity: 0.16666667 | tag: student | tagto:  provision
+similarity: 0.16666667 | tag: handle | tagto:  loss
+similarity: 0.06666667 | tag: code | tagto:  method
+similarity: 0.16666667 | tag: region | tagto:  contract
+similarity: 0.09722222 | tag: space | tagto:  request
+similarity: 0.08333333 | tag: format | tagto:  task
+similarity: 0.08333333 | tag: URL | tagto:  method
+similarity: 0.09722222 | tag: file | tagto:  request
+similarity: 0.10000000 | tag: folder | tagto:  message
+similarity: 0.10000000 | tag: club | tagto:  task
+similarity: 0.19047619 | tag: location | tagto:  service
+similarity: 0.10000000 | tag: photo | tagto:  user
+similarity: 0.16666667 | tag: net | tagto:  id
+similarity: 0.16666667 | tag: client | tagto:  number
+similarity: 0.19444444 | tag: date | tagto:  service
+similarity: 0.12500000 | tag: gain | tagto:  loss
+similarity: 0.16666667 | tag: test | tagto:  number
+similarity: 0.10000000 | tag: telco | tagto:  format
+similarity: 0.25000000 | tag: resource | tagto:  URL
+similarity: 0.08333333 | tag: event | tagto:  task
+similarity: 0.17500000 | tag: version | tagto:  method
+similarity: 0.10000000 | tag: simular | tagto:  method
+similarity: 0.12500000 | tag: locator | tagto:  resource
+similarity: 0.16666667 | tag: avatar | tagto:  blog
+similarity: 0.16666667 | tag: top | tagto:  day
+similarity: 0.18333333 | tag: wholesale | tagto:  transaction
+similarity: 0.16666667 | tag: op | tagto:  range
+similarity: 0.16666667 | tag: object | tagto:  status
+similarity: 0.20370370 | tag: measurement | tagto:  method
+similarity: 0.16666667 | tag: group | tagto:  user
+similarity: 0.25000000 | tag: layer | tagto:  service
+similarity: 0.16666667 | tag: dit | tagto:  range
+similarity: 0.25000000 | tag: end | tagto:  name
+similarity: 0.25000000 | tag: monitor | tagto:  service
+similarity: 0.25000000 | tag: churn | tagto:  service
+similarity: 0.12500000 | tag: site | tagto:  op
+similarity: 0.16666667 | tag: protocol | tagto:  Internet
+similarity: 0.09375000 | tag: hypertext | tagto:  op
+similarity: 0.09375000 | tag: markup | tagto:  hypertext
+similarity: 0.25000000 | tag: minority | tagto:  task
+similarity: 0.12500000 | tag: Web | tagto:  op
+similarity: 0.22222222 | tag: are | tagto:  task
+similarity: 0.14062500 | tag: rejection | tagto:  advice
+similarity: 0.25000000 | tag: host | tagto:  name
+similarity: 0.13461538 | tag: identification | tagto:  club
+similarity: 0.16666667 | tag: calling | tagto:  method
+similarity: 0.28125000 | tag: simulator | tagto:  service
+similarity: 0.18518519 | tag: permission | tagto:  status
+similarity: 0.16666667 | tag: template | tagto:  document
+similarity: 0.27500000 | tag: achievement | tagto:  number
+similarity: 0.25000000 | tag: equipment | tagto:  network
+similarity: 0.27500000 | tag: association | tagto:  contract
+similarity: 0.08333333 | tag: type | tagto:  markup
+similarity: 0.10000000 | tag: toe | tagto:  markup
+similarity: 0.18750000 | tag: signature | tagto:  tag
+similarity: 0.29166667 | tag: web | tagto:  service
+similarity: 0.28571429 | tag: American | tagto:  contract
+similarity: 0.18750000 | tag: interface | tagto:  method
+similarity: 0.25000000 | tag: thread | tagto:  blog
+similarity: 0.22222222 | tag: category | tagto:  user
+similarity: 0.19444444 | tag: stay | tagto:  session
+similarity: 0.08333333 | tag: language | tagto:  op
+similarity: 0.16666667 | tag: job | tagto:  simular
+similarity: 0.27500000 | tag: reference | tagto:  transaction
+similarity: 0.25000000 | tag: screen | tagto:  blog
+similarity: 0.28571429 | tag: delivery | tagto:  name
+similarity: 0.25000000 | tag: description | tagto:  goal
+similarity: 0.25000000 | tag: copy | tagto:  request
+similarity: 0.25000000 | tag: entry | tagto:  blog
+similarity: 0.08333333 | tag: van | tagto:  type
+similarity: 0.25000000 | tag: comment | tagto:  blog
+similarity: 0.35000000 | tag: grid | tagto:  service
+similarity: 0.26923077 | tag: acknowledgment | tagto:  loss
+similarity: 0.27777778 | tag: shortening | tagto:  resource
+similarity: 0.25000000 | tag: process | tagto:  method
+similarity: 0.25000000 | tag: HTML | tagto:  method
+similarity: 0.25000000 | tag: cloud | tagto:  management
+similarity: 0.25000000 | tag: account | tagto:  method
+similarity: 0.25000000 | tag: use | tagto:  method
+similarity: 0.29166667 | tag: token | tagto:  request
+similarity: 0.29166667 | tag: life | tagto:  request
+similarity: 0.29166667 | tag: time | tagto:  request
+similarity: 0.28125000 | tag: generator | tagto:  system
+similarity: 0.25000000 | tag: attribute | tagto:  generator
+similarity: 0.30555556 | tag: performance | tagto:  Internet
+similarity: 0.28571429 | tag: bookmark | tagto:  user
+similarity: 0.25000000 | tag: parameter | tagto:  session
+similarity: 0.16666667 | tag: string | tagto:  op
+similarity: 0.30000000 | tag: page | tagto:  e-mail
+similarity: 0.27777778 | tag: completion | tagto:  advice
+similarity: 0.25000000 | tag: need | tagto:  code
+similarity: 0.50000000 | tag: don't | tagto:  service
+similarity: 0.29166667 | tag: receipt | tagto:  advice
+similarity: 0.25000000 | tag: highlight | tagto:  category
+similarity: 0.50000000 | tag: visitor | tagto:  service
+similarity: 0.33333333 | tag: word | tagto:  category
+similarity: 0.50000000 | tag: demand | tagto:  user
+similarity: 0.50000000 | tag: revision | tagto:  name
+similarity: 0.50000000 | tag: setting | tagto:  name
+similarity: 0.50000000 | tag: license | tagto:  information
+similarity: 0.28571429 | tag: health | tagto:  category
+similarity: 0.50000000 | tag: standard | tagto:  version
+similarity: 0.50000000 | tag: album | tagto:  name
+similarity: 0.50000000 | tag: analysis | tagto:  service
+similarity: 0.50000000 | tag: map | tagto:  service
+similarity: 0.50000000 | tag: base | tagto:  report
+similarity: 0.25000000 | tag: traffic | tagto:  site
+similarity: 0.50000000 | tag: community | tagto:  blog
+similarity: 0.50000000 | tag: progress | tagto:  method
+similarity: 0.50000000 | tag: week
+| tagto:  provider
+similarity: 0.50000000 | tag: book | tagto:  name
+similarity: 0.50000000 | tag: guest | tagto:  name
+similarity: 0.50000000 | tag: aspect | tagto:  day
+similarity: 0.50000000 | tag: pair | tagto:  blog
+similarity: 0.50000000 | tag: thumbnail | tagto:  report
+similarity: 0.50000000 | tag: home | tagto:  blog
+similarity: 0.50000000 | tag: trigger | tagto:  method
+similarity: 0.50000000 | tag: lookup | tagto:  name
+similarity: 0.50000000 | tag: hello | tagto:  URL
+similarity: 0.25000000 | tag: topic | tagto:  health
+similarity: 0.50000000 | tag: procedure | tagto:  task
+similarity: 0.50000000 | tag: custom | tagto:  property
+similarity: 0.50000000 | tag: biography | tagto:  album
+similarity: 0.23333333 | tag: article | tagto:  topic
+similarity: 0.50000000 | tag: validation | tagto:  Internet
+similarity: 0.54545455 | tag: organization | tagto:  service
+similarity: 0.50000000 | tag: voice | tagto:  method
+similarity: 0.50000000 | tag: sample | tagto:  detail
+similarity: 0.50000000 | tag: widget | tagto:  detail
+similarity: 0.54545455 | tag: facilitation | tagto:  service
+similarity: 0.50000000 | tag: employment | tagto:  organization
+similarity: 0.50000000 | tag: preference | tagto:  blog
+similarity: 0.50000000 | tag: domain
+| tagto:  week
+similarity: 0.56250000 | tag: implement | tagto:  service
+similarity: 0.50000000 | tag: header | tagto:  blog
+similarity: 0.50000000 | tag: landing | tagto:  method
+similarity: 0.50000000 | tag: rating | tagto:  user
+similarity: 0.50000000 | tag: ear | tagto:  protocol
+similarity: 0.57142857 | tag: customer | tagto:  service
+similarity: 0.55000000 | tag: publication | tagto:  document
+similarity: 0.50000000 | tag: byte | tagto:  info
+similarity: 0.50000000 | tag: liter | tagto:  image
+similarity: 0.50000000 | tag: output | tagto:  session
+similarity: 0.50000000 | tag: member | tagto:  blog
+similarity: 0.50000000 | tag: video | tagto:  blog
+similarity: 0.57142857 | tag: building | tagto:  service
+similarity: 0.50000000 | tag: ping | tagto:  request
+similarity: 0.50000000 | tag: platform | tagto:  widget
+similarity: 0.50000000 | tag: Italian | tagto:  web
+similarity: 0.55555556 | tag: beta | tagto:  management
+similarity: 0.57142857 | tag: password | tagto:  name
+similarity: 0.58333333 | tag: link | tagto:  service
+similarity: 0.55555556 | tag: occupation | tagto:  property
+similarity: 0.50000000 | tag: infrastructure | tagto:  key
+similarity: 0.50000000 | tag: level | tagto:  tag
+similarity: 0.54545455 | tag: notification | tagto:  implement
+similarity: 0.50000000 | tag: application | tagto:  management
+similarity: 0.50000000 | tag: function | tagto:  resource
+similarity: 0.50000000 | tag: check | tagto:  status
+similarity: 0.50000000 | tag: feedback | tagto:  management
+similarity: 0.55000000 | tag: marketplace | tagto:  domain
+similarity: 0.50000000 | tag: pharmacy | tagto:  web
+similarity: 0.50000000 | tag: database | tagto:  session
+similarity: 0.54545455 | tag: verification | tagto:  user
+similarity: 0.50000000 | tag: minute | tagto:  URL
+similarity: 0.50000000 | tag: scale | tagto:  grid
+similarity: 0.56250000 | tag: Norwegian | tagto:  layer
+similarity: 0.57142857 | tag: fact | tagto:  platform
+similarity: 0.50000000 | tag: collection | tagto:  trigger
+similarity: 0.55000000 | tag: share | tagto:  publication
+similarity: 0.50000000 | tag: coverage | tagto:  analysis
+similarity: 0.50000000 | tag: route | tagto:  layer
+similarity: 0.50000000 | tag: metric | tagto:  cloud
+similarity: 0.50000000 | tag: company | tagto:  web
+similarity: 0.50000000 | tag: asset | tagto:  cloud
+similarity: 0.50000000 | tag: server | tagto:  notification
+similarity: 0.62500000 | tag: production | tagto:  platform

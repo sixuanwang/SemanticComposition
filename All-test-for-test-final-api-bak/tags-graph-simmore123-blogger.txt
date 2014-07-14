@@ -1,0 +1,16 @@
+comment: { resource:0.50000000,  reference:0.50000000,  doc:0.50000000,  blog:0.16666667,  identification:0.50000000,  id:0.25000000, }
+resource: { comment:0.50000000,  locator:0.50000000,  identification:0.50000000,  blog:0.50000000, }
+reference: { comment:0.50000000,  URL:0.50000000,  doc:0.03846154,  patch:0.50000000,  blog:0.03846154,  user:0.25000000,  path:0.50000000, }
+URL: { blog:0.50000000,  doc:0.50000000,  reference:0.50000000, }
+doc: { comment:0.50000000,  reference:0.03846154,  URL:0.50000000,  patch:0.50000000,  blog:0.03846154,  user:0.25000000,  path:0.50000000, }
+patch: { blog:0.25000000,  doc:0.50000000,  id:0.50000000,  reference:0.50000000,  method:0.50000000, }
+blog: { comment:0.16666667,  resource:0.50000000,  reference:0.03846154,  URL:0.50000000,  doc:0.03846154,  patch:0.25000000,  locator:0.50000000,  identification:0.50000000,  user:0.16666667,  path:0.50000000,  bypath:0.50000000,  id:0.03125000, }
+locator: { blog:0.50000000,  resource:0.50000000, }
+identification: { comment:0.50000000,  blog:0.50000000,  resource:0.50000000,  user:0.50000000, }
+user: { blog:0.16666667,  doc:0.25000000,  identification:0.50000000,  id:0.25000000,  reference:0.25000000, }
+query: { match:0.50000000, }
+id: { comment:0.25000000,  blog:0.03125000,  bypath:0.50000000,  user:0.25000000,  patch:0.50000000, }
+path: { blog:0.50000000,  doc:0.50000000,  reference:0.50000000, }
+bypath: { blog:0.50000000,  id:0.50000000, }
+method: { patch:0.50000000, }
+match: { query:0.50000000, }

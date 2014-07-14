@@ -1,0 +1,97 @@
+
+from xml.etree import ElementTree
+from xml.etree.ElementTree import Element
+from xml.etree.ElementTree import SubElement
+
+class Port:
+    def __init__(self, pname = [], ptype = [], description = []):
+        self.PortName = pname    ###list
+        self.Type = ptype    ###list
+        self.Description = description  ##list
+
+
+
+class TagSignature:
+    def __init__(self, tagid, tagtype=None, nametag = [""], inputports = [], outputports = []):
+        " self.* are the values stored in xml "
+        self.tagid = tagid   ###int
+        self.tagtype = tagtype
+        self.nametag = nametag  ###string list
+        self.inputPorts = inputports  ###port list
+        self.outputPorts = outputports   ###port list
+
+    def loadTagSignatureFromXML(self, string):
+        ###parse xml file
+        document = ElementTree.parse(string)
+        self.tagtype = document.find('TagType').text ### assign value to self.*
+        self.nametag = document.find('NameTag').text
+
+        inputs = document.find('Inputs')  ###find <Inputs> Element
+        for port in inputs.findall('Port'):  ### for each <Port> in <Inputs> Element
+            port2add = Port(port.find('PortName').text, port.find('Type').text, port.find('Description').text)
+            self.inputPorts.append(port2add) ### append port2add to Inputs Port List
+
+        outputs = document.find('Outputs')
+        for port in outputs.findall('Port'):
+             port2add = Port(port.find('PortName').text, port.find('Type').text, port.find('Description').text)
+             self.outputPorts.append(port2add) ### append port2add to Outputs Port List
+
+    def saveTagSignatureToXML(self, string):
+        tagsignature = Element('TagSignature')
+        tagtype = SubElement(tagsignature, 'TagType')  ### create 'TagType' Element
+        tagtype.text = str(self.tagtype)  ### assign value
+        print "tagtype = " +tagtype.text
+        nametag = SubElement(tagsignature, 'NameTag')
+        nametag.text = str(self.nametag)
+
+        ### Inputs Ports
+        inputs = SubElement(tagsignature, 'Inputs')
+        for port in self.inputPorts: ### for each port in the inputs Port List
+            inputport = SubElement(inputs, 'Port')
+            inputportname = SubElement(inputport, 'PortName')
+            inputportname.text = str(port.PortName) ###add PortName value
+            inputporttype = SubElement(inputport, 'Type')
+            inputporttype.text = str(port.Type) ###add Type value
+            inputportdes = SubElement(inputport, 'Description')
+            inputportdes.text = str(port.Description) ###add des value
+
+        ### Outputs Ports
+        outputs = SubElement(tagsignature, 'Outputs')
+        for port in self.outputPorts: ### for each port in the inputs Port List
+            outputport = SubElement(outputs, 'Port')
+            outputportname = SubElement(outputport, 'PortName')
+            outputportname.text = str(port.PortName) ###add PortName value
+            outputporttype = SubElement(outputport, 'Type')
+            outputporttype.text = str(port.Type) ###add Type value
+            outputportdes = SubElement(outputport, 'Description')
+            outputportdes.text = str(port.Description) ###add des value
+
+        ###write into xml file
+        output_file = open(string, 'w')
+        output_file.write('<?xml version = "1.0"?>')
+        output_file.write(ElementTree.tostring(tagsignature))
+        output_file.close()
+
+
+
+
+
+
+print "I am doing test class TagSignature\n"
+
+tagsi = TagSignature('0')
+tagsi.loadTagSignatureFromXML('config.xml')
+tagsi.saveTagSignatureToXML('writeconfig.xml')
+
+
+"""
+print "initializing tagsignature \n"
+inputports = Port(['tip1', 'tip2'], ['tipp1', 'tipp2'], 'descriptionin1')
+outputports = Port(['top1', 'top2'], ['topp1', 'topp2'], 'descriptionout1')
+tagsignature = TagSignature('1', 'Model', ['tn1', 'tn2'], inputports, outputports)
+print "test save tagsignature to tagsignature.xml file"
+tagsignature.saveTagSignatureToXML('tagsignature.xml')
+print "test load tagsignature from tagsignature.xml file"
+tagsignature.loadTagSignatureFromXML('tagsignature.xml')
+
+"""

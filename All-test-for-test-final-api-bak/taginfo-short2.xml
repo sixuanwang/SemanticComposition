@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<dataset>
+	<document>
+		<url>http://lists.osafoundation.org/pipermail/dev/2003-March/000479.html</url>
+		<hash>66fa11b33b6ac183314892703c20fa47</hash>
+		<filetype>html</filetype>
+		<filename>66fa11b33b6ac183314892703c20fa47.html</filename>
+		<users>27</users>
+		<tags>
+			<tag>
+				<name>python</name>
+				<weight>27</weight>
+			</tag>
+			<tag>
+				<name>programming</name>
+				<weight>14</weight>
+			</tag>
+			<tag>
+				<name>standards</name>
+				<weight>11</weight>
+			</tag>
+			<tag>
+				<name>style</name>
+				<weight>8</weight>
+			</tag>
+			<tag>
+				<name>coding</name>
+				<weight>7</weight>
+			</tag>
+			<tag>
+				<name>reference</name>
+				<weight>4</weight>
+			</tag>
+			<tag>
+				<name>conventions</name>
+				<weight>3</weight>
+			</tag>
+			<tag>
+				<name>guidelines</name>
+				<weight>2</weight>
+			</tag>
+		</tags>
+	</document>
+</dataset>

@@ -1,0 +1,344 @@
+
+#################ModelProject 1 - 3v3basketballpark  #########################
+
+basketball park | audience | audience out audience | audience in audience
+basketball park | | score out total out | total round in
+basketball park | | audience out money out out total score out | total round in audience in worker in
+basketball park | court | score out total score out | total round in
+basketball park | score | total score out | total score in
+basketball park | | money out audience out | audience in worker in
+
+#################ModelProject 2 - airportboarding  #########################
+
+airport | | luggage over weight custom fail security fail | passenger
+airport | buffer | buffer out | notify buffer in
+airport | custom | custom out custom fail out | custom in
+airport | luggage | luggage out over weight out | luggage in
+airport | | out feedback | in
+airport | queue | queue out | queue in
+airport | security | security out security fail out | security in
+airport | | over weight passenger no custom fail passenger no security fail passenger no | check in
+
+#################ModelProject 3 - alternatebitprot  #########################
+
+alternate bit protocol | | packet sent | control in
+alternate bit protocol | network | |
+alternate bit protocol | receiver | receiver | receiver
+alternate bit protocol | send | out packet sent | control in in
+alternate bit protocol | | |
+
+#################ModelProject 4 - ambulancedispatch  #########################
+
+ambulance dispatch | ambulance dispatch | | ambulance dispatch
+
+#################ModelProject 5 - autopilot  #########################
+
+auto pilot | system | | desire pitch in
+
+#################ModelProject 6 - barbershop  #########################
+
+barbershop | barber | | progress
+barbershop | barbershop | | next
+barbershop | | | progress
+barbershop | | progress |
+barbershop | reception | | next
+
+#################ModelProject 7 - BluetoothSimulator  #########################
+
+simulator | simulator | arrival | enable
+simulator | connection manager | device permission | search din connect device
+simulator | transmission | sent port | out
+simulator | pair device finder | device | search din
+simulator | permission verify | permission | connect device
+simulator | receiver mobile | arrival | permit
+simulator | send mobile | search device connect out | enable device found start sent
+
+#################ModelProject 8 - Cable_Anchor_Robot  #########################
+
+cable anchor robot | | |
+cable anchor robot | generator | motor motor generator | generator
+cable anchor robot | motor | motor | motor
+cable anchor robot | path generator | path generator next position | path generator
+cable anchor robot | plan | next position ready plan | plan
+cable anchor robot | queue | queue | queue ready
+cable anchor robot | robot | robot | robot
+cable anchor robot | robot generator | robot generator motor motor | robot generator
+cable anchor robot | translate | motor motor translate | translate
+
+#################ModelProject 9 - casebasedreasoner  #########################
+
+case base reason | | | ret
+case base reason | | output | input
+case base reason | | solution | query feedback
+case base reason | interface | query feedback output | input solution
+case base reason | retain | retain | retain
+case base reason | retrieve | ret prop |
+case base reason | reuse | sol | prop
+case base reason | revise | solution | feed adapt
+
+#################ModelProject 10 - city_water  #########################
+
+| | level |
+| pump | |
+| | level |
+| reservoir | |
+| | |
+
+#################ModelProject 11 - clock  #########################
+
+clock | alarm clock | | snooze
+clock | alarm controller | | pass snooze
+clock | alarm reg test | |
+clock | buzzer driver test | |
+clock | reg test | |
+clock | reg test | |
+clock | time reg | |
+clock | time register | pass |
+
+#################ModelProject 12 - garagedoor  #########################
+
+garage door | alarm gen | |
+garage door | code | code |
+garage door | counter | |
+garage door | door | code door open |
+garage door | door timer | door open | code
+garage door | garage door | door open | motion light
+garage door | light in | | code
+garage door | light out | | motion light
+
+#################ModelProject 13 - GSM_Authentication_Sim  #########################
+
+m | access control | rand | max id id
+m | m | OK | max id
+m | mobile network | and OK | max id id
+m | mobile center | OK |
+m | card | id | rand
+
+#################ModelProject 14 - hospitalLaundry  #########################
+
+hospital laundry | hospital laundry | short amount ship dirty |
+hospital laundry | hospital | dirty | clean
+hospital laundry | | ship short amount | dirty
+hospital laundry | laundry | clean | dirty
+hospital laundry | laundry shipping | ship short amount | clean
+
+#################ModelProject 15 - HouseHeating  #########################
+
+house | controller | heater signal |
+house | | tout |
+house | heater | heat gain | heater signal
+house | house heat system | |
+house | house heat system report | tout heater signal heat loss heat gain |
+house | | | heat loss heat gain
+house | thermostat | heater signal | heat loss heat gain
+house | | heat loss | tout
+
+#################ModelProject 16 - ImitationLearning  #########################
+
+imitation learning | | |
+imitation learning | | |
+
+#################ModelProject 17 - IndustrialImagingSystem  #########################
+
+industrial image system | buffer | image out response out | command in
+industrial image system | camera | image out | trig in
+industrial image system | ma | image out | trig in
+industrial image system | frame grab | image out response out timer out | command in trig in image in
+industrial image system | | image out response out | command in response in image in
+industrial image system | | image out out | trigger in in
+industrial image system | | image out out | trigger in in
+industrial image system | | image out out | trigger in in
+industrial image system | | image out response out | image in command in
+industrial image system | timer | timer out response out | trig in command in
+
+#################ModelProject 18 - MemoryHierarchy  #########################
+
+memory hierarchy | | address out out error out | address in in
+memory hierarchy | | address out out error out | address in in
+memory hierarchy | cache | |
+memory hierarchy | central processing unit | address out error out | control in in
+memory hierarchy | | out |
+memory hierarchy | | address out | control in
+
+#################ModelProject 19 - micro wave oven  #########################
+
+micro wave oven | beep test | |
+micro wave oven | cook time test | |
+micro wave oven | cur time reg test | |
+micro wave oven | display test | |
+micro wave oven | micro wave oven | |
+micro wave oven | cook reg test | |
+micro wave oven | phase reg test | |
+micro wave oven | power test | |
+micro wave oven | power test | |
+micro wave oven | cook reg test | |
+micro wave oven | time counter test | |
+
+#################ModelProject 20 - newspaper  #########################
+
+newspaper | | |
+newspaper | newspaper | |
+newspaper | | |
+newspaper | | |
+
+#################ModelProject 21 - offline File Transfer   #########################
+
+file transfer | access network | |
+file transfer | file server | out out | in in request in
+file transfer | file server send | request file sent out | request in in in
+file transfer | network | out out | in in request in
+file transfer | off line file transfer | file sent out | control in request in
+file transfer | receiver | out out | receiver
+file transfer | send | out file sent | control in in
+file transfer | | |
+file transfer | file exchange | read out | request store
+file transfer | file read thread | out | request
+file transfer | file write thread | out | store
+
+#################ModelProject 22 - omniengine_with_batch  #########################
+
+| create capture | | create capture
+| create filter | | create filter
+| engine control | |
+| start capture | | start capture
+| stop capture | | stop capture
+| wireless channel | | wireless channel
+
+#################ModelProject 23 - otrain  #########################
+
+train | in train queue | passenger out | station number passenger in
+train | train | passenger arrive passenger initial |
+train | station generator | passenger initial |
+train | station queue | passenger out | station number passenger in
+train | arrival generator | station number |
+
+#################ModelProject 24 - Panama_Canal  #########################
+
+panama canal | controller | control control queue | control in
+panama canal | gate | gate control out | gate control in
+panama canal | | control out | control in
+panama canal | lock | lock control out | lock control in
+panama canal | | |
+panama canal | queue | queue | queue control in
+
+#################ModelProject 25 - Queue  #########################
+
+queue | queue | queue | in stop
+
+#################ModelProject 26 - Resin  #########################
+
+resin | computer | computer | computer
+resin | | |
+resin | | |
+resin | | |
+resin | | |
+resin | resin | resin | resin
+resin | | |
+
+#################ModelProject 27 - SecureAreaAccess  #########################
+
+secure area access | alarm | out alarm alarm error alarm | arm in disarm in alarm pin OK
+secure area access | authenticate | alarm pin OK error door pin OK | pin in alarm alarm
+secure area access | display | out | pin prompt in alarm in error in door OK in
+secure area access | secure area access system | | arm disarm personal identification number
+secure area access | system | pin prompt alarm out error out door OK out | arm in disarm in n in
+
+#################ModelProject 28 - soccer  #########################
+
+soccer | ball play test | |
+soccer | model test | |
+soccer | | |
+
+#################ModelProject 29 - switching  #########################
+
+| sink | packet | sink in
+| source | packet out packet total |
+| switch | switch switch gate way | switch in
+| switch node | gate way | switch node
+
+#################ModelProject 30 - Tank_Fire  #########################
+
+tank fire | barrel | | fin
+tank fire | elect fire | elect fire | elect fire
+tank fire | emergency | emergency | emergency
+tank fire | fire | fire |
+tank fire | gunner | gunner |
+tank fire | load | | sin fin
+tank fire | fire | fire | fire
+tank fire | | | sin
+tank fire | tank | | safety pin
+
+#################ModelProject 31 - technical support financial department   #########################
+
+support department | | plan OK request validation problem | call in validation result
+support department | | plan OK problem | call in
+support department | | q out | call in release next
+support department | | control out | control in
+support department | | problem | call in
+support department | validation | result | request validation
+
+#################ModelProject 32 - traffic light  #########################
+
+traffic light | | car |
+traffic light | alight | lighter |
+traffic light | | remove add | fill
+traffic light | | walk |
+traffic light | intersection | |
+traffic light | | |
+traffic light | | | lighter
+
+#################ModelProject 33 - traffic light system  #########################
+
+traffic light system | | |
+traffic light system | intersection | next block out | stop in
+traffic light system | | value busy time-out |
+traffic light system | | out next block | in
+traffic light system | lane | | stop
+traffic light system | | out next block | in
+traffic light system | | out next block | in
+traffic light system | | light signal |
+traffic light system | top | light |
+traffic light system | | throughput |
+traffic light system | traffic light | light throughput | signal
+
+#################ModelProject 34 - Traffic_Intersection_Connector  #########################
+
+traffic intersection connect | connection generator | connection generator | connection generator reset
+traffic intersection connect | | |
+traffic intersection connect | intersection | next block out | stop in
+traffic intersection connect | | |
+traffic intersection connect | | value busy time-out |
+traffic intersection connect | | out next block | in
+traffic intersection connect | lane | | stop
+traffic intersection connect | | out next block | in
+traffic intersection connect | | out next block | in
+traffic intersection connect | | light signal |
+traffic intersection connect | queue | queue | in
+traffic intersection connect | top | |
+traffic intersection connect | top queue | top queue | stop
+traffic intersection connect | top and connection generator | out |
+traffic intersection connect | top original | light car out |
+traffic intersection connect | | throughput |
+traffic intersection connect | traffic light | light throughput | signal
+
+#################ModelProject 35 - transport  #########################
+
+transport | gen | go |
+transport | load | |
+transport | | |
+transport | | |
+transport | transport | |
+transport | | |
+transport | | |
+transport | unload | |
+transport | | |
+transport | | |
+
+#################ModelProject 36 - unmanned ground vehicle  #########################
+
+ground vehicle | heading sensor | heading sensor | heading sensor
+ground vehicle | intrude sensor | intrude sensor | intrude sensor
+ground vehicle | main computer | status turning port turn left turn right | heading input heading intrude
+ground vehicle | | status left wheel right wheel | input heading intrude
+ground vehicle | wheel assembly | left wheel right wheel | turn left turn right
+ground vehicle | wheel set | wheel set | wheel set

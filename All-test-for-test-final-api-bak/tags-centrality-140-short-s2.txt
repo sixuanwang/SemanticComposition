@@ -1,0 +1,20 @@
+
+centrality decreasing tag list (with0 tags removed):
+[programming]= -> 0.0843842573129
+[compiler]= -> 0.0843842573129
+[llvm]= -> 0.0851469691773
+[vm]= -> 0.0878858226805
+[development]= -> 0.0894671975982
+[compilers]= -> 0.0924153418467
+[virtual_machine]= -> 0.10375235341
+[software]= -> 0.112839563501
+[opensource]= -> 0.231483631298
+
+similarity: 0.00400616 | tag: compiler | tagto:  programming
+similarity: 0.00481250 | tag: llvm | tagto:  compiler
+similarity: 0.00541401 | tag: vm | tagto:  llvm
+similarity: 0.00652038 | tag: development | tagto:  programming
+similarity: 0.00111959 | tag: compilers | tagto:  compiler
+similarity: 0.00910891 | tag: virtual_machine | tagto:  programming
+similarity: 0.01278539 | tag: software | tagto:  compilers
+similarity: 0.01593220 | tag: opensource | tagto:  software

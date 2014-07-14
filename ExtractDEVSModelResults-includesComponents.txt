@@ -1,0 +1,7442 @@
+#################ModelProject  1  #########################
+2dofrobotarm | Decision | 
+[TOP]
+components : Decision@Decision
+out : Motion_Command
+out : Home_Command
+in : UserCommand
+in : Done_Motion
+in : Done_Homing
+
+2dofrobotarm | Homing | 
+[TOP]
+components : Joint1@Joint1 Joint2@Joint2
+out : Homed
+in : H_Homing_Command
+[Joint1]
+[Joint2]
+
+2dofrobotarm | Joint1 | 
+[TOP]
+components : Joint1@Joint1
+out : Done
+in : Homing
+[Joint1]
+
+2dofrobotarm | Joint2 | 
+[TOP]
+components : Joint2@Joint2
+out : Done
+in : Homing
+[Joint2]
+
+2dofrobotarm | Motion | 
+[TOP]
+components : Motion@Motion
+in : Command
+out : Done
+out : J1_Position J2_Position
+out : Efficiency
+[Motion]
+
+2dofrobotarm | MotionController | 
+[TOP]
+components : Decision@Decision Motion@Motion
+in : Input_Command Done
+out : M_Homing_Command OutJ1_Pos OutJ2_Pos OutEfficiency
+[Decision]
+[Motion]
+
+2dofrobotarm | RobotArm | 
+[TOP]
+components : Homing MotionController
+out : RobotJ1 RobotJ2 RobotEfficiency
+in : User_Input
+[Homing]
+components : Joint1@Joint1 Joint2@Joint2
+out : Homed
+in : H_Homing_Command
+[MotionController]
+components : Decision@Decision Motion@Motion
+in : Input_Command Done
+out : M_Homing_Command OutJ1_Pos OutJ2_Pos OutEfficiency
+[Decision]
+[Motion]
+[Joint1]
+[Joint2]
+
+#################ModelProject  2  #########################
+3v3basketballpark | audience | 
+[top]
+components : audience@Audience
+out : audienceOut
+out : out
+in : audienceIn
+in : in
+[audience]
+
+3v3basketballpark | basketballcourt | 
+[top]
+components : basketballcourt@BasketballCourt
+out : scoreOut
+out : totalOut
+in : totalRoundNumIn
+[basketballcourt]
+
+3v3basketballpark | basketballpark | 
+[top]
+components : audience@Audience
+components : ticketwindow@TicketWindow
+components : Court
+out : audienceOut moneyOut out totalScoreOut
+in : totalRoundNumIn audienceIn workerIn
+[ticketwindow]
+[Court]
+components : basketballcourt@BasketballCourt
+components : score@Score
+in : totalRoundNumIn
+out : scoreOut totalScoreOut
+[basketballcourt]
+[score]
+[audience]
+
+3v3basketballpark | court | 
+[top]
+components : basketballcourt@BasketballCourt
+components : score@Score
+in : totalRoundNumIn
+out : scoreOut
+out : totalScoreOut
+[basketballcourt]
+[score]
+
+3v3basketballpark | score | 
+[top]
+components : score@Score
+out : totalScoreOut
+in : totalScoreIn
+[score]
+
+3v3basketballpark | ticketwindow | 
+[top]
+components : ticketwindow@TicketWindow
+out : moneyOut
+out : audienceOut
+in : audienceIn
+in : workerIn
+[ticketwindow]
+
+#################ModelProject  3  #########################
+aircondition | aireac | 
+[top]
+components : ucontrol@Ucontrol uf@Ufc uc@Ufc proptemp@Proptemp gentemp@Gentemp
+out : consumo tempHab actiFrio actiCalor temp
+in : tempd
+[ucontrol]
+[uf]
+[uc]
+[proptemp]
+[gentemp]
+intervalo : 60.0
+
+aircondition | aireacon | 
+[top]
+components : ucontrol@Ucontrol uf@Ufc uc@Ufc proptemp@Proptemp gentemp@Gentemp
+out : consumo
+in : tempd
+[ucontrol]
+[uf]
+[uc]
+[proptemp]
+[gentemp]
+intervalo : 60.0
+
+aircondition | gentemp | 
+[top]
+components : gentemp@Gentemp
+out : out
+[gentemp]
+intervalo : 30
+
+aircondition | proptemp | 
+[top]
+components : proptemp@Proptemp
+out : temphab
+in : tempe frio calor
+[proptemp]
+
+aircondition | ucontrol | 
+[top]
+components : ucontrol@Ucontrol
+out : actifrio acticalor
+in : tempd tempr
+[ucontrol]
+
+aircondition | ufc | 
+[top]
+components : ufc@Ufc
+out : out
+in : in
+[ufc]
+
+#################ModelProject  4  #########################
+airportboarding | airportboarding | 
+[top]
+components : Queue
+components : Servicecenter
+out : luggageOverWeight
+out : customFail
+out : securityFail
+in : passengersBoarding
+[Queue]
+components : buffer@Buffer
+components : proc@Proc
+out : interPassengersOut
+in : allPassengersIn
+[buffer]
+[proc]
+[Servicecenter]
+components : luggage@Luggage
+components : custom@Custom
+components : security@Security
+out : overWeightPassengerNo
+out : customFailPassengerNo
+out : securityFailPassengerNo
+in : checkIn
+[luggage]
+[custom]
+[security]
+
+airportboarding | buffer | 
+[top]
+components : buffer@Buffer
+out : bufferOut
+in : notifyDone
+in : bufferIn
+[buffer]
+
+airportboarding | custom | 
+[top]
+components : custom@Custom
+out : customOut
+out : customFailOut
+in : customIn
+[custom]
+
+airportboarding | luggage | 
+[top]
+components : luggage@Luggage
+out : luggageOut
+out : overWeightOut
+in : luggageIn
+[luggage]
+
+airportboarding | proc | 
+[top]
+components : proc@Proc
+out : procOut
+out : procFeedback
+in : procIn
+[proc]
+
+airportboarding | queue | 
+[top]
+components : buffer@Buffer
+components : proc@Proc
+out : queueOut
+in : queueIn
+[buffer]
+[proc]
+
+airportboarding | security | 
+[top]
+components : security@Security
+out : securityOut
+out : securityFailOut
+in : securityIn
+[security]
+
+airportboarding | servicecenter | 
+[top]
+components : luggage@Luggage
+components : custom@Custom
+components : security@Security
+out : overWeightPassengerNo
+out : customFailPassengerNo
+out : securityFailPassengerNo
+in : checkIn
+[luggage]
+[custom]
+[security]
+
+#################ModelProject  5  #########################
+alternatebitprot | abpMA | 
+[top]
+components : sender@Sender
+components : Network
+components : receiver@Receiver
+out : packetSent ackReceived
+in : controlIn
+[sender]
+[receiver]
+[Network]
+components : subnet1@Subnet
+components : subnet2@Subnet
+out : in1 in2
+out : out1 out2
+[subnet1]
+[subnet2]
+
+alternatebitprot | networkMA | 
+[top]
+components : subnet1@Subnet
+components : subnet2@Subnet
+out : in1 in2
+out : out1 out2
+[subnet1]
+[subnet2]
+
+alternatebitprot | receiverMA | 
+[top]
+components : receiver@Receiver 
+out : out
+in : in
+[receiver]
+
+alternatebitprot | senderMA | 
+[top]
+components : sender@Sender
+out : dataOut
+out : packetSent
+out : ackReceived
+in : controlIn
+in : ackIn
+[sender]
+
+alternatebitprot | subnetMA | 
+[top]
+components : subnet1@Subnet 
+out : out
+in : in
+[subnet1]
+
+#################ModelProject  6  #########################
+ambulancedispatch | AmbulanceDispatch | 
+[top]
+components : CallHandler Dispatcher Response@Response
+in : in
+out :  response_out 
+[CallHandler]
+components : CallerQueue CallerINFO@CallerINFO
+in : callin
+out : lout pout
+[Dispatcher]
+components : Dispatch@Dispatch 
+in : lin pin 
+out : ambulance_out time_out 
+[Response]
+[Dispatch]
+[CallerINFO]
+[CallerQueue]
+components : CallLength@Generator CallQueue@Queue 
+out : callout 
+in : callin 
+[CallLength]
+[CallQueue]
+
+#################ModelProject  7  #########################
+autopilot | APSystem | 
+[top]
+components : AutoPilotController AircraftController 
+out : actualPitch_out 
+in : desiredPitch_in 
+[AutoPilotController]
+components : AutoPilotController@AutoPilotController 
+out : cmdPitch_out 
+in : desiredPitch_in actualPitch_in 
+[AutoPilotController]
+[AircraftController]
+components : AircraftController@AircraftController
+out : actualPitch_out 
+in : cmdPitch_in 
+[AircraftController]
+
+#################ModelProject  8  #########################
+barbershop | barberMA1 | 
+[top]
+components : checkhair@Checkhair cuthair@cuthair
+in : cust progress
+out : finished cutcontinue
+[checkhair]
+[cuthair]
+
+barbershop | barbershopMA1 | 
+[top]
+components : reception@Reception Barber
+in : newcust next
+out : cust finished 
+[reception]
+[Barber]
+components : checkhair@Checkhair cuthair@Cuthair
+in : in
+out : out
+[checkhair]
+[cuthair]
+
+barbershop | checkhairMA1 | 
+[top]
+components : checkhair@Checkhair 
+in : cust progress
+out : cutcontinue finished
+[checkhair]
+
+barbershop | cuthairMA1 | 
+[top]
+components : cuthair@Cuthair 
+in : cutcontinue
+out : progress
+[cuthair]
+
+barbershop | receptionMA1 | 
+[top]
+components : reception@Reception 
+in : newcust next
+out : cust 
+[reception]
+
+#################ModelProject  9  #########################
+BattleSimulation | battleMA | 
+[Top]
+components : Knight Dragon
+out : battleOut
+in : battleIn
+[Knight]
+components : kdecision@Kdecision kattack@Kattack kmove@Kmove 
+out : kOut 
+in : kIn 
+[kdecision]
+[kattack]
+[kmove]
+[Dragon]
+components : ddecision@Ddecision dattack@Dattack dmove@Dmove 
+out : dOut 
+in : dIn 
+[ddecision]
+[dattack]
+[dmove] 
+
+BattleSimulation | dattackMA | 
+[Top]
+components : dattack@Dattack 
+out : out 
+in : in 
+[dattack]
+
+BattleSimulation | ddecisionMA | 
+[Top]
+components : ddecision@Ddecision 
+out : out 
+in : in 
+[ddecision]
+
+BattleSimulation | dmoveMA | 
+[Top]
+components : dmove@Dmove 
+out : out 
+in : in 
+[dmove]
+
+BattleSimulation | dragonMA | 
+[Top]
+components : ddecision@Ddecision dmove@Dmove dattack@Dattack 
+out : dOut 
+in : dIn 
+[ddecision]
+[dmove]
+[dattack]
+
+BattleSimulation | kattackMA | 
+[Top]
+components : kattack@Kattack 
+out : out 
+in : in 
+[kattack]
+
+BattleSimulation | kdecisionMA | 
+[Top]
+components : kdecision@Kdecision 
+out : out 
+in : in 
+[kdecision]
+
+BattleSimulation | kmoveMA | 
+[Top]
+components : kmove@Kmove 
+out : out 
+in : in 
+[kmove]
+
+BattleSimulation | knightMA | 
+[Top]
+components : kdecision@Kdecision kattack@Kattack kmove@Kmove 
+out : kOut 
+in : kIn 
+[kdecision]
+[kattack]
+[kmove]
+
+#################ModelProject  10  #########################
+BluetoothSimulator | bluetoothSimulator | 
+[top]
+components : senderMobile@SenderMobile
+components : dataTransmission@DataTransmission
+components : ConnectionManager
+components : receiverMobile@ReceiverMobile
+out : newMsgArrival 
+in : enableBT 
+[senderMobile]
+[receiverMobile]
+[dataTransmission]
+[ConnectionManager]
+components : pairedDeviceFinder@PairedDeviceFinder
+components : permissionVerifier@PermissionVerifier
+in : search connectDevice granted IDin
+out : deviceID connected getID reqPermission   
+[permissionVerifier]
+[pairedDeviceFinder]
+
+BluetoothSimulator | connectionManager | 
+[top]
+components : pairedDeviceFinder@PairedDeviceFinder
+components : permissionVerifier@PermissionVerifier
+in : search IDin connectDevice granted
+out : deviceID getID reqPermission connected
+[permissionVerifier]
+[pairedDeviceFinder]
+
+BluetoothSimulator | dataTransmission | 
+[top]
+components : dataTransmission@DataTransmission 
+out : dataSent 
+out : dataPort  
+in : dataOut gotData
+[dataTransmission]
+
+BluetoothSimulator | pairedDeviceFinder | 
+[top]
+components : pairedDeviceFinder@PairedDeviceFinder 
+out : getID 
+out : deviceID  
+in : search IDin
+[pairedDeviceFinder]
+
+BluetoothSimulator | permissionVerifier | 
+[top]
+components : permissionVerifier@PermissionVerifier 
+out : connected 
+out : reqPermission  
+in : connectDevice granted
+[permissionVerifier]
+
+BluetoothSimulator | ReceiverMobile | 
+[top]
+components : receiverMobile@ReceiverMobile 
+out : IDout 
+out : accepted 
+out : gotData 
+out : newMsgArrival
+in : permit data IDrequested
+[receiverMobile]
+
+BluetoothSimulator | SenderMobile | 
+[top]
+components : senderMobile@SenderMobile 
+out : searchDevice 
+out : connect 
+out : dataOut 
+in : enableBT deviceFound start dataSent
+[senderMobile]
+
+#################ModelProject  11  #########################
+BorderControlSystem | ActionTakerMA | 
+[Top]
+components : ActionTaker@ActionTakerType 
+out : out carLeft 
+in : in 
+[ActionTaker]
+
+BorderControlSystem | AdmissibilityEvaluatorMA | 
+[Top]
+components : AdmissibilityEvaluator@AdmissibilityEvaluatorType 
+out : AdmEvalResultOut 
+in : AdmIIn PIPassIn CIIn 
+[AdmissibilityEvaluator]
+
+BorderControlSystem | AdmissibilityInspectionMA | 
+[Top]
+components : AdmissibilityInspection@AdmissibilityInspectionType 
+out : out 
+in : in 
+[AdmissibilityInspection]
+
+BorderControlSystem | borderCrossing | 
+[Top]
+components : BorderCrossing 
+out : Action 
+in : in 
+in : start 
+[BorderCrossing]
+components : TrafficInputQueue@TrafficInputQueueType ActionTaker@ActionTakerType ProcessingModule 
+out : action 
+in : start in 
+[TrafficInputQueue]
+[ActionTaker]
+[ProcessingModule]
+components : AdmissibilityEvaluator@AdmissibilityEvaluatorType PrimaryInspection SecondaryInspection 
+out : AdmEvalOut 
+in : trafficIn 
+[AdmissibilityEvaluator]
+[PrimaryInspection]
+components : VehicleQueryPerformer@VehicleQueryPerformerType PersonQueryPerformer@PersonQueryPerformerType QueryResultReviewer@QueryResultReviewerType 
+out : PIPass PIFail 
+in : trafficIn 
+[VehicleQueryPerformer]
+[PersonQueryPerformer]
+[QueryResultReviewer]
+[SecondaryInspection]
+components : AdmissibilityInspection@AdmissibilityInspectionType CustomsInspection@CustomsInspectionType 
+out : AdmIOut CIOut 
+in : SIInput 
+[AdmissibilityInspection]
+[CustomsInspection]
+
+BorderControlSystem | CustomsInspectionMA | 
+[Top]
+components : CustomsInspection@CustomsInspectionType 
+out : out 
+in : in 
+[CustomsInspection]
+
+BorderControlSystem | PersonQueryPerformerMA | 
+[Top]
+components : PersonQueryPerformer@PersonQueryPerformerType 
+out : out 
+in : in 
+[PersonQueryPerformer]
+
+BorderControlSystem | PrimaryInspectionMA | 
+[Top]
+components : PrimaryInspection 
+out : pass fail 
+in : in 
+[PrimaryInspection]
+components : VehicleQueryPerformer@VehicleQueryPerformerType PersonQueryPerformer@PersonQueryPerformerType QueryResultReviewer@QueryResultReviewerType 
+out : pass fail 
+in : in 
+[VehicleQueryPerformer]
+[PersonQueryPerformer]
+[QueryResultReviewer]
+
+BorderControlSystem | QueryResultReviewerMA | 
+[Top]
+components : QueryResultReviewer@QueryResultReviewerType 
+out : QRRPassOut QQRFailOut 
+in : pqpin vqpin 
+[QueryResultReviewer]
+
+BorderControlSystem | SecondaryInspectionMA | 
+[Top]
+components : SecondaryInsection 
+out : AdmIOut CIOut 
+in : in 
+[SecondaryInsection]
+components : AdmissibilityInspection@AdmissibilityInspectionType CustomsInspection@CustomsInspectionType 
+out : AdmIOut CIOut 
+in : in 
+[AdmissibilityInspection]
+[CustomsInspection]
+
+BorderControlSystem | TrafficInputQueueMA | 
+[Top]
+components : TrafficInputQueue@TrafficInputQueueType 
+out : out 
+in : start in systemFree 
+[TrafficInputQueue]
+
+BorderControlSystem | VehicleQueryPerformerMA | 
+[Top]
+components : VehicleQueryPerformer@VehicleQueryPerformerType 
+out : out 
+in : in 
+[VehicleQueryPerformer]
+
+#################ModelProject  12  #########################
+BusVending | displayTest | 
+[top]
+components : d@Display
+in : in 
+out : 
+[d]
+
+BusVending | expendedora | 
+[top]
+components : display@Display printer vuelto monedas gen@Generador
+in : nuevo_boleto cancelar ingreso_moneda
+out : vuelto_salida
+[display]
+[gen]
+[printer]
+components : q@Queue p@Printer
+in : impresion 
+out : 
+[p]
+[q]
+[monedas]
+components : qvm@Queue v@Verificador
+in : ingreso_moneda activar_vm 
+out : moneda_verificada 
+[v]
+[qvm]
+[vuelto]
+components : v5@Vuelto v10@Vuelto v25@Vuelto v50@Vuelto
+in : dar_vuelto 
+out : monedas resto
+[v5]
+[v10]
+[v25]
+[v50]
+
+BusVending | expendedoraTest | 
+[top]
+components : display@Display printer vuelto monedas gen@Generador
+in : nuevo_boleto cancelar ingreso_moneda
+out : vuelto_salida
+[display]
+[gen]
+[printer]
+components : q@Queue p@Printer
+in : impresion 
+out : 
+[p]
+[q]
+[monedas]
+components : qvm@Queue v@Verificador
+in : ingreso_moneda activar_vm 
+out : moneda_verificada 
+[v]
+[qvm]
+[vuelto]
+components : v5@Vuelto v10@Vuelto v25@Vuelto v50@Vuelto
+in : dar_vuelto 
+out : monedas resto
+[v5]
+[v10]
+[v25]
+[v50]
+
+BusVending | genTest | 
+[top]
+components : g@Generador
+in : nuevo_boleto cancelar moneda_verificada
+out : activar_vm impresion display dar_vuelto
+[g]
+
+BusVending | printTest | 
+[top]
+components : q@Queue p@Printer
+in : impresion 
+out : 
+[p]
+[q]
+
+BusVending | vmTest | 
+[top]
+components : q@Queue v@Verificador
+in : ingreso_moneda activar_vm 
+out : moneda_verificada 
+[v]
+[q]
+
+BusVending | vueltoTest | 
+[top]
+components : v5@Vuelto v10@Vuelto v25@Vuelto v50@Vuelto
+in : a_dar 
+out : monedas resto
+[v5]
+[v10]
+[v25]
+[v50]
+
+#################ModelProject  13  #########################
+Cable_Anchor_Robot | engager | 
+[top] 
+components : engager1@Engager
+out : out
+in : in
+[engager1]
+
+Cable_Anchor_Robot | generator | 
+[top] 
+components : generator1@Generator
+out : motorOut1
+out : motorOut2
+out : out
+in : in
+in : done
+[translator1]
+
+Cable_Anchor_Robot | motor | 
+[top] 
+components : motor1@Motor
+out : out
+in : in
+[motor1]
+
+Cable_Anchor_Robot | pathGenerator | 
+[top] 
+components : queue1@Queue
+components : planner1@Planner
+out : out
+out : engaged
+out : nextPosition
+in : in
+in : done
+[planner1]
+intial.x : 0
+intial.y : 0
+[queue1]
+
+Cable_Anchor_Robot | planner | 
+[top] 
+components : planner1@Planner
+out : nextPosition
+out : ready
+out : engaged
+out : out
+in : in
+in : done
+[planner1]
+intial.x : 0
+intial.y : 0
+
+Cable_Anchor_Robot | queue | 
+[top] 
+components : queue1@Queue
+out : out
+in : in
+in : ready
+
+Cable_Anchor_Robot | robot | 
+[top]
+components : engager1@Engager
+components : motor1@Motor
+components : motor2@Motor
+components : robotGenerator1
+in : in
+out : out
+[robotGenerator1]
+components : pathGenerator1
+components : translator1@Translator
+in : in
+in : done
+out : out
+out : engaged
+out : motorOut1
+out : motorOut2
+[pathGenerator1] 
+components : queue1@Queue
+components : planner1@Planner
+in : in
+in : done
+out : nextPosition
+out : engaged
+out : out
+[planner1]
+intial.x : 0
+intial.y : 0
+[translator1]
+[motor1]
+[motor2]
+[engager1]
+
+Cable_Anchor_Robot | robotGenerator | 
+[top]
+components : pathGenerator1
+components : translator1@Translator
+in : in
+in : done
+out : out
+out : engaged
+out : motorOut1
+out : motorOut2
+[pathGenerator1] 
+components : queue1@Queue
+components : planner1@Planner
+in : in
+in : done
+out : nextPosition
+out : engaged
+out : out
+[planner1]
+intial.x : 2
+intial.y : 5
+[queue1]
+[translator1]
+
+Cable_Anchor_Robot | translator | 
+[top] 
+components : translator1@Translator
+out : motorOut1
+out : motorOut2
+out : out
+in : in
+in : done
+[translator1]
+
+#################ModelProject  14  #########################
+car | carwash | 
+[top]
+components : Wash Dry rinsecycle@rinsecycle myqueue@MYQueue pcode@pcode
+in : system_in
+out : system_out
+[Wash]
+components : washcycle@washcycle shampoo@shampoo water@water
+in  : wash_in
+out : wash_out
+out : wash_done
+[Dry]
+components : cloth@cloth drycycle@drycycle
+in : dry_in
+out : dry_out
+out : dry_done
+[washcycle]
+[rinsecycle]
+[drycycle]
+[cloth]
+[water]
+[shampoo]
+[pcode]
+[MYQueue]
+
+car | washrinse | 
+[top]
+components : wash@washcycle rinse@rinsecycle dry@drycycle queue@Queue
+in : wrdin
+out : wrdout
+[wash]
+[rinse]
+[dry]
+[queue]
+
+#################ModelProject  15  #########################
+casebasedreasoner | casebase | 
+[top]
+components : casebase@CaseBase 
+out : prov
+in : ret
+in : stor
+[casebase]
+
+casebasedreasoner | casebasedreasoner | 
+[top]
+components : retrieve@Retrieve reuse@Reuse casebase@CaseBase retain@Retain revise@Revise interface@Interface
+out : output
+in : input
+[retrieve]
+[retain]
+[casebase]
+[revise]
+[reuse]
+[interface]
+
+casebasedreasoner | cbrcycle | 
+[top]
+components : retrieve@Retrieve reuse@Reuse casebase@CaseBase retain@Retain revise@Revise 
+out : solution
+in : query
+in : feedback
+[retrieve]
+[retain]
+[casebase]
+[revise]
+[reuse]
+
+casebasedreasoner | interface | 
+[top]
+components : interface@Interface
+out : query
+out : feedback
+out : output
+in : input
+in : solution
+[interface]
+
+casebasedreasoner | retain | 
+[top]
+components : retain@Retain 
+out : out
+in : in
+[retain]
+
+casebasedreasoner | retrieve | 
+[top]
+components : retrieve@Retrieve 
+out : ret
+out : prop
+in : que
+in : prov
+[retrieve]
+
+casebasedreasoner | reuse | 
+[top]
+components : reuse@Reuse 
+out : sol
+out : adpt
+in : prop
+[reuse]
+
+casebasedreasoner | revise | 
+[top]
+components : revise@Revise
+out : solution
+out : fixed
+in : feed
+in : adapt
+[revise]
+
+#################ModelProject  16  #########################
+city_water | city_water | 
+[top]
+components : pump1@Pump
+components : pump2@Pump
+components : res@Reservoir
+components : wpump1@WellPump
+components : wpump2@WellPump
+in : start_in1
+in : stop_in1
+in : start_in2
+in : stop_in2
+in : wstart_in1
+in : wstop_in1
+in : wstart_in2
+in : wstop_in2
+in : power_in
+out : flow_out
+out : state_out1
+out : state_out2
+out : level
+[pump1]
+[pump2]
+[wpump1]
+[wpump2]
+[res]
+
+city_water | pump | 
+[top]
+components : pump1@Pump pump2@Pump
+in : start_in1
+in : start_in2
+in : stop_in1
+in : stop_in2
+in : level_in
+in : low_level_in
+in : power_in
+out : state_out1
+out : state_out2
+out : flow_out
+[pump1]
+[pump2]
+
+city_water | pump_station | 
+[top]
+components : pump1@Pump
+components : pump2@Pump
+components : res@Reservoir
+in : q_in
+in : start_in1
+in : stop_in1
+in : start_in2
+in : stop_in2
+in : power_in
+out : flow_out
+out : state_out1
+out : state_out2
+out : level
+[pump1]
+[pump2]
+[res]
+
+city_water | reservoir | 
+[top]
+components : res@Reservoir
+in : q_in
+in : qp_in
+out : level_out
+out : low_level_out
+[res]
+
+city_water | well_pump | 
+[top]
+components : wpump1@WellPump wpump2@WellPump
+in : start_in1
+in : start_in2
+in : stop_in1
+in : stop_in2
+out : flow_out
+[wpump1]
+[wpump2]
+
+#################ModelProject  17  #########################
+clock | alarmClock | 
+[top]
+components : TR AC display@DispDrv
+in : hours minutes time_set alarm_set alarm_on snooze
+out : displayed_time buzzer_on
+[TR]
+components : min@MinReg hr@HrReg adder@TimeAdder
+in : time_set hours minutes
+out : time_of_day
+[AC]
+components : alarm@AlarmReg tc@TimeComp buz@BuzDrv
+in : time_of_day hours minutes alarm_set time_set snooze alarm_on
+out : alarm_time buzzer_on
+
+clock | alarmController | 
+[top]
+components : alarm@AlarmReg tc@TimeComp buz@BuzDrv
+in : time_of_day hours minutes alarm_set time_set snooze alarm_on
+out : alarm_time buzzer_on
+
+clock | alarmRegTest | 
+[top]
+components : alarm@AlarmReg
+in : c_alarm_set c_hours c_minutes
+out : c_alarm_time
+
+clock | buzzerDriverTest | 
+[top]
+components : drv@BuzDrv
+in : c_time_set c_alarm_set c_alarm_on c_time_match c_snooze
+out : c_buzzer_on
+
+clock | hrRegTest | 
+[top]
+components : hr@HrReg
+in : c_time_set c_hours c_wrap_around
+out : c_time_hours
+
+clock | minRegTest | 
+[top]
+components : min@MinReg
+in : c_time_set c_minutes
+out : c_time_minutes c_wrap_around
+
+clock | timeReg | 
+[top]
+components : hr@HrReg min@MinReg adder@TimeAdder
+in : c_time_set c_hours c_minutes
+out : c_time_of_day
+
+clock | timeRegister | 
+[top]
+components : min@MinReg hr@HrReg adder@TimeAdder
+in : time_set hours minutes
+out : time_of_day
+
+#################ModelProject  18  #########################
+clock_2 | AgujaHour | 
+[top]
+components : hora@AgujaHour
+out : VALUE
+in : INCREMENT DECREMENT
+
+clock_2 | AgujaMin | 
+[top]
+components : min@AgujaMin
+out : VALUE OUT_INCREMENT OUT_DECREMENT
+in : TIC IN_INCREMENT IN_DECREMENT
+
+clock_2 | Agujas | 
+[top]
+components : min@AgujaMin
+components : hora@AgujaHour
+out : HOUR_VALUE MIN_VALUE
+in : TIC INCREMENT DECREMENT
+
+clock_2 | Alarma | 
+[top]
+components : alarma@Alarma
+out : ALARM_ON ALARM_OFF SOUND_ALARM
+in : ACTIVATE DEACTIVATE ALARM_HOUR ALARM_MIN CLOCK_HOUR CLOCK_MIN
+
+clock_2 | ControlAlarma | 
+[top]
+components : agujasAlarma
+components : alarma@Alarma
+out : ALARM_ON ALARM_OFF SOUND_ALARM ALARM_MIN ALARM_HOUR
+in : ACTIVATE DEACTIVATE CLOCK_HOUR CLOCK_MIN INCREMENT DECREMENT
+[agujasAlarma]
+components : min@AgujaMin
+components : hora@AgujaHour
+out : HOUR_VALUE MIN_VALUE
+in : TIC INCREMENT DECREMENT
+
+clock_2 | ControlEncendido | 
+[top]
+components : controlencendido@ControlEncendido
+out : CLOCK_ON CLOCK_OFF
+in : TURN_ON TURN_OFF
+
+clock_2 | Motor | 
+[top]
+components : control@ControlEncendido
+components : pendulo@Pendulo
+out : TIC CLOCK_ON CLOCK_OFF
+in : TURN_ON TURN_OFF
+
+clock_2 | Pendulo | 
+[top]
+components : pendulo@Pendulo
+out : TIC
+in : TURN_ON TURN_OFF
+
+clock_2 | Reloj | 
+[top]
+components : agujas
+components : controlalarma
+components : motor
+out : CLOCK_ON CLOCK_OFF ALARM_ON ALARM_OFF SOUND_ALARM CLOCK_HOUR CLOCK_MIN ALARM_HOUR ALARM_MIN
+in : TURN_ON TURN_OFF ACTIVATE DEACTIVATE INCREMENT DECREMENT INC_ALARM DEC_ALARM
+[agujas]
+components : min@AgujaMin
+components : hora@AgujaHour
+out : HOUR_VALUE MIN_VALUE
+in : TIC INCREMENT DECREMENT
+[motor]
+components : control@ControlEncendido
+components : pendulo@Pendulo
+out : TIC CLOCK_ON CLOCK_OFF
+in : TURN_ON TURN_OFF
+[controlalarma]
+components : agujasAlarma
+components : alarma@Alarma
+out : ALARM_ON ALARM_OFF SOUND_ALARM ALARM_MIN ALARM_HOUR
+in : ACTIVATE DEACTIVATE CLOCK_HOUR CLOCK_MIN INCREMENT DECREMENT
+[agujasAlarma]
+components : minAlarma@AgujaMin
+components : horaAlarma@AgujaHour
+out : HOUR_VALUE MIN_VALUE
+in : TIC INCREMENT DECREMENT
+
+#################ModelProject  19  #########################
+communicationsmanagementsystem | CMS | 
+[Top]
+components : CSU CCU HF 
+out : Audio_Speaker_Out AM_Transmission_Out FM_Transmission_Out VUHF_Transmission_Out HF_Transmission_Out LED_Output 
+in : Keyline Audio_In User_Input AM_Reception_In FM_Reception_In VUHF_Reception_In HF_Reception_In 
+[CSU]
+components : CSU_Interface_Controller@CSU_Interface_ControllerType Button_Controller@Button_ControllerType Crypto_Controller@Crypto_ControllerType GUI_Controller@GUI_ControllerType LED@LEDType 
+out : Status_Out 
+in : User_Input Radio_Tx_In 
+[CSU_Interface_Controller]
+[Button_Controller]
+[Crypto_Controller]
+[GUI_Controller]
+[LED]
+[CCU]
+components : CCU_Interface@CCU_InterfaceType Status_Controller@Status_ControllerType Audio_Multiplexer@Audio_MultiplexerType 
+out : CSU_Out Audio_Out HF_Audio_Out VUHF_Audio_Out FM_Audio_Out AM_Audio_Out ANVDT_Status_Out 
+in : CSU_In Audio_In Keyline ANVDT_Status_In HF_Audio_In VUHF_Audio_In FM_Audio_In AM_Audio_In 
+[CCU_Interface]
+[Status_Controller]
+[Audio_Multiplexer]
+[HF]
+components : ANVDT@ANVDTType HF_Transceiver@HF_TransceiverType 
+out : ANVDT_Status_Out Hf_Audio_Out HF_Transmission_Out 
+in : HF_Status_In HF_Audio_In HF_Reception_In 
+[ANVDT]
+[HF_Transceiver]
+
+#################ModelProject  20  #########################
+CruiseControlSystem | BreakController | 
+[top]
+components : BRC@BreakController
+out : testOut
+in : testIn
+[BRC]
+
+CruiseControlSystem | ButtonControllerMA | 
+[top]
+components : ButtonController
+in : testInOn
+in : testInOff
+in : testInSet
+in : testInAcc
+in : testInDec
+in : testInResume
+out : testOutTurnOn
+out : testOutTurnOff
+out : testOutDec
+out : testOutInc
+out : testOutSet
+out : testOutResume
+[ButtonController]
+components : onOff@ONOFFController SpeedController set@Set resume@Resume
+in : inON inOFF inSET inACC inDEC inRESUME
+out : outON outOFF outSET outDEC outACC outRESUME
+[onOff]
+[set]
+[resume]
+[SpeedController]
+components : accQ@Queue decQ@Queue inc@Increase dec@Decrease 
+out : incOut
+out : decOut
+in : accIn
+in : decIn
+[accQ]
+[decQ]
+[inc]
+[dec]
+
+CruiseControlSystem | ButtonInputModuleMA | 
+[top]
+components : BIM@ButtonInputModule
+out : testOut_ON
+out : testOut_OFF
+out : testOut_SET
+out : testOut_ACC
+out : testOut_DEC
+out : testOut_RESUME
+in : testIn
+[BIM]
+
+CruiseControlSystem | CCSControllerMA | 
+[top]
+components : CCSC@CCSController
+out : testOut_INC
+out : testOut_DEC
+out : testOut_STOP
+in : testIn_TURNEDON
+in : testIn_TURNEDOFF
+in : testIn_INC
+in : testIn_DEC
+in : testIn_SET
+in : testIn_RESUME
+in : testIn_BREAK
+in : testIn_GAS
+in : testIn_SPEED
+[CCSC]
+
+CruiseControlSystem | CruiseControlSystemMA | 
+[top]
+components : CruiseControlSystem
+in : testInButton
+in : testInBreak
+in : testInGasPedal
+in : testInSpeedSensor
+out : testThrottle
+[CruiseControlSystem]
+components : ProcessingModule bim@ButtonInputModule om@OutputModule
+in : inButton inBreak inGasPedal inSpeed
+out : throttle
+[bim]
+[om]
+incTime : 00:00:00:005
+[ProcessingModule]
+components : brc@BreakController ButtonController ccsc@CCSController pc@PedalController
+in : inON inOFF inSET inACC inDEC inRESUME inBREAK inGAS inSPEED
+out : outINC outDEC outSTOP
+[brc]
+[pc]
+[ccsc]
+[ButtonController]
+components : onOff@ONOFFController SpeedController set@Set resume@Resume
+in : inON inOFF inSET inACC inDEC inRESUME
+out : outON outOFF outSET outDEC outACC outRESUME
+[onOff]
+[set]
+[resume]
+[SpeedController]
+components : accQ@Queue decQ@Queue inc@Increase dec@Decrease 
+out : incOut
+out : decOut
+in : accIn
+in : decIn
+[accQ]
+[decQ]
+[inc]
+[dec]
+
+CruiseControlSystem | DecreaseMA | 
+[top]
+components : DecR@Decrease
+out : testOut
+in : testIn
+[DecR]
+
+CruiseControlSystem | IncreaseMA | 
+[top]
+components : IncR@Increase
+out : testOut
+in : testIn
+[IncR]
+
+CruiseControlSystem | ONOFFControllerMA | 
+[top]
+components : ONOFF@ONOFFController
+out : testONOut testOFFOut
+in : testONIn testOFFIn                                               
+[ONOFF]
+
+CruiseControlSystem | OutputModuleMA | 
+[top]
+components : OM@OutputModule
+out : testThrottle
+in : testInc testDec testStp
+[OM]
+incTime : 00:00:00:010
+
+CruiseControlSystem | PedalControllerMA | 
+[top]
+components : PC@PedalController
+out : testOut
+in : testIn
+[PC]
+
+CruiseControlSystem | ProcessingModuleMA | 
+[top]
+components : ProcessingModule
+in : testInOn
+in : testInOff
+in : testInSet
+in : testInAcc
+in : testInDec
+in : testInResume
+in : testInBreak
+in : testInGas
+in : testInSpeed
+out : testOutInc
+out : testOutDec
+out : testOutStop
+[ProcessingModule]
+components : brc@BreakController ButtonController ccsc@CCSController pc@PedalController
+in : inON inOFF inSET inACC inDEC inRESUME inBREAK inGAS inSPEED
+out : outINC outDEC outSTOP
+[brc]
+[pc]
+[ccsc]
+[ButtonController]
+components : onOff@ONOFFController SpeedController set@Set resume@Resume
+in : inON inOFF inSET inACC inDEC inRESUME
+out : outON outOFF outSET outDEC outACC outRESUME
+[onOff]
+[set]
+[resume]
+[SpeedController]
+components : accQ@Queue decQ@Queue inc@Increase dec@Decrease 
+out : incOut
+out : decOut
+in : accIn
+in : decIn
+[accQ]
+[decQ]
+[inc]
+[dec]
+
+CruiseControlSystem | ResumeMA | 
+[top]
+components : RES@Resume
+out : testOut
+in : testIn
+[RES]
+
+CruiseControlSystem | SetMA | 
+[top]
+components : SET@Set
+out : testOut
+in : testIn
+[SET]
+
+CruiseControlSystem | SpeedControllerMA | 
+[top]
+components : SpeedController
+out : testIncOut
+out : testDecOut
+in : testAccIn
+in : testDecIn
+[SpeedController]
+components : accQ@Queue decQ@Queue inc@Increase dec@Decrease 
+out : incOut
+out : decOut
+in : accIn
+in : decIn
+[accQ]
+[decQ]
+[inc]
+[dec]
+
+#################ModelProject  21  #########################
+CSMA-CA | BufferMA | 
+[top]
+components : Buffer@BufferType 
+out : job_out 
+in : msg_in done_in 
+[Buffer]
+
+CSMA-CA | CSMACA-DCF | 
+[Top]
+components : M@MeduimType Node1 Node2 Node3 
+in : 
+out : latency1 latency2 latency3 throughput1 throughput2 throughput3 debug1 debug2 debug3 free busy
+[Node1]
+components : MAC1 Gen1@GeneratorType T1@TransducerType 
+in : busy free receive
+out : debug send throughput latency
+[Gen1]
+[MAC1]
+components : TR1@TxRxControllerType Buffer1@BufferType
+in : msg_in receive busy free
+out : msgSent send debug
+[Node2]
+components : MAC2 Gen2@GeneratorType T2@TransducerType 
+in : busy free receive
+out : debug send throughput latency
+[Gen2]
+[MAC2]
+components : TR2@TxRxControllerType Buffer2@BufferType
+in : msg_in receive busy free
+out : msgSent send debug
+[Node3]
+components : MAC3 Gen3@GeneratorType T3@TransducerType 
+in : busy free receive
+out : debug send throughput latency
+[Gen3]
+[MAC3]
+components : TR3@TxRxControllerType Buffer3@BufferType
+in : msg_in receive busy free
+out : msgSent send debug
+
+CSMA-CA | GeneratorMA | 
+[top]
+components : Generator@GeneratorType 
+out : out 
+[Generator]
+
+CSMA-CA | MAC | 
+[Top]
+components : TR@TxRxControllerType Buffer@BufferType
+in : msg_in receive busy free
+out : msgSent send debug
+
+CSMA-CA | meduimAndTwoNodes | 
+[Top]
+components : Med@MeduimType TR1@TxRxControllerType TR2@TxRxControllerType TR3@TxRxControllerType 
+out : msgSent1 msgSent2 msgSent3 done1 done2 done3 debug1 debug2 debug3
+in : dataIn1 dataIn2 dataIn3
+[Med]
+[TR1]
+[TR2]
+
+CSMA-CA | MeduimMA | 
+[Top]
+components : Med@MeduimType 
+out : forward1 forward2 forward3 forward4 forward5 forward6 forward7 forward8 forward9 forward10 free0 free1 free2 free3 free4 free5 free6 free7 free8 free9 free10 busy0 busy1 busy2 busy3 busy4 busy5 busy6 busy7 busy8 busy9 busy10 
+in : in1 in2 in3 in4 in5 in6 in7 in8 in9 in10 
+[Med]
+
+CSMA-CA | Node | 
+[Top]
+components : MAC Gen@GeneratorType T@TransducerType 
+in : busy free receive
+out : debug send throughput latency
+[Gen]
+[MAC]
+components : TR@TxRxControllerType Buffer@BufferType
+in : msg_in receive busy free
+out : msgSent send debug
+
+CSMA-CA | TransducerMA | 
+[top]
+components : T@TransducerType 
+in : msg_gen msg_sent 
+out : throughput latency
+[Transducer]
+
+CSMA-CA | TxRxControllerMA | 
+[Top]
+components : TxRx@TxRxControllerType 
+out : send done msgSent 
+in : free busy receive dataIn 
+
+#################ModelProject  22  #########################
+DEController | controlSystem | 
+[top]
+components : ControlSystem
+in : Yrin xTin plantState
+out : Ypout modelSelect observeU
+[ControlSystem]
+components : plant1@Plant interpLast1@InterpLast interpLast2@InterpLast genControl1@GenControl unitDelay1@UnitDelay model1@Model1 model2@Model2 model3@Model3
+in : Yrin xTin plantState
+out : Ypout modelSelect observeU
+[plant1]
+[interpLast1]
+[genControl1]
+[unitDelay1]
+[interpLast2]
+[model1]
+[model2]
+[model3]
+
+DEController | genControl | 
+[top]
+components : genControl@GenControl
+in : Yrin Ypin Ypdin Em1in Em2in Em3in
+out : Uout
+[genControl]
+
+DEController | interpLast | 
+[top]
+components : interpLast@InterpLast
+in : evXin xTin 
+out : xdout xddout
+[interpLast]
+
+DEController | model1 | 
+[top]
+components : model1@Model1
+in : Uin Ypin Ypdin Ypddin 
+out : Ymout Eout
+[model1]
+
+DEController | model2 | 
+[top]
+components : model2@Model2
+in : Uin Ypin Ypdin Ypddin 
+out : Ymout Eout
+[model2]
+
+DEController | model3 | 
+[top]
+components : model3@Model3
+in : Uin Ypin Ypdin Ypddin 
+out : Ymout Eout
+[model3]
+
+DEController | plant | 
+[top]
+components : plant@Plant
+in : Uin Ypdin Ypddin Trigger plantState
+out : Ypout
+[plant]
+
+DEController | unitDelay | 
+[top]
+components : unitDelay@UnitDelay
+in : theIn
+out : theOut
+[unitDelay]
+
+#################ModelProject  23  #########################
+DepthFinderDevice | Controller | 
+[top]
+components : controller@Controller
+in : in1
+in : in2
+out : out1
+out : out2
+out : out3
+[controller]
+
+DepthFinderDevice | Con_DS | 
+[top]
+components : controller@controller
+components : ds@DepthSensor
+in : in1
+in : in2
+out : out1
+out : out2
+[controller]
+[ds]
+
+DepthFinderDevice | DepthSensor | 
+[top]
+components : ds@DepthSensor
+in : in1
+in : in2
+out : out
+[ds]
+
+DepthFinderDevice | Device | 
+[top]
+components : inflator@Inflator
+components : Con_DS
+in : in1
+in : in2
+out : out1
+out : out2
+[inflator]
+inflateProcessingTime : 00:00:02:00
+[Con_DS]
+components : controller@controller
+components : ds@DepthSensor
+in : in1
+in : in2
+out : out1
+out : out2
+[ds]
+[controller]
+
+DepthFinderDevice | Inflator | 
+[top]
+components : inflator@Inflator
+in : in
+out : out
+[inflator]
+inflateProcessingTime : 00:00:02:000
+#################ModelProject  24  #########################
+discrete_event_driven_vehicle | brakes | 
+[top]
+components : brakes_a@Brakes
+in : br_int
+[brakes_a]
+
+discrete_event_driven_vehicle | controlUnit | 
+[top]
+components : movementController_a@MovementController steeringController_a@SteeringController
+out : mot_torq br_int disp_info1 disp_info2 delta_angle 
+in : accel decel emerg_brk act_rpm_fb turn_angle drive_straight act_ang_fb
+[movementController_a]
+[steeringController_a]
+
+discrete_event_driven_vehicle | DEDV_topmodel | 
+[top]
+components : display_a@Display controlUnit_c movementModel_c steeringModel_c
+out : mot_rpm wheel_turn
+in : accel decel emerg_brk turn_angle drive_straight act_wheel_angle act_rpm
+[controlUnit_c]
+components : movementController_a@MovementController steeringController_a@SteeringController
+out : mot_torq br_int delta_angle
+in : accel decel emerg_brk turn_angle drive_straight act_rpm_fb act_ang_fb
+[movementModel_c]
+components : motor_a@Motor brakes_a@Brakes velocitySensor_a@VelocitySensor
+out : mot_rpm act_rpm_fb
+in : act_rpm mot_torq br_int
+[steeringModel_c]
+components : steerMechType_a@SteerMechType steeringSensor_a@SteeringSensor
+out : act_ang_fb wheel_turn
+in : delta_angle act_wheel_angle
+[display_a]
+[movementController_a]
+[steeringController_a]
+[motor_a]
+[brakes_a]
+[velocitySensor_a]
+[steerMechType_a]
+[steeringSensor_a]
+
+discrete_event_driven_vehicle | display | 
+[top]
+components : display_a@Display
+in : display_in1 display_in2
+[display_a]
+
+discrete_event_driven_vehicle | motor | 
+[top]
+components : motor_a@Motor
+out : mot_rpm 
+in : mot_torq
+[motor_a]
+
+discrete_event_driven_vehicle | movementController | 
+[top]
+components : movementController_a@MovementController 
+out : br_int mot_torq disp_info1 
+in : act_rpm_fb accel decel emerg_brk
+[movementController_a]
+
+discrete_event_driven_vehicle | movementModel | 
+[top]
+components : motor_a@Motor brakes_a@Brakes velocitySensor_a@VelocitySensor
+out : mot_rpm act_rpm_fb
+in : mot_torq br_int act_rpm
+[motor_a]
+[brakes_a]
+[velocitySensor_a]
+
+discrete_event_driven_vehicle | steeringController | 
+[top]
+components : steeringController_a@SteeringController
+out : delta_angle disp_info2 
+in : turn_angle drive_straight act_ang_fb
+[steeringController_a]
+
+discrete_event_driven_vehicle | steeringModel | 
+[top]
+components : steeringSensor_a@SteeringSensor steerMechType_a@SteerMechType 
+out : wheel_turn act_ang_fb 
+in : delta_angle act_wheel_angle 
+[steeringSensor_a]
+[steerMechType_a]
+
+discrete_event_driven_vehicle | steeringSensor | 
+[top]
+components : steeringSensor_a@SteeringSensor
+out : act_ang_fb 
+in : act_wheel_angle 
+[steeringSensor_a]
+
+discrete_event_driven_vehicle | steerMechType | 
+[top]
+components : steerMechType_a@SteerMechType
+out : wheel_turn 
+in : delta_angle
+[steerMechType_a]
+
+discrete_event_driven_vehicle | velocitySensor | 
+[top]
+components : velocitySensor_a@VelocitySensor
+out : act_rpm_fb 
+in : act_rpm
+[velocitySensor_a]
+
+#################ModelProject  25  #########################
+DocProc | sample | 
+[top]
+components : Scanner Interpreter Correction
+in : lote fin
+out : tidleScan tidleInterpret tidleVerify 
+[Scanner]
+components : s@Scan sq@Queueproc
+in : lote fin
+out : doc tidle finished
+[s]
+[sq]
+[Interpreter]
+components : i@Interpret iq@Queueproc igr@Generatorproc
+in : doc fin
+out : docv doct tidle cantdocv cantdoct
+[iq]
+[i]
+[igr]
+[Correction]
+components : v@Verify vq@Queueproc vgr@Generatorproc
+in : doc fin
+out : doct tidle cantdocb cantdoct
+[vq]
+[v]
+[vgr]
+
+#################ModelProject  26  #########################
+FreightElev | Ecall | 
+[top]
+components : Ecall@Ecall
+in : inside_call
+in : outside_call
+out : call_gen
+
+FreightElev | Econtrol | 
+[Econtrol]
+components : Econtrol@Econtrol
+in : acall
+in : fback
+out : floor
+out : timem
+
+FreightElev | Elevator | 
+[top]
+components : Econtrol@Econtrol Evehicle@Evehicle
+out : floor
+in : acall
+
+FreightElev | Evehicle | 
+[Evehicle]
+components : Evehicle@Evehicle
+in : in
+out : out
+
+FreightElev | FElevator | 
+[top]
+components : Ecall@Ecall Elevator
+out : floor
+in : inside_call
+in : outside_call
+[Elevator]
+components : Econtrol@Econtrol Evehicle@Evehicle
+out : floor
+in : acall
+
+#################ModelProject  27  #########################
+fsm | atmMA | 
+[top]
+components : st0@fsm st1@fsm st2@fsm st3@fsm st4@fsmst5@fsmst6@fsm st7@fsmst8@fsmst8@fsm st9@fsm
+out : idle checkin sel-transact sel-wd-ac in-amount confirm dispensing sel-depo-ac depo-ready depo-end errIn
+in : in
+[st0]
+initState : 1
+[st1]
+[st2]
+[st3]
+[st4]
+[st5]
+[st6]
+[st7]
+[st8]
+[st9]
+
+fsm | boilingMA | 
+[top]
+components : cold@fsm heating@fsm boiling@fsm cooling@fsm
+out : cold heating boiling cooling errIn action
+in : in
+[cold]
+initState : 1
+[heating]
+[boiling]
+[cooling]
+
+fsm | mealyMA | 
+[top]
+components : even@fsm odd@fsm
+out : evenSt  oddSt EerrInput OerrInput action
+in : in
+[even]
+initState : 1
+[odd]
+
+fsm | mooreMA | 
+[top]
+components : s0@fsm s1@fsm s2@fsm
+out : s0 s1 s2 errIn
+in : in
+[s0]
+initState : 1
+[s1]
+[s2]
+
+fsm | venderMA | 
+[top]
+components : zero@fsm five@fsm ten@fsm fifteen@fsm twenty@fsm
+out : zero five ten fifteen twenty errIn action
+in : in
+[zero]
+initState : 1
+[five]
+[ten]
+[fifteen]
+[twenty]
+
+#################ModelProject  28  #########################
+fsm2 | AtmMA | 
+[top]
+components : idle@moorestate checkingpin@moorestate selectingtransaction@moorestate withdrawing@moorestate inputingamount@moorestate confirming@moorestate withdrawaldone@moorestate depositing@moorestate insertingmoney@moorestate depositdone@moorestate
+out : idle checkingpin selectingtransaction withdrawing inputingamount confirming withdrawaldone depositing insertingmoney depositdone error
+in : in
+[idle]
+[checkingpin]
+[selectingtransaction]
+[withdrawing]
+[inputingamount]
+[confirming]
+[withdrawaldone]
+[depositing]
+[insertingmoney]
+[depositdone]
+
+fsm2 | MooreStateMA | 
+[top]
+components : moorestate@MooreState
+out : stateOut
+out : transitionOut
+out : errorOut
+in : transitionIn
+in : eventIn
+[moorestate]
+
+fsm2 | SimpleMooreMachineMA | 
+[top]
+components : s0@moorestate s1@moorestate s2@moorestate
+out : s0 s1 s2 error
+in : in
+[s0]
+[s1]
+[s2]
+
+fsm2 | TelephonyMA | 
+[top]
+components : idle@moorestate gettingnumber@moorestate ringingaside@moorestate ringingbside@moorestate speech@moorestate waitonhook@moorestate
+out : idle gettingnumber ringingaside ringingbside speech waitonhook error
+in : in
+[idle]
+[gettingnumber]
+[ringingaside]
+[ringingbside]
+[speech]
+[waitonhook]
+
+fsm2 | VenderMachineMA | 
+[top]
+components : zero@moorestate five@moorestate ten@moorestate fifteen@moorestate twenty@moorestate
+out : zero five ten fifteen twenty error
+in : in
+[zero]
+[five]
+[ten]
+[fifteen]
+[twenty]
+
+#################ModelProject  29  #########################
+garagedoor | alarmGenMA | 
+[top]
+components : alarmGen@AlarmGen 
+out : minor_alarm major_alarm
+in : unauth_attempt emerg alarm_reset
+
+garagedoor | codeContMA | 
+[top]
+components : codeCont@CodeCont 
+out : incre validCode emerg
+in : input_code open_request emerg_open 
+[codeCont]
+
+garagedoor | counterMA | 
+[top]
+components : counter@Counter 
+out : unauth_attempt
+in : incre
+
+garagedoor | doorContMA | 
+[top]
+components : codeCont@CodeCont counter@Counter doorTimer@DoorTimer
+in : input_code open_request emerg_open 
+out : validCode emerg unauth_attempt doorOpen  
+[codeCont]
+
+garagedoor | doorTimerMA | 
+[top]
+components : doorTimer@DoorTimer 
+out : doorOpen
+in : validCode
+
+garagedoor | garageDoorMA | 
+[top]
+components : doorCont lightIn@LightIn lightOut@LightOut alarmGen@AlarmGen
+in : input_code open_request emerg_open alarm_reset motion light
+out : doorOpen minor_alarm major_alarm inlon outlon
+[doorCont]
+components : codeCont@CodeCont counter@Counter doorTimer@DoorTimer
+in : input_code open_request emerg_open 
+out : validCode emerg unauth_attempt doorOpen  
+[codeCont]
+
+garagedoor | lightInMA | 
+[top]
+components : lightIn@LightIn
+out : inlon
+in : validCode
+
+garagedoor | lightOutMA | 
+[top]
+components : lightOut@LightOut
+out : outlon
+in : motion light
+
+#################ModelProject  30  #########################
+goBackNProtocol | gbnMA | 
+[top]
+components : transmitter@Transmitter
+components : timer0@Timer
+components : timer1@Timer
+components : timer2@Timer
+components : timer3@Timer
+components : Network
+components : receiver@Receiver
+out : ->->->->->sentPkt
+out : <-<-<-ack
+out : !!!!!!!!!!!!!!!!!!!!!!!!!!reset
+in : startTx
+[transmitter]
+[receiver]
+[timer0]
+[timer1]
+[timer2]
+[timer3]
+[Network]
+components : subnet1@Subnet
+components : subnet2@Subnet
+out : in1 in2
+out : out1 out2
+[subnet1]
+[subnet2]
+
+goBackNProtocol | networkMA | 
+[top]
+components : subnet1@Subnet
+components : subnet2@Subnet
+out : in1 in2
+out : out1 out2
+[subnet1]
+[subnet2]
+
+goBackNProtocol | receiverMA | 
+[top]
+components : receiver@Receiver 
+out : out
+in : in
+[receiver]
+
+goBackNProtocol | senderMA | 
+[top]
+components : sender@Sender
+out : dataOut
+out : packetSent
+out : ackReceived
+in : controlIn
+in : ackIn
+[sender]
+
+goBackNProtocol | timerMA | 
+[top]
+components : timer@Timer
+out : timeOutSig
+in : trigger
+in : reset
+[timer]
+
+goBackNProtocol | transmitterMA | 
+[top]
+components : transmitter@Transmitter
+components : timer0@Timer
+components : timer1@Timer
+components : timer2@Timer
+components : timer3@Timer
+out : ->->->->->->sentPkt
+out : <-<-<-ack
+out : !!!!!!!!!!!!!!!!!!!!!!!!!!reset
+in : startTx
+in : ack
+[transmitter]
+[timer0]
+[timer1]
+[timer2]
+[timer3]
+
+#################ModelProject  31  #########################
+grocerystore | store | 
+[top]
+components : generator@Generator distributor@Distributor cash0@Cash cash1@Cash cash2@Cash cash3@Cash 
+components : traveler@Traveler CarSystem
+out : customerFinished bagRemoved
+[CarSystem]
+components : conveyor@Conveyor searcher@Searcher
+out : customerFinished bagRemoved
+in : customerId bagSearchTime bagId
+[generator]
+
+#################ModelProject  32  #########################
+GSM_Authentication_Sim | AccessControlMA | 
+[top]
+components : AccessControl@AccessControl 
+out : Rand
+out : SRES_1 
+in : MaxValidId
+in : Id 
+[AccessControl]
+
+GSM_Authentication_Sim | GSM_Auth_Sim_MA | 
+[top]
+components : SIMCard@SIMCard
+components : MobileNetwork
+in : MaxValidId 
+in : On
+out : Ok
+[SIMCard]
+[MobileNetwork]
+components : AccessControl@AccessControl
+components : MobileSwitchingCenter@MobileSwitchingCenter
+in : MaxValidId 
+in : Id
+in : SRES_2
+out : RAND
+out : Ok
+[AccessControl]
+
+GSM_Authentication_Sim | MobileNetworkMA | 
+[top]
+components : AccessControl@AccessControl
+components : MobileSwitchingCenter@MobileSwitchingCenter
+in : MaxValidId 
+in : Id
+in : SRES_2
+out : RAND
+out : Ok
+[AccessControl]
+
+GSM_Authentication_Sim | MobileSwitchingCenterMA | 
+[top]
+components : MobileSwitchingCenter@MobileSwitchingCenter 
+out : Ok
+in : SRES_1
+in : SRES_2 
+
+GSM_Authentication_Sim | SIMCardMA | 
+[top]
+components : SIMCard@SIMCard 
+out : Id
+out : SRES_2 
+in : On
+in : Rand 
+[SIMCard]
+
+#################ModelProject  33  #########################
+HelicopterFlightDeckSimulation | hfdsControlledAirspace | 
+[top]
+components : deckOfficer@DeckOfficer
+components : ct@ControlTower
+components : ch148@Helicopter
+out : OH
+out : LC
+out : WC
+in : IH
+in : HA
+in : TO
+in : WA
+[ch148]
+[deckOfficer]
+[ct]
+
+HelicopterFlightDeckSimulation | hfdsControlTower | 
+[top]
+components : ct@ControlTower
+out : WC
+out : LC
+out : TC
+in : LR
+in : WA
+in : TO
+[ct]
+
+HelicopterFlightDeckSimulation | hfdsDeckOfficer | 
+[top]
+components : deckOfficer@DeckOfficer
+out : DA
+in : DC
+in : HA
+[deckOfficer]
+
+HelicopterFlightDeckSimulation | hfdsHangar | 
+[top]
+components : hangar@Hangar
+out : HA
+in : CL
+in : TO
+[hangar]
+
+HelicopterFlightDeckSimulation | hfdsHelicopter | 
+[top]
+components : ch148@Helicopter
+out : LR
+out : DC
+out : OH
+in : IH
+in : DA
+in : LC
+in : TC
+[ch148]
+
+HelicopterFlightDeckSimulation | hfdsMissionPlanning | 
+[top]
+components : missionPlanning@MissionPlanning
+out : NM
+in : CL
+[missionPlanning]
+
+HelicopterFlightDeckSimulation | hfdsRast | 
+[top]
+components : rast@Rast
+out : CL
+out : TO
+in : LC
+in : NM
+[rast]
+
+HelicopterFlightDeckSimulation | hfdsShipDeck | 
+[top]
+components : mp@MissionPlanning
+components : hangar@Hangar
+components : rast@Rast
+out : TO
+out : HA
+in : LC
+[rast]
+[hangar]
+[mp]
+
+HelicopterFlightDeckSimulation | hfdsTop | 
+[top]
+components : weather@Weather
+components : ShipDeck
+components : ControlledAirspace
+out : outHelicopter
+out : outLandingGranted
+in : inHelicopter
+[weather]
+[ControlledAirspace]
+components : deckOfficer@DeckOfficer
+components : ct@ControlTower
+components : ch148@Helicopter
+out : OH
+out : LC
+out : WC
+in : IH
+in : HA
+in : TO
+in : WA
+[ch148]
+[deckOfficer]
+[ct]
+[ShipDeck]
+components : mp@MissionPlanning
+components : hangar@Hangar
+components : rast@Rast
+out : TO
+out : HA
+in : LC
+[rast]
+[hangar]
+[mp]
+
+HelicopterFlightDeckSimulation | hfdsWeather | 
+[top]
+components : weather@Weather
+out : WA
+in : WC
+[weather]
+
+#################ModelProject  34  #########################
+hercules | comparitor | 
+[top]
+components : comparitor@Comparitor
+out : out
+in : in1
+in : in2
+[comparitor]
+
+hercules | data_queue | 
+[top]
+components : data_queue@Queue
+out : out
+in : in
+[data_queue]
+
+hercules | FDG | 
+[top]
+components : flight_data_generator@Flight_Data_Generator
+out : out
+[flight_data_generator]
+
+hercules | lms_simulator | 
+[top]
+components : WOW_generator@Generator
+components : flight_data_generator@Flight_Data_Generator
+components : processor
+out : out
+[processor]
+components : data_queue@Queue
+components : comparitor@Comparitor 
+components : recorder@Recorder 
+out : out
+in : data_in
+in : on_off
+[comparitor]
+[data_queue]
+[recorder]
+[flight_data_generator]
+[WOW_generator]
+
+hercules | processor | 
+[top]
+components : data_queue@Queue
+components : comparitor@Comparitor 
+components : recorder@Recorder
+out : out
+in : data_in
+in : WOW_in
+[comparitor]
+[data_queue]
+[recorder]
+
+hercules | recorder | 
+[top]
+components : recorder@Recorder
+out : out
+in : in
+[recorder]
+
+hercules | WOW_gen | 
+[top]
+components : WOW_generator@Generator
+out : out
+[WOW_generator]
+
+#################ModelProject  35  #########################
+HMC | bodyMA | 
+[top]
+components : body@Body 
+out : output
+out : current
+in : bodyin1
+in : bodyin2
+in : bodyin3
+in : bodyin4
+in : bodyin5
+in : bodyin6
+in : bodyin7
+in : bodyin8
+in : bodyin9
+in : bodyin10
+in : bodyin11
+in : bodyin12
+in : bodyin13
+in : bodyin14
+in : bodyin15
+in : bodyin16
+in : bodyin17
+in : bodyin18
+in : bodyin19
+in : bodyin20
+in : bodyin21
+in : bodyin22
+in : bodyin23
+in : bodyin24
+in : bodyin25
+in : bodyin26
+in : bodyin27
+in : bodyin28
+in : bodyin29
+in : bodyin30
+in : bodyin31
+in : bodyin32
+in : bodyin33
+in : bodyin34
+in : bodyin35
+in : bodyin36
+in : bodyin37
+in : bodyin38
+in : bodyin39
+in : bodyin40
+in : bodyin41
+in : bodyin42
+in : bodyin43
+in : bodyin44
+in : bodyin45
+in : bodyin46
+in : bodyin47
+in : bodyin48
+in : bodyin49
+in : bodyin50
+in : bodyin51
+in : bodyin52
+in : bodyin53
+in : bodyin54
+in : bodyin55
+in : bodyin56
+in : bodyin57
+in : bodyin58
+in : bodyin59
+in : bodyin60
+in : bodyin61
+in : bodyin62
+in : bodyin63
+in : bodyin64
+in : bodyin65
+in : bodyin66
+in : bodyin67
+in : bodyin68
+in : bodyin69
+in : bodyin70
+in : bodyin71
+in : bodyin72
+in : bodyin73
+in : bodyin74
+in : bodyin75
+in : bodyin76
+in : bodyin77
+in : bodyin78
+in : bodyin79
+in : bodyin80
+in : bodyin81
+[body]
+
+HMC | brainMA | 
+[top]
+components : brain@Brain 
+out : brainout
+in : input
+in : current
+[brain]
+
+HMC | cordMA | 
+[top]
+components : cord@Cord 
+in : brainout
+out : cordout1
+out : cordout2
+out : cordout3
+out : cordout4
+out : cordout5
+out : cordout6
+out : cordout7
+out : cordout8
+out : cordout9
+out : cordout10
+out : cordout11
+out : cordout12
+out : cordout13
+out : cordout14
+out : cordout15
+out : cordout16
+out : cordout17
+out : cordout18
+out : cordout19
+out : cordout20
+out : cordout21
+out : cordout22
+out : cordout23
+out : cordout24
+out : cordout25
+out : cordout26
+out : cordout27
+out : cordout28
+out : cordout29
+out : cordout30
+out : cordout31
+out : cordout32
+out : cordout33
+out : cordout34
+out : cordout35
+out : cordout36
+out : cordout37
+out : cordout38
+out : cordout39
+out : cordout40
+out : cordout41
+out : cordout42
+out : cordout43
+out : cordout44
+out : cordout45
+out : cordout46
+out : cordout47
+out : cordout48
+out : cordout49
+out : cordout50
+out : cordout51
+out : cordout52
+out : cordout53
+out : cordout54
+out : cordout55
+out : cordout56
+out : cordout57
+out : cordout58
+out : cordout59
+out : cordout60
+out : cordout61
+out : cordout62
+out : cordout63
+out : cordout64
+out : cordout65
+out : cordout66
+out : cordout67
+out : cordout68
+out : cordout69
+out : cordout70
+out : cordout71
+out : cordout72
+out : cordout73
+out : cordout74
+out : cordout75
+out : cordout76
+out : cordout77
+out : cordout78
+out : cordout79
+out : cordout80
+out : cordout81
+[cord]
+
+HMC | hmcMA | 
+[top]
+components : brain@Brain
+components : cord@Cord
+components : body@Body
+in : input
+out : output
+[brain]
+[cord]
+[body]
+
+#################ModelProject  36  #########################
+hospitalLaundry | hospitalLaundryMA | 
+[top]
+components : hospital@Hospital
+components : Laundromat
+out : shortAmount shipped dirty
+[hospital]
+[Laundromat]
+components : laundryCleaning@LaundryCleaning
+components : laundryShipping@LaundryShipping 
+in : dirty
+out : shipped shortAmount
+[laundryCleaning]
+[laundryShipping]
+
+hospitalLaundry | hospitalMA-test1 | 
+[top]
+components : hospital@Hospital 
+out : dirty
+in : clean
+[hospital]
+
+hospitalLaundry | laundromatMA-test1 | 
+[top]
+components : laundryCleaning@LaundryCleaning
+components : laundryShipping@LaundryShipping 
+in : dirty
+out : shipped shortAmount
+[laundryCleaning]
+[laundryShipping]
+
+hospitalLaundry | laundryCleaningMA-test1 | 
+[top]
+components : laundryCleaning@LaundryCleaning 
+out : clean
+in : dirty
+[laundryCleaning]
+
+hospitalLaundry | laundryShippingMA-test1 | 
+[top]
+components : laundryShipping@LaundryShipping 
+out : shipped shortAmount
+in : clean
+[laundryShipping]
+
+#################ModelProject  37  #########################
+HouseHeating | controllerMA | 
+[top]
+components : controller@Controller
+in : Troom
+out : HeaterCntrSignal
+[controller]
+
+HouseHeating | generatMA | 
+[top]
+components : generat@Generator
+out : Tout
+[generat]
+
+HouseHeating | heaterMA | 
+[top]
+components : heater@HouseHeater
+in : HeaterCntrSignal
+in : Troom
+out : HeatGain
+[heater]
+
+HouseHeating | HouseHeatSystemMA | 
+[top]
+components : generat@Generator
+components : transduc@Transducer 
+components : Thermostat
+components : heater@HouseHeater
+[generat] 
+[transduc] 
+[heater] 
+[Thermostat]
+components : tempsensor@TempSensor
+components : controller@Controller
+in : HeatLosses HeatGain
+out : Troom HeaterCntrSignal
+[tempsensor]
+[controller]
+
+HouseHeating | HouseHeatSystemReportMA | 
+[top]
+components : generat@Generator
+components : transduc@Transducer 
+components : Thermostat
+components : heater@HouseHeater
+out : Tout Troom HeaterCntrSignal HeatLosses HeatGain
+[generat] 
+[transduc] 
+[heater] 
+[Thermostat]
+components : tempsensor@TempSensor
+components : controller@Controller
+in : HeatLosses HeatGain
+out : Troom HeaterCntrSignal
+[tempsensor]
+[controller]
+
+HouseHeating | tempsensorMA | 
+[top]
+components : tempsensor@TempSensor
+in : HeatLosses
+in : HeatGain
+out : Troom
+[tempsensor]
+
+HouseHeating | ThermostatMA | 
+[top]
+components : tempsensor@TempSensor
+components : controller@Controller
+in : HeatLosses HeatGain
+out : Troom HeaterCntrSignal
+[tempsensor]
+[controller]
+
+HouseHeating | transducMA | 
+[top]
+components : transduc@Transducer
+in : Tout
+in : Troom
+out : HeatLosses
+[transduc]
+
+#################ModelProject  38  #########################
+HumanMotionClassification | camerasMA | 
+[top]
+components : cameras@Cameras 
+out : cam_pc
+in : pc_cam
+[cameras]
+
+HumanMotionClassification | classifierMA | 
+[top]
+components : classifier@Classifier 
+out : result
+out : trainAcc
+in : DP
+[classifier]
+
+HumanMotionClassification | hmcMA | 
+[top]
+components : motion_capture_system
+components : preprocessor@Preprocessor
+components : classifier@Classifier
+out : result
+in : init
+[preprocessor]
+[classifier]
+[motion_capture_system]
+components : pc@Pc
+components : cameras@Cameras
+in : tr_ts pcI
+out : DOut
+[pc]
+[cameras]
+
+HumanMotionClassification | motion_capture_systemMA | 
+[top]
+components : pc@Pc
+components : cameras@Cameras
+out : pcI tr_ts
+out : DOut
+[pc]
+[cameras]
+
+HumanMotionClassification | pcMA | 
+[top]
+components : pc@Pc 
+out : DOut
+out : pc_cam
+in : tr_ts
+in : pcI
+in : cam_pc
+[pc]
+
+HumanMotionClassification | preprocessorMA | 
+[top]
+components : preprocessor@Preprocessor 
+out : DP
+in : DIn
+[preprocessor]
+
+#################ModelProject  39  #########################
+HumitidyComparator | CompareHumidity | 
+[top]
+components : cH@CompareHumidity
+in : in1 in2
+out : humidDiff1
+[cH]
+
+HumitidyComparator | CompareTemp | 
+[top]
+components : compareTemp@CompareTemp
+in : in1 in2
+out : tempDiff1
+[compareTemp]
+
+HumitidyComparator | hospitalTC | 
+[top]
+components : sAT@SeasonAndTimeGen
+components : pI@PatientInfo
+components : pO@ProcessorOne
+components : SC
+components : TC
+in : tSensor0 hSensor0
+out : condHeat humidD
+[sAT]
+[pI]
+[pO]
+[TC]
+components : SC
+components : memory@Memory
+in : tSensor tempIn1 humidIn1 hSensor 
+out : TPort1 TPort2
+[memory]
+[SC]
+components : ct@CompareTemp
+components : pT@ProcessorTwo
+components : ch@CompareHumidity
+in : in1 in2 in3 in4
+out : SPort1 SPort2
+[ct]
+[ch]
+[pT]
+
+HumitidyComparator | memory | 
+[top]
+components : memory@Memory
+in : tempIn1 humidIn1
+out : tempOut1 humidOut1
+[memory]
+
+HumitidyComparator | PatientInfo | 
+[top]
+components : patientInfo@PatientInfo
+out : infoOut1
+[patientInfo]
+
+HumitidyComparator | ProcessorOne | 
+[top]
+components : pOne@ProcessorOne
+in : seasonIn1 timeIn1 peopleIn1
+out : tempOut1 humidOut1
+[pOne]
+
+HumitidyComparator | ProcessorTwo | 
+[top]
+components : processorTwo@ProcessorTwo
+in : inp1 inp2
+out : Port1 Port2
+[processorTwo]
+
+HumitidyComparator | PT | 
+[top]
+components : TC
+components : po@ProcessorOne
+in : season time people tSensor2 hSensor2
+out : humidD condHeat
+[po]
+[TC]
+components : SC
+components : memory@Memory
+in : tSensor1 hSensor1 tempIn1 humidIn1
+out : TPort1 TPort2
+[memory]
+[SC]
+components : ct@CompareTemp
+components : pt@ProcessorTwo
+components : ch@CompareHumidity
+in : in1 in2 in3 in4
+out : SPort1 SPort2
+[ct]
+[ch]
+[pt]
+
+HumitidyComparator | SandT | 
+[top]
+components : sAtG@SeasonAndTimeGen
+out : seasonPort1 timePort1
+[sAtG]
+
+HumitidyComparator | smallController | 
+[top]
+components : ct@CompareTemp
+components : pp@ProcessorTwo
+components : ch@CompareHumidity
+in : in1 in2 in3 in4
+out : SPort1 SPort2
+[ct]
+[ch]
+[pp]
+
+HumitidyComparator | TC | 
+[top]
+components : SC
+components : memory@Memory
+in : tSensor tempIn1 humidIn1 hSensor 
+out : TPort1 TPort2
+[memory]
+[SC]
+components : ct@CompareTemp
+components : pp@ProcessorTwo
+components : ch@CompareHumidity
+in : in1 in2 in3 in4
+out : SPort1 SPort2
+[ct]
+[ch]
+[pp]
+
+#################ModelProject  40  #########################
+ImitationLearning | imitator_robot | 
+[top]
+components : rtc0@Imitator
+out : out
+in : intouch
+in : insonar
+
+ImitationLearning | observer_robot | 
+[top]
+components : obs@Observer rob@robot
+out : out
+in : intt
+in : ins
+[rob]
+
+#################ModelProject  41  #########################
+IndustrialImagingSystem | bufferMA | 
+[top]
+components : buffer@FGStorageBuffer
+out : imageOut
+out	: responseOut
+in : commandIn
+[buffer]
+internal_bus_speed : 500.0
+
+IndustrialImagingSystem | cameraMA | 
+[top]
+components : camera@CameraLinkAreaScanDigitalCamera
+out : imageDataOut
+in : trigIn
+[camera]
+
+IndustrialImagingSystem | cont_cameraMa | 
+[top]
+components : camera@CameraLinkAreaScanDigitalCamera
+out : imageDataOut
+in : trigIn
+[camera]
+
+IndustrialImagingSystem | FrameGrabber | 
+[top]
+components : interface@FGHostSystemInterface
+components : im_acq@FGImageAcquisition
+components : timer@FGTimer
+components : buffer@FGStorageBuffer
+in : commandIn
+in : trigIn
+in : imageIn
+out : imageOut
+out : responseOut
+out : timerOut
+[buffer]
+internal_bus_speed : 500.0
+[interface]
+[timer]
+[im_acq]
+
+IndustrialImagingSystem | hsiMA | 
+[top]
+components : interface@FGHostSystemInterface
+out : imageOut
+out : responseOut
+out : buf
+out : ia
+out : tim
+in : commandIn
+in : responseIn
+in : imageIn
+[interface]
+
+IndustrialImagingSystem | iis_cont_cam | 
+[top]
+components : camera@CameraLinkAreaScanDigitalCamera
+components : FrameGrabber
+out : imageBufOut respOut
+in : triggerIn cmndIn
+[camera]
+[FrameGrabber]
+components : interface@FGHostSystemInterface im_acq@FGImageAcquisition timer@FGTimer buffer@FGStorageBuffer
+in : trigIn imageIn cIn
+out : imageOut responseOut timerOut
+[buffer]
+internal_bus_speed : 10000.0
+[interface]
+[timer]
+[im_acq]
+IndustrialImagingSystem | iis_fast_cam | 
+[top]
+components : camera@CameraLinkAreaScanDigitalCamera
+components : FrameGrabber
+out : imageBufOut respOut
+in : triggerIn cmndIn
+[camera]
+[FrameGrabber]
+components : interface@FGHostSystemInterface im_acq@FGImageAcquisition timer@FGTimer buffer@FGStorageBuffer
+in : trigIn imageIn cIn
+out : imageOut responseOut timerOut
+[buffer]
+internal_bus_speed : 500.0
+[interface]
+[timer]
+[im_acq]
+IndustrialImagingSystem | iis_trig_cam | 
+[top]
+components : camera@CameraLinkAreaScanDigitalCamera
+components : FrameGrabber
+out : imageBufOut respOut
+in : triggerIn cmndIn
+[camera]
+[FrameGrabber]
+components : interface@FGHostSystemInterface im_acq@FGImageAcquisition timer@FGTimer buffer@FGStorageBuffer
+in : trigIn imageIn cIn
+out : imageOut responseOut timerOut
+[buffer]
+internal_bus_speed : 10000.0
+[interface]
+[timer]
+[im_acq]
+IndustrialImagingSystem | im_acqMA | 
+[top]
+components : grabber@FGImageAcquisition
+out : imageOut
+out	: responseOut
+in : imageIn
+in : commandIn
+[grabber]
+
+IndustrialImagingSystem | timerMA | 
+[top]
+components : timer@FGTimer
+out : timerOut
+out	: responseOut
+in : trigIn
+in : commandIn
+[timer]
+
+#################ModelProject  42  #########################
+jkclock | andGateMA | 
+[top]
+components : and@andGate
+out : out
+in : in_a in_b in_enable
+[and]
+
+jkclock | clockMA | 
+[top]
+components : clock@Clock
+out : out_clk
+[clock]
+
+jkclock | JKMA | 
+[top]
+components : SR and_A@andGate and_B@andGate
+out : Q Q_bar
+in : J K enable
+[SR]
+components : nor_A@norGate nor_B@norGate
+out : Q Q_bar
+in : S R
+[nor_A]
+[nor_B]
+[and_A]
+[and_B]
+
+jkclock | JK_clockMA | 
+[top]
+components : JK clock@Clock
+out : Q Q_bar
+in : J K enable
+[JK]
+components : SR and_A@andGate and_B@andGate
+out : Q Q_bar
+in : J K clk
+[SR]
+components : nor_A@norGate nor_B@norGate
+out : Q Q_bar
+in : S R
+[nor_A]
+[nor_B]
+[and_A]
+[and_B]
+[clock]
+
+jkclock | norGateMA | 
+[top]
+components : nor@norGate
+out : out
+in : in_a in_b
+[nor]
+
+jkclock | SRMA | 
+[top]
+components : SR
+out : Q Q_bar
+in : S R
+[SR]
+components : nor_A@norGate nor_B@norGate
+out : Q Q_bar
+in : S R
+[nor_A]
+[nor_B]
+
+#################ModelProject  43  #########################
+line_tracking_robot | LineRobot | 
+[top]
+components : ControlUnit MovementUnit SensorUnit
+in : LIGHT_IN
+in : START_IN
+out : MOVER_OUT
+out : MOVEL_OUT
+[SensorUnit]
+components : LS@LightSensor
+in : SU_LIGHT_IN_TOP
+in : SU_START_IN_CU
+out : SU_LIGHT_OUT_CU
+[ControlUnit]
+components : SCtrl@SensorController MCtrl@MovementController
+in : CU_START_IN_TOP
+in : CU_LIGHT_IN_SU
+out : CU_START_OUT_SU
+out : CU_MOVER_OUT_MU
+out : CU_MOVEL_OUT_MU
+[MovementUnit]
+components : MotorR@MotorRight MotorL@MotorLeft
+in : MU_MOVER_IN_CU
+in : MU_MOVEL_IN_CU
+out : MU_MOVER_OUT_TOP
+out : MU_MOVEL_OUT_TOP
+[LS]
+[SCtrl]
+[MCtrl]
+[MotorR]
+[MotorL]
+
+#################ModelProject  44  #########################
+Liver | lobule | 
+[top]
+components : node@liverNode nodeA@liverNodeA nodeB@liverNodeB
+in : in
+out : out
+[node]
+[nodeA]
+[nodeB]
+[nodeC]
+[nodeD]
+[nodeE]
+[nodeF]
+
+#################ModelProject  45  #########################
+loadbalancer | lbsMA | 
+[top]
+components :  dbserver@DBServer server1@Server  server2@Server server3@Server  balancer@Balancer 
+[dbserver]
+[server1]
+[server2]
+[server3]
+[balancer]
+
+loadbalancer | lbs_topMA | 
+[top]
+components :  dbserver@DBServer server1@Server  server2@Server server3@Server  balancer@Balancer generator@Generator
+[dbserver]
+[server1]
+[server2]
+[server3]
+[balancer]
+[generator]
+
+loadbalancer | LoadbalancerMA1 | 
+[top]
+components : balancer@balancer
+out : out
+in :  in 
+[balancer]
+[
+loadbalancer | LoadbalancerMA2 | 
+[top]
+components : dbserver@DBServer
+out : out1 out2 out3
+in : in 
+[dbserver]
+
+loadbalancer | serverMA | 
+[top]
+components : server@Server
+out : out db
+in : in  done
+[server]
+
+#################ModelProject  46  #########################
+manufacturingfac | buffer | 
+[top]
+components : buffer@Buffer
+in : in done
+out : updatedNumElem partOut
+[buffer]
+
+manufacturingfac | Inspector1 | 
+[top]
+components : Inspector1
+in : numBuf1 numBuf2 numBuf3
+out : out1 out2 out3 
+[Inspector1]
+components : warehouse@Warehouse prioritizer@Prioritizer
+out : out1 out2 out3
+[warehouse]
+[prioritizer]
+
+manufacturingfac | manfac_study1 | 
+[top]
+components : buf1@Buffer buf2@Buffer buf3@Buffer buf4@Buffer buf5@Buffer
+components : Inspector1 Inspector2
+components : workstation1@Workstation1 workstation2@Workstation2 workstation3@Workstation2
+out : partOut1 partOut2 partOut3
+[Inspector1]
+components : warehouse1@Warehouse prioritizer@Prioritizer
+in : numBuf1 numBuf2 numBuf3
+out : out1 out2 out3
+[Inspector2]
+components : warehouse2@Warehouse sorter@Sorter
+in : numBuf2 numBuf3
+out : out2 out3
+[warehouse1]
+[warehouse2]
+[prioritizer]
+[sorter]
+[buf1]
+[buf2]
+[buf3]
+[buf4]
+[buf5]
+[workstation1]
+[workstation2]
+[workstation3]
+
+manufacturingfac | prioritizer | 
+[top]
+components : prio@Prioritizer
+in : in numBuf1 numBuf2 numBuf3
+out : out1 out2 out3 inspectorReady
+[prio]
+
+manufacturingfac | sorter | 
+[top]
+components : sort@Sorter
+in : in numBuf2 numBuf3
+out : out2 out3 inspectorReady
+[sort]
+
+manufacturingfac | warehouse1 | 
+[top]
+components : warehouse@Warehouse
+in : inspectorReady
+out : newPart
+[warehouse]
+
+manufacturingfac | workstation1 | 
+[top]
+components : workstation1@Workstation1
+in : in numBuf
+out : out ready
+[workstation1]
+
+#################ModelProject  47  #########################
+MemoryHierarchy | cachel1MA | 
+[top]
+components : cachel1@CacheL1 
+in : AddressIn
+in : DataIn
+out : AddressOut
+out : DataOut
+out : ErrorOut
+[cachel1]
+
+MemoryHierarchy | cachel2MA | 
+[top]
+components : cachel2@CacheL2 
+in : AddressIn
+in : DataIn
+out : AddressOut
+out : DataOut
+out : ErrorOut
+[cachel2]
+
+MemoryHierarchy | cacheMA | 
+[top]
+components : cachel1@CacheL1
+components : cachel2@CacheL2
+in : cpuaddressin  mainmemorydatain
+out : cachedataout cacheaddressout
+[cachel1]
+[cachel2]
+
+MemoryHierarchy | centralprocessingunitMA | 
+[top]
+components : centralprocessingunit@CentralProcessingUnit 
+out : AddressOut
+out : DataReceived
+out : ErrorOut
+in : ControlIn
+in : DataIn
+[centralprocessingunit]
+
+MemoryHierarchy | mainmemoryMA | 
+[top]
+components : mainmemory@MainMemory 
+out : out errorout
+in : in 
+[mainmemory]
+
+MemoryHierarchy | mhMA | 
+[top]
+components : centralprocessingunit@CentralProcessingUnit 
+components : cache
+components : mainmemory@MainMemory 
+out : AddressOut
+out : DataReceived
+in : ControlIn
+[centralprocessingunit]
+[cache]
+components : cachel1@CacheL1
+components : cachel2@CacheL2
+in : cpuaddressin  mainmemorydatain
+out : cachedataout cacheaddressout
+[cachel1]
+[cachel2]
+[mainmemory]
+
+#################ModelProject  48  #########################
+microwaveoven | beepTestMA | 
+[top]
+components : bp@BeepDrv
+in : beep_in
+out : beep_out
+
+microwaveoven | cookTimeTestMA | 
+[top]
+components : mincook@MinCookReg seccook@SecCookReg
+in : c_time_set c_seconds c_minutes
+out : c_time_seconds c_time_minutes
+
+microwaveoven | curTimeRegTestMA | 
+[top]
+components : curtime@CurTimeRegister
+in : n_time_set n_hours n_minutes
+out : n_cur_time
+
+microwaveoven | displayTestMA | 
+[top]
+components : dis@Displayer
+in : c_day_time c_counter_time
+out : c_cur_time c_rem_time
+
+microwaveoven | microwaveovenMA | 
+[top]
+components : PHASE timecookcounter@TimeCookCounter powerdriver@PowerDrv bp@BeepDrv curtime@CurTimeRegister dis@Displayer
+in : c_phase_set c_powerlevel_in c_seconds c_minutes c_hours c_time_set c_start c_stop c_clear
+out : beep_out c_powerlevel_out c_cur_time c_rem_time
+[PHASE]
+components : COOKTIME powlvl@PowLvlReg
+in : c_phase_set c_powerlevel_in c_seconds c_minutes
+out : c_time_seconds c_time_minutes c_powerlevel_out
+[COOKTIME]
+components : mincook@MinCookReg seccook@SecCookReg
+in : c_time_set c_seconds c_minutes
+out : c_time_seconds c_time_minutes
+
+microwaveoven | minCookRegTestMA | 
+[top]
+components : mincook@MinCookReg
+in : c_time_set c_minutes
+out : c_time_minutes
+
+microwaveoven | phaseRegTestMA | 
+[top]
+components : COOKTIME powlvl@PowLvlReg
+in : c_phase_set c_powerlevel_in c_seconds c_minutes
+out : c_time_seconds c_time_minutes c_powerlevel_out
+[COOKTIME]
+components : mincook@MinCookReg seccook@SecCookReg
+in : c_time_set c_seconds c_minutes
+out : c_time_seconds c_time_minutes
+
+microwaveoven | powerDrvTestMA | 
+[top]
+components : powerdriver@PowerDrv
+in : c_power_set c_powerlevel_in
+out : c_powerlevel_out
+
+microwaveoven | powerLvlTestMA | 
+[top]
+components : powlvl@PowLvlReg
+in : c_phase_set c_powerlevel_in
+out : c_powerlevel_out
+
+microwaveoven | secCookRegTestMA | 
+[top]
+components : sec@SecCookReg
+in : c_time_set c_seconds
+out : c_time_seconds
+
+microwaveoven | timeCounterTestMA | 
+[top]
+components : timecookcounter@TimeCookCounter
+in : c_phase_set c_start c_stop c_clear c_seconds c_minutes
+out : c_time_remaining c_powerswitch c_beep
+
+#################ModelProject  49  #########################
+mobilitymngmt | GatewayMA | 
+[top]
+components : gateway@Gateway
+in : inCObject inSObject handoff
+out : outCObject outSObject registerClient
+
+mobilitymngmt | GatewayQMA | 
+[top]
+components : gatewayQ@Gatewayqueue
+in : inCObject inSObject handoff done
+out : outCObject outSObject registerClient
+[gatewayQ]
+
+mobilitymngmt | MobileTerminalMA | 
+[top]
+components : mob@Mobilitymodule
+components : trans@Transceiver
+components : queue@Transqueue 
+in : inApp inG
+out : outG1 outG2 pG1 pG2 outApp
+[queue]
+
+mobilitymngmt | MobilityManagementMA | 
+[top]
+components : MobileTerminal 
+components : WirelessGateway1 
+components : WirelessGateway2
+components : TupleSpace
+components : Server
+[WirelessGateway1]
+components : gw1@Gateway
+components : gwq1@Gatewayqueue
+in : inS inC handoff
+out : outS outC register
+[WirelessGateway2]
+components : gw2@Gateway
+components : gwq2@Gatewayqueue
+in : inS inC handoff
+out : outS outC register
+[MobileTerminal]
+components : mob@Mobilitymodule
+components : trans@Transceiver
+components : queue@Transqueue 
+in : inApp inG
+out : outG1 outG2 pG1 pG2 outApp
+[TupleSpace]
+components : tqueue@Queue
+components : tClient@Tupleclient
+components : tSqueue@Tuplequeue
+components : tServer@Tupleserver
+in : inC inS RC
+out : outC outS1 outS2
+[Server]
+components : serv@CPU
+components : serverQueue@Queue
+in : inC
+out : outS
+[queue]
+[gwq1]
+[gwq2]
+[tqueue]
+[tSqueue]
+[serverQueue]
+[serv]
+
+mobilitymngmt | MobilityModuleMA | 
+[top]
+components : mob@MobilityModule
+out : location
+
+mobilitymngmt | ServerMA | 
+[top]
+components : serv@CPU
+components : serverQueue@Queue
+in : inC
+out : outS
+[serverQueue]
+[serv]
+
+mobilitymngmt | TransceiverMA | 
+[top]
+components : trans@Transceiver
+in : inApp inGateway position
+out : outGateway1 outGateway2 positionSet1 positionSet2 outApp
+
+mobilitymngmt | TransceiverQMA | 
+[top]
+components : transQ@Transqueue
+in : inApp inGateway position done
+out : outCObject outSObject location
+[transQ]
+
+mobilitymngmt | TupleClientMA | 
+[top]
+components : tc@TupleClient
+in : inCObject
+out : outCObject
+
+mobilitymngmt | TupleQMA | 
+[top]
+components : tQ@Tuplequeue
+in : inSObject registerClient done
+out : outSObject registerC
+[tQ]
+
+mobilitymngmt | TupleServerMA | 
+[top]
+components : tS@Tupleserver
+in : inSObject registerClient
+out : outSObject1 outSObject2 cRegistered
+
+mobilitymngmt | WirelessGatewayMA | 
+[top]
+components : gw1@Gateway
+components : gwq1@Gatewayqueue
+in : inS inC handoff
+out : outS outC register
+[gwq1]
+
+#################ModelProject  50  #########################
+multitasksrv | model1 | 
+[top]
+components : servmt_cola
+components : dispes_cola
+components : gen@Generator
+components : trans@Transducer
+out : throughput 
+[servmt_cola]
+components : servMT@ServMT
+components : cola1@Queue
+in : in done
+out : out solved
+[servMT]
+[cola1]
+[dispes_cola]
+components : disp@DispositivoES
+components : cola2@Queue
+out : done
+in : in
+[disp]
+[cola2]
+[gen]
+[trans]
+
+#################ModelProject  51  #########################
+NavigationAvionics | gpsMA | 
+[top]
+components : gps@GPS 
+out : port_out_gps_x
+out : port_out_gps_y
+out : port_out_gps_z
+in : port_in_power
+[gps]
+
+NavigationAvionics | gyroMA | 
+[top]
+components : gyro@Gyro 
+out : port_out_accel
+in : port_in_power
+[gyro]
+
+NavigationAvionics | IRS | 
+[top]
+components : gyro_x@Gyro 
+components : gyro_y@Gyro
+components : gyro_z@Gyro
+components : irs_comp@IRScomputer
+in : port_in_power
+in : port_in_gps_x
+in : port_in_gps_y
+in : port_in_gps_z
+out : irs_x_pos
+out : irs_y_pos
+out : irs_z_pos
+[gyro_x]
+[gyro_y]
+[gyro_z]
+[irs_comp]
+
+NavigationAvionics | irs_computerMA | 
+[top]
+components : ic@IRScomputer 
+out : port_out_irs_x
+out : port_out_irs_y
+out : port_out_irs_z
+in : port_in_power
+in : port_in_gps_x
+in : port_in_gps_y
+in : port_in_gps_z
+in : port_in_gyro_x
+in : port_in_gyro_y
+in : port_in_gyro_z
+[ic]
+
+NavigationAvionics | NavigationAvionics | 
+[top]
+components : irs_lru
+components : gps_lru@GPS
+in : port_in_power
+out : irs_x_pos
+out : irs_y_pos
+out : irs_z_pos
+[gps_lru]
+[irs_lru]
+components : gyro_x@Gyro 
+components : gyro_y@Gyro
+components : gyro_z@Gyro
+components : irs_comp@IRScomputer
+in : port_in_power
+in : port_in_gps_x
+in : port_in_gps_y
+in : port_in_gps_z
+out : irs_x_pos
+out : irs_y_pos
+out : irs_z_pos
+[gyro_x]
+[gyro_y]
+[gyro_z]
+[irs_comp]
+
+NavigationAvionics | NavigationAvionicsIndependentPower | 
+[top]
+components : irs_lru
+components : gps_lru@GPS
+in : port_in_power_gps
+in : port_in_power_irs
+out : irs_x_pos
+out : irs_y_pos
+out : irs_z_pos
+[gps_lru]
+[irs_lru]
+components : gyro_x@Gyro 
+components : gyro_y@Gyro
+components : gyro_z@Gyro
+components : irs_comp@IRScomputer
+in : port_in_power
+in : port_in_gps_x
+in : port_in_gps_y
+in : port_in_gps_z
+out : irs_x_pos
+out : irs_y_pos
+out : irs_z_pos
+[gyro_x]
+[gyro_y]
+[gyro_z]
+[irs_comp]
+
+#################ModelProject  52  #########################
+Nerve_Cell_Membrane | ion_gate | 
+[top]
+components : gate@ion_gate
+in : in_Delta_V
+in : in_V
+out : out_Delta_V
+out : out_g
+[gate]
+
+Nerve_Cell_Membrane | ion_generator | 
+[top]
+components : generator@ion_generator
+out : out_Delta_V
+[generator]
+
+Nerve_Cell_Membrane | K_channel | 
+[top]
+components : K_generator@ion_generator
+components : n_gate@ion_gate
+in : in_V
+out : out_Delta_V
+[K_generator]
+[n_gate]
+
+Nerve_Cell_Membrane | Na_channel | 
+[top]
+components : Na_generator@ion_generator
+components : h_gate@ion_gate
+components : m_gate@ion_gate
+in : in_V
+out : out_Delta_V
+[Na_generator]
+[h_gate]
+[m_gate]
+
+Nerve_Cell_Membrane | NCM | 
+[top]
+components : node0
+components : node1
+components : node2
+components : node3
+in : in_Delta_V_left
+in : in_Delta_V_right
+out : out_Delta_V_left
+out : out_Delta_V_right
+out : out_V0
+out : out_V1
+out : out_V2
+out : out_V3
+[node0]
+components : regulator0@voltage_regulator
+components : K_channel0
+components : Na_channel0
+in : in_Delta_V
+out : out_Delta_V
+out : out_V
+[regulator0]
+[K_channel0]
+components : K_generator0@ion_generator
+components : n_gate0@ion_gate
+in : in_V
+out : out_Delta_V
+[K_generator0]
+[n_gate0]
+[Na_channel0]
+components : Na_generator0@ion_generator
+components : h_gate0@ion_gate
+components : m_gate0@ion_gate
+in : in_V
+out : out_Delta_V
+[Na_generator0]
+[h_gate0]
+[m_gate0]
+[node1]
+components : regulator1@voltage_regulator
+components : K_channel1
+components : Na_channel1
+in : in_Delta_V
+out : out_Delta_V
+out : out_V
+[regulator1]
+[K_channel1]
+components : K_generator1@ion_generator
+components : n_gate1@ion_gate
+in : in_V
+out : out_Delta_V
+[K_generator1]
+[n_gate1]
+[Na_channel1]
+components : Na_generator1@ion_generator
+components : h_gate1@ion_gate
+components : m_gate1@ion_gate
+in : in_V
+out : out_Delta_V
+[Na_generator1]
+[h_gate1]
+[m_gate1]
+[node2]
+components : regulator2@voltage_regulator
+components : K_channel2
+components : Na_channel2
+in : in_Delta_V
+out : out_Delta_V
+out : out_V
+[regulator2]
+[K_channel2]
+components : K_generator2@ion_generator
+components : n_gate2@ion_gate
+in : in_V
+out : out_Delta_V
+[K_generator2]
+[n_gate2]
+[Na_channel2]
+components : Na_generator2@ion_generator
+components : h_gate2@ion_gate
+components : m_gate2@ion_gate
+in : in_V
+out : out_Delta_V
+[Na_generator2]
+[h_gate2]
+[m_gate2]
+[node3]
+components : regulator3@voltage_regulator
+components : K_channel3
+components : Na_channel3
+in : in_Delta_V
+out : out_Delta_V
+out : out_V
+[regulator3]
+[K_channel3]
+components : K_generator3@ion_generator
+components : n_gate3@ion_gate
+in : in_V
+out : out_Delta_V
+[K_generator3]
+[n_gate3]
+[Na_channel3]
+components : Na_generator3@ion_generator
+components : h_gate3@ion_gate
+components : m_gate3@ion_gate
+in : in_V
+out : out_Delta_V
+[Na_generator3]
+[h_gate3]
+[m_gate3]
+
+Nerve_Cell_Membrane | NCM_node | 
+[top]
+components : regulator@voltage_regulator
+components : K_channel
+components : Na_channel
+in : in_Delta_V
+out : out_Delta_V
+out : out_V
+[regulator]
+[K_channel]
+components : K_generator@ion_generator
+components : n_gate@ion_gate
+in : in_V
+out : out_Delta_V
+[K_generator]
+[n_gate]
+[Na_channel]
+components : Na_generator@ion_generator
+components : h_gate@ion_gate
+components : m_gate@ion_gate
+in : in_V
+out : out_Delta_V
+[Na_generator]
+[h_gate]
+[m_gate]
+
+Nerve_Cell_Membrane | voltage_regulator | 
+[top]
+components : regulator@voltage_regulator
+in : in_Delta_V
+out : out_V
+[regulator]
+
+#################ModelProject  53  #########################
+NetworkIP | Application | 
+[top]
+components : application@Application
+out : outtoTransport outtoUser
+in : infromHTTPuser infromFTPuser infromTelNetuser infromSMTPuser infromSNMPuser infromTransport
+[application]
+
+NetworkIP | dataLink | 
+[Top]
+components : dataLink@dataLink test2@test2
+out : frameOut packetOut
+in : frameIn packetIn
+[dataLink]
+[test2]
+
+NetworkIP | host | 
+[top]
+components : DataLink@dataLink Application@Application Transport Internet 
+out : hOut Display senseCarrier ApplicationTransport
+in :  FTP_In HTTP_In SMTP_In SNMP_In Telnet_In physicalInput statusCarrier Source Destination
+[Transport]
+components : datagramCreator1@datagramCreator datagramStripper1@datagramStripper checksumCreator1@checksumCreator checksumValidator1@checksumValidator
+out : outtoApplication outtoNetwork
+in : infromApplication infromNetwork
+[Internet]
+components : Receiver@Receiver
+out : outtoTransport outtoDataLink
+in : infromTransport infromDataLink SourceIP DestinationIP
+[Receiver]
+[datagramCreator1]
+[datagramStripper1]
+[checksumCreator1]
+[checksumValidator1] 
+[DataLink]
+[Application]
+
+NetworkIP | Network | 
+[top]
+components : receiver1@Receiver
+out : outtoTransport outtoDataLink
+in : infromTransport infromDataLink SourceIP DestinationIP
+[receiver1]
+
+NetworkIP | PacketProcessor | 
+[top]
+components : pp@PacketProcessor
+out : destination updatetable requ getPacket out next
+in : in outInterface packet cont
+[pp]
+
+NetworkIP | RIPTable | 
+[top]
+components : rip@RIPTable2
+out : out_interface out done
+in : address request update
+[rip]
+
+NetworkIP | router | 
+[top]
+components : interface1 interface2 RPU rip@ripTable2
+out : out1 out2
+in : in1 in2
+[RPU]
+components : pp@PacketProcessor q@queue
+out : out_packet destination request get_packet update 
+in : in_packet outInterface cont flag 
+[interface1]
+components : ro1@RouterOutput ri1@RouterIn
+out : out_packet packet_to_RPU flag_RPU
+in : in_packet ready packet_from_RPU
+[interface2]
+components : ro2@RouterOutput ri2@RouterIn
+out : out_packet packet_to_RPU flag_RPU
+in : in_packet ready packet_from_RPU
+[ro1]
+[ri1]
+[ro2]
+[ri2]
+[rip]
+[pp]
+[q]
+
+NetworkIP | RouterIn | 
+[top]
+components : ri@RouterIn
+out : to_RPU flag interfaceNum
+in : in ready
+[ri]
+
+NetworkIP | RouterOut | 
+[top]
+components : ro@RouterOutput
+out : out
+in : from_RPU interfaceNum
+[ro]
+
+NetworkIP | Transport | 
+[top]
+components : datagramCreator1@datagramCreator datagramStripper1@datagramStripper checksumCreator1@checksumCreator checksumValidator1@checksumValidator
+out : outtoApplication outtoNetwork
+in : infromApplication infromNetwork
+[datagramCreator1]
+[datagramStripper1]
+[checksumCreator1]
+[checksumValidator1] 
+
+#################ModelProject  54  #########################
+newspaper | news | 
+[top]
+components : jour
+components : office
+components : pr@printer
+in   : in
+out  : out
+[jour]
+components : p_j@p_journalist
+components : t_j@t_journalist
+in   : in
+out  : out
+[office]
+components : ed@editor
+components : mk@makeup
+components : ch@chiefEditor
+in   : in 
+out  : out
+[p_j]
+[t_j] 
+[ed] 
+[mk] 
+[ch] 
+[pr]
+
+newspaper | newspaper | 
+[top]
+components : photo_j@journal text_j@journal editor@edit_d makeup@edit_d chief@edit_d
+[Hangar]
+components : selector@selector Deposito1@deposito Deposito2@deposito Deposito3@deposito Deposito4@deposito 4_to_1@salida
+out : sale_hangar
+in : in
+[cola_aterrizaje]
+[cola_despegue]
+
+newspaper | news_atomic | 
+[top]
+components : p_j@p_journalist
+in   : in
+out  : out
+[p_j]
+
+newspaper | news_couple | 
+[top]
+components : jour
+in   : in
+out  : out
+[jour]
+components : p_j@p_journalist
+components : t_j@t_journalist
+in   : in
+out  : out
+[p_j]
+[t_j] 
+
+#################ModelProject  55  #########################
+nif | accountMA | 
+[top]
+components : account@Account
+out : accountNO_out 
+in : account_setting 
+in : plus_in
+in : minus_in
+[account]
+
+nif | datagenerationMA | 
+[top]
+components : datageneration@Datageneration
+out : data1_out 
+out : data2_out
+out : data3_out
+out : data4_out
+in : accountNO_in 
+in : LT_in
+[datageneration]
+
+nif | dataprocessingMA | 
+[top]
+components : filter@Filter
+components : write@Write
+components : display@Display
+out : display_out 
+in : bit1_in 
+in : bit2_in 
+in : bit3_in 
+in : bit4_in 
+in : choice_in
+[filter]
+[display]
+[write]
+
+nif | displayMA | 
+[top]
+components : display@Display
+out : display_out 
+in : filter_in write_in
+[display]
+
+nif | filterMA | 
+[top]
+components : filter@Filter
+out : bit_out 
+in : choice_in
+in : bit1_in 
+in : bit2_in
+in : bit3_in
+in : bit4_in
+[filter]
+
+nif | NIFMA | 
+[top]
+components : account@Account
+components : refresh@Refresh
+components : datageneration@Datageneration
+components : Dataprocessing
+out : display_out 
+in : account_setting 
+in : refresh_setting 
+in : plus_in
+in : minus_in 
+in : choice_in
+[account]
+[refresh]
+[datageneration]
+[Dataprocessing]
+components : filter@Filter
+components : write@Write
+components : display@Display
+out : display_out 
+in : bit1_in 
+in : bit2_in 
+in : bit3_in 
+in : bit4_in 
+in : choice_in
+[filter]
+[display]
+[write]
+
+nif | refreshMA | 
+[top]
+components : refresh@Refresh
+out : refresh_out 
+in : refresh_setting 
+in : plus_in 
+in : minus_in
+[refresh]
+
+nif | writeMA | 
+[top]
+components : write@Write
+out : write_out 
+in : choice_in
+[write]
+
+#################ModelProject  56  #########################
+offlineft | AccessNetworkMA | 
+[top]
+components : subnet1@Subnet
+components : subnet2@Subnet
+out : in1 in2
+out : out1 out2
+[subnet1]
+[subnet2]
+
+offlineft | FileServerMA | 
+[top]
+components : tmpfilereadthread@TmpFileReadThread
+components : tmpfilewritethread@TmpFileWriteThread
+components : fileserverreceiver@Receiver
+components : fileserversender@FileServerSender
+in : inAToF inBToF requestIn
+out : outFToA outFToB
+[tmpfilewritethread]
+[tmpfilereadthread]
+[fileserverreceiver]
+[fileserversender]
+
+offlineft | FileServerSenderMA | 
+[top]
+components : fileserversender@FileServerSender
+out : requestData ackReceived fileSent dataOut
+in  : requestIn dataIn ackIn
+[fileserversender]
+
+offlineft | NetworkMA | 
+[top]
+components : AccessNetWorkA
+components : AccessNetWorkB
+components : FileExchangeServer
+in : inAtoN inBToN requestIn
+out : outNToA outNToB
+[FileExchangeServer]
+components : tmpfilereadthread@TmpFileReadThread
+components : tmpfilewritethread@TmpFileWriteThread
+components : fileserverreceiver@Receiver
+components : fileserversender@FileServerSender
+in : inAToF inBToF requestIn
+out : outFToA outFToB
+[tmpfilewritethread]
+[tmpfilereadthread]
+[fileserverreceiver]
+[fileserversender]
+[AccessNetWorkA]
+components : subnetAToF@Subnet
+components : subnetFToA@Subnet
+in : inAToS inFToS
+out : outSToA outSToF
+[subnetAToF]
+[subnetFToA]
+[AccessNetWorkB]
+components : subnetBToF@Subnet
+components : subnetFToB@Subnet
+in : inBToS inFToS
+out : outSToB outSToF
+[subnetBToF]
+[subnetFToB]
+
+offlineft | offLineFileTransferMA | 
+[top]
+components : UA@Sender
+components : Network
+components : UB@Receiver
+out : fileSent ackReceived outData
+in : controlIn requestIn
+[UA]
+[UB]
+[Network]
+components : AccessNetWorkA
+components : AccessNetWorkB
+components : FileExchangeServer
+in : inAtoN inBToN requestIn
+out : outNToA outNToB
+[FileExchangeServer]
+components : tmpfilereadthread@TmpFileReadThread
+components : tmpfilewritethread@TmpFileWriteThread
+components : fileserverreceiver@Receiver
+components : fileserversender@FileServerSender
+in : inAToF inBToF requestIn
+out : outFToA outFToB
+[tmpfilewritethread]
+[tmpfilereadthread]
+[fileserverreceiver]
+[fileserversender]
+[AccessNetWorkA]
+components : subnetAToF@Subnet
+components : subnetFToA@Subnet
+in : inAToS inFToS
+out : outSToA outSToF
+[subnetAToF]
+[subnetFToA]
+[AccessNetWorkB]
+components : subnetBToF@Subnet
+components : subnetFToB@Subnet
+in : inBToS inFToS
+out : outSToB outSToF
+[subnetBToF]
+[subnetFToB]
+
+offlineft | receiverMA | 
+[top]
+components : receiver@Receiver 
+out : out outData
+in : in 
+[receiver]
+
+offlineft | senderMA | 
+[top]
+components : sender@Sender
+out : dataOut
+out : fileSent
+out : ackReceived
+in : controlIn
+in : ackIn
+[sender]
+
+offlineft | subnetMA | 
+[top]
+components : subnet1@Subnet 
+out : out 
+in : in 
+[subnet1]
+
+offlineft | tmpFileExchangeMA | 
+[top]
+components : tmpfilereadthread@TmpFileReadThread
+components : tmpfilewritethread@TmpFileWriteThread
+out : readDataOut
+in : deleteData requestData
+in : storeData 
+[tmpfilewritethread]
+[tmpfilereadthread]
+
+offlineft | tmpFileReadThreadMA | 
+[top]
+components : tmpfilereadthread@TmpFileReadThread 
+out : dataOut 
+in : deleteData requestData 
+[tmpfilereadthread]
+
+offlineft | tmpFileWriteThreadMA | 
+[top]
+components : tmpfilewritethread@TmpFileWriteThread
+out : dataOut 
+in : storeData
+[tmpfilewritethread]
+
+#################ModelProject  57  #########################
+omniengine_with_batch | CreateCapture | 
+[top]
+components : createcapture@CreateCapture createfilter@CreateFilter
+out : capture_created
+out: filter_code
+in : in
+[createcapture]
+[createfilter]
+
+omniengine_with_batch | CreateFilter | 
+[top]
+components : createfilter@CreateFilter
+out : filter_done
+in : in 
+[createfilter]
+
+omniengine_with_batch | OmniEngineControl | 
+[top]
+components : create start stop@StopCapture 
+out : capture_created
+out : filter_code
+out : capture_started
+out : channel_num
+out : capture_stopped
+in :  create_capture
+in :  start_capture
+in :  stop_capture
+[create]
+components : createcapture@CreateCapture createfilter@CreateFilter
+out : capture_created
+out: filter_code
+in : in
+[start]
+components : startcapture@StartCapture wirelesschannel@WirelessChannel
+out : capture_started
+out : channel_num
+in : in
+[createcapture]
+[createfilter]
+[startcapture]
+[wirelesschannel]
+[stop]
+
+omniengine_with_batch | StartCapture | 
+[top]
+components : startcapture@StartCapture wirelesschannel@WirelessChannel
+out : capture_started
+out : channel_num
+in : in
+[startcapture]
+[wirelesschannel]
+
+omniengine_with_batch | StopCapture | 
+[top]
+components : stopcapture@StopCapture
+out : capture_stopped
+in : in
+[stopcapture]
+
+omniengine_with_batch | WirelessChannel | 
+[top]
+components : wirelesschannel@WirelessChannel
+out : channel_done
+in : in 
+[wirelesschannel]
+
+#################ModelProject  58  #########################
+OnoC | CommandModulation | 
+[top]
+components : commandModulation@CommandModulation 
+out : out1
+in : in1
+in : in2
+[commandModulation]
+
+OnoC | Driver | 
+[top]
+components : driver@Driver 
+out : current
+in : data
+[driver]
+
+OnoC | EmissionLaser | 
+[top]
+components : emissionLaser@EmissionLaser 
+out : out1
+in : in1
+in : in2
+[emissionLaser]
+
+OnoC | Laser | 
+[top]
+components : laser@Laser  
+out : light 
+in : current 
+[laser] 
+
+OnoC | OpticalTransmitter | 
+[top]
+components : polarizationCommand@PolarizationCommand 
+components : commandModulation@CommandModulation 
+components : emissionLaser@EmissionLaser 
+out : y
+in : x
+[polarizationCommand]
+[commandModulation]
+[emissionLaser]
+
+OnoC | Photodiode | 
+[top]
+components : photodiode@Photodiode  
+in : light 
+out : current 
+[photodiode] 
+
+OnoC | PolarizationCommand | 
+[top]
+components : polarizationCommand@PolarizationCommand 
+out : out1
+out : out2
+in : in1
+[polarizationCommand]
+
+OnoC | Receiver | 
+[top]
+components : photodiode@Photodiode 
+components : aTIA@TIA
+in : light
+out : data
+[photodiode]
+[aTIA]
+
+OnoC | TIA | 
+[top]
+components : aTIA@TIA 
+in : current
+out : data
+[aTIA]
+
+OnoC | Transmitter | 
+[top]
+components : laser@Laser 
+components : driver@Driver
+out : light
+in : data
+[laser]
+[driver]
+
+#################ModelProject  59  #########################
+OperationRoom | OperationMA | 
+[top]
+components : scheduler@Scheduler 
+components : doctor@DOCTOR 
+components : nurse@Nurse 
+components : Operationroom
+out : out
+in : in
+[scheduler]
+[doctor]
+[nurse]
+[Operationroom]
+components : equipment@Equipment
+components : operation@Operation
+in : in
+out : out done
+[equipment]
+[operation]
+
+#################ModelProject  60  #########################
+otrain | InTrainQueue | 
+[top]
+components : InTrainQueue@InTrainQueue
+in : StationNumber
+in : PassengerIn
+out : PassengerOut
+[InTrainQueue]
+
+otrain | O-Train | 
+[top]
+out : PassengerArrived
+out : PassengerInitial
+components : BayviewStation@StationGenerator CarlingStation@StationGenerator
+components : CarletonStation@StationGenerator ConfedStation@StationGenerator
+components : GreenboroStation@StationGenerator
+components : BayviewQueue@StationQueue CarlingQueue@StationQueue
+components : CarletonQueue@StationQueue ConfedQueue@StationQueue
+components : GreenboroQueue@StationQueue
+components : OTrain
+[BayviewStation]
+[CarlingStation]
+[CarletonStation]
+[ConfedStation]
+[GreenboroStation]
+[BayviewQueue]
+[CarlingQueue]
+[CarletonQueue]
+[ConfedQueue]
+[GreenboroQueue]
+[OTrain]
+in : PassengerIn
+out : PassengerOut
+out : StationNumber
+components : BayviewPassengers@InTrainQueue CarlingPassengers@InTrainQueue
+components : CarletonPassengers@InTrainQueue ConfedPassengers@InTrainQueue
+components : GreenboroPassengers@InTrainQueue
+components : StationArrival@StationArrivalGenerator
+[BayviewPassengers]
+[CarlingPassengers]
+[CarletonPassengers]
+[ConfedPassengers]
+[GreenboroPassengers]
+
+otrain | StationGenerator | 
+[top]
+components : Station@StationGenerator
+out : PassengerInitial
+[Station]
+
+otrain | StationQueue | 
+[top]
+components : StationQueue@StationQueue
+in : StationNumber
+in : PassengerIn
+out : PassengerOut
+[StationQueue]
+
+otrain | StrationArrivalGenerator | 
+[top]
+components : StationGenerator@StationArrivalGenerator 
+out : StationNumber
+
+#################ModelProject  61  #########################
+Panama_Canal | controller | 
+[top]
+components : controller@Controller
+out : controlLocks
+out : controlQueue
+in : controlIn
+[controller]
+
+Panama_Canal | gate | 
+[top]
+components : gate@Gate
+out : Out
+out : controlOut
+in : In
+in : controlIn
+[gate]
+
+Panama_Canal | gatun_locks | 
+[top]
+components : gate@Gate
+components : lock3@lock
+components : lock2@Lock
+components : lock1@Lock
+out : Out
+out	: controlOut
+in	: In
+in	: controlIn
+[gate]
+[lock3]
+[lock2]
+[lock1]
+
+Panama_Canal | lock | 
+[top]
+components : lock@Lock
+out : Out
+out : controlOut
+in : In
+in : controlIn
+[lock]
+
+Panama_Canal | panama_canal | 
+[top]
+components : controller@Controller
+components : queue@Queue
+components : Gatun_Locks
+out	: Out
+in	: In
+[controller]
+[queue]
+[Gatun_Locks]
+components : gate@Gate
+components : lock3@lock
+components : lock2@Lock
+components : lock1@Lock
+out : Out
+out	: controlOut
+in	: In
+in	: controlIn
+[gate]
+[lock3]
+[lock2]
+[lock1]
+
+Panama_Canal | queue | 
+[top]
+components : queue@Queue
+out : Out
+in : In
+in : controlIn
+[queue]
+
+#################ModelProject  62  #########################
+Pendulum_clock | AgujaHour | 
+[top]
+components : hora@AgujaHour
+out : VALUE
+in : INCREMENT DECREMENT
+
+Pendulum_clock | AgujaMin | 
+[top]
+components : min@AgujaMin
+out : VALUE OUT_INCREMENT OUT_DECREMENT
+in : TIC IN_INCREMENT IN_DECREMENT
+
+Pendulum_clock | Agujas | 
+[top]
+components : min@AgujaMin
+components : hora@AgujaHour
+out : HOUR_VALUE MIN_VALUE
+in : TIC INCREMENT DECREMENT
+
+Pendulum_clock | Alarma | 
+[top]
+components : alarma@Alarma
+out : ALARM_ON ALARM_OFF SOUND_ALARM
+in : ACTIVATE DEACTIVATE ALARM_HOUR ALARM_MIN CLOCK_HOUR CLOCK_MIN
+
+Pendulum_clock | ControlAlarma | 
+[top]
+components : agujasAlarma
+components : alarma@Alarma
+out : ALARM_ON ALARM_OFF SOUND_ALARM ALARM_MIN ALARM_HOUR
+in : ACTIVATE DEACTIVATE CLOCK_HOUR CLOCK_MIN INCREMENT DECREMENT
+[agujasAlarma]
+components : min@AgujaMin
+components : hora@AgujaHour
+out : HOUR_VALUE MIN_VALUE
+in : TIC INCREMENT DECREMENT
+
+Pendulum_clock | ControlEncendido | 
+[top]
+components : controlencendido@ControlEncendido
+out : CLOCK_ON CLOCK_OFF
+in : TURN_ON TURN_OFF
+
+Pendulum_clock | Motor | 
+[top]
+components : control@ControlEncendido
+components : pendulo@Pendulo
+out : TIC CLOCK_ON CLOCK_OFF
+in : TURN_ON TURN_OFF
+
+Pendulum_clock | Pendulo | 
+[top]
+components : pendulo@Pendulo
+out : TIC
+in : TURN_ON TURN_OFF
+
+Pendulum_clock | Reloj | 
+[top]
+components : agujas
+components : controlalarma
+components : motor
+out : CLOCK_ON CLOCK_OFF ALARM_ON ALARM_OFF SOUND_ALARM CLOCK_HOUR CLOCK_MIN ALARM_HOUR ALARM_MIN
+in : TURN_ON TURN_OFF ACTIVATE DEACTIVATE INCREMENT DECREMENT INC_ALARM DEC_ALARM
+[agujas]
+components : min@AgujaMin
+components : hora@AgujaHour
+out : HOUR_VALUE MIN_VALUE
+in : TIC INCREMENT DECREMENT
+[motor]
+components : control@ControlEncendido
+components : pendulo@Pendulo
+out : TIC CLOCK_ON CLOCK_OFF
+in : TURN_ON TURN_OFF
+[controlalarma]
+components : agujasAlarma
+components : alarma@Alarma
+out : ALARM_ON ALARM_OFF SOUND_ALARM ALARM_MIN ALARM_HOUR
+in : ACTIVATE DEACTIVATE CLOCK_HOUR CLOCK_MIN INCREMENT DECREMENT
+[agujasAlarma]
+components : minAlarma@AgujaMin
+components : horaAlarma@AgujaHour
+out : HOUR_VALUE MIN_VALUE
+in : TIC INCREMENT DECREMENT
+
+#################ModelProject  63  #########################
+pharmacy | pharmacyMA | 
+[top]
+components : Dropoff 
+components : Labeling
+out : out
+in : in
+[Dropoff]
+components : checkin@Checkin
+components : checkfile@Checkfile
+in : in
+out : out
+[checkin]
+[checkfile]
+[Labeling]
+components : filling@Filling
+components : consulting@Consulting
+in : in
+out : out
+[filling]
+[consulting]
+
+#################ModelProject  64  #########################
+pizzakitchen | admlug | 
+[top]
+components : adm@AdministradorLugares
+out 	: out outLugar1 outLugar2 outLugar3 outLugar4 outLugar5 outLugar6 outLugar7 outLugar8 outLugar9 outLugar10
+in 	: in inLugar1 inLugar2 inLugar3 inLugar4 inLugar5 inLugar6 inLugar7 inLugar8 inLugar9 inLugar10
+[adm]
+
+pizzakitchen | cola | 
+[top]
+components : cola@Cola
+out 	: out
+in 	: in dame
+[cola]
+
+pizzakitchen | horno | 
+[top]
+components : adm@AdministradorLugares lugar1@Lugar lugar2@Lugar lugar3@Lugar lugar4@Lugar lugar5@Lugar lugar6@Lugar lugar7@Lugar lugar8@Lugar lugar9@Lugar lugar10@Lugar
+out 	: out
+in 	: in
+
+pizzakitchen | lugar | 
+[top]
+components : lugar@Lugar
+out 	: out
+in 	: in
+[lugar]
+
+pizzakitchen | pizzeria | 
+[top]
+components : cola@Cola pizzero@Pizzero Horno
+out 	: out
+in 	: in
+[Horno]
+components : adm@AdministradorLugares lugar1@Lugar lugar2@Lugar lugar3@Lugar lugar4@Lugar lugar5@Lugar lugar6@Lugar lugar7@Lugar lugar8@Lugar lugar9@Lugar lugar10@Lugar
+out 	: out
+in 	: in
+
+pizzakitchen | pizzero | 
+[top]
+components : pizzero@Pizzero
+out 	: out outHorno outPedidos
+in 	: in inHorno
+[pizzero]
+
+#################ModelProject  65  #########################
+ponzischeme | InvestorPool | 
+[top]
+components : ponzi@PonziType fund1@FundType pool
+out : totalInvestor_out ponziStatus_out balance_out payout_out longTerm_out payoutReq_out ponziRecruit_out
+out : initialPoolStats_out fundStatus_out
+in : payoutReq_in  
+[InitialPool]
+initialInvestment : 100
+[LongTermPoolType]
+[FundType]
+[pool]
+components : initialPool@InitialPool longTermPool@LongTermPoolType
+in : count_in initial_in rate_in payout_in control_in
+out : payoutReq_out totalCount_out longStats_out initialStats_out principal_out
+
+#################ModelProject  66  #########################
+Queue | QueueMA | 
+[top]
+components : queue@Queue 
+out : out
+in : in done stop
+[queue]
+
+#################ModelProject  67  #########################
+Resin | computer | 
+[top]
+components : comp@computer 
+out : out
+out : mixtankControl_out
+out : storetankControl_out
+in : in
+in : mixtankTemp_in
+in : mixtankEmpty_in
+in : mouldtankTemp_in
+in : mouldtankEmpty_in
+in : storetankEmpty_in
+[comp]
+
+Resin | csystem | 
+[top]
+components : compu@Computer
+in : in
+in : storetankEmpty_in
+in : mixtankTemp_in
+in : mixtankEmpty_in
+in : mouldtankTemp_in
+in : mouldtankEmpty_in
+out : out
+out : mixtankControl_out
+out : storetankControl_out
+[compu]
+Resin | mixtank | 
+[top]
+components : mtk@mixtank 
+out : out
+out : mixtankTemp_out
+out : mixtankEmpty_out
+in : in
+in : start_in
+in : mixtankControl_in
+[mtk]
+
+Resin | mouldtank | 
+[top]
+components : moutk@mouldtank 
+out : out
+out: mouldtankTemp_out
+in : in
+in : start_in
+[moutk]
+
+Resin | pline | 
+[top]
+components : Stank
+components : mtk@mixtank
+components : motk@mouldtank
+out : storetankEmpty_out
+out : mixtankTemp_out
+out : mixtankEmpty_out
+out : mouldtankTemp_out
+out : mouldtankEmpty_out
+in : start_in
+in : mixtankControl_in
+in : storetankControl_in
+[mtk]
+[motk]
+[Stank]
+components : cou@count
+components : stk@storetank
+in : in
+in : storetankControl_in
+out : out
+[cou]
+[stk]
+
+Resin | resin | 
+[top]
+components : controlsystem
+components : prodline
+out : out
+in : in
+[controlsystem]
+components : compu@Computer
+in : in
+in : storetankEmpty_in
+in : mixtankTemp_in
+in : mixtankEmpty_in
+in : mouldtankTemp_in
+in : mouldtankEmpty_in
+out : out
+out : mixtankControl_out
+out : storetankControl_out
+[compu]
+[prodline]
+components : Stank
+components : mtk@mixtank
+components : motk@mouldtank
+out : storetankEmpty_out
+out : mixtankTemp_out
+out : mixtankEmpty_out
+out : mouldtankTemp_out
+out : mouldtankEmpty_out
+in : start_in
+in : mixtankControl_in
+in : storetankControl_in
+[mtk]
+[motk]
+[Stank]
+components : cou@count
+components : stk@storetank
+in : in
+in : storetankControl_in
+out : out
+[cou]
+[stk]
+
+Resin | stk | 
+[top]
+components : cou@count
+components : stk@storetank
+in : in
+in : storetankControl_in
+out : out
+[cou]
+[stk]
+
+#################ModelProject  68  #########################
+rifle | BoltAssyMA | 
+[top]
+components : BA@BoltAssy
+in : in_bulletReady
+in : in_releaseBolt
+in : in_boltBack
+out : out_boltPosn
+out : out_bulletLoaded
+[BA]
+
+rifle | BulletMA | 
+[top]
+components : Bull@Bullet
+in : in_bulletReady
+out : out_isDud
+[Bull]
+
+rifle | ChamberMA | 
+[top]
+components : Chbr@Chamber
+in : in_isDud
+in : in_bulletLoaded
+out : out_boltBack
+out : out_bulletFired
+out : out_casing
+[Chbr]
+
+rifle | MagAssyMA | 
+[top]
+components : Mag@Magazine Bull@Bullet
+in : in_initBullets
+in : in_initMagSeating
+in : in_bulletLoaded
+out : out_bulletReady
+out : out_isDud
+[Mag]
+[Bull]
+
+rifle | MagazineMA | 
+[top]
+components : Mag@Magazine
+in : in_initBullets
+in : in_initMagSeating
+in : in_bulletLoaded
+out : out_bulletReady
+[Mag]
+
+rifle | RifleMA | 
+[top]
+components : MagAssy TA@TrigAssy BA@BoltAssy Chbr@Chamber
+in : inInitBullets
+in : inInitMagSeating
+in : inHandlePosn
+in : inTriggerPressed
+in : inFiringSelector
+out : outBulletFired
+out : outCasing
+out : outBoltPosn
+[TA]
+[BA]
+[Chbr]
+[MagAssy]
+components : Mag@Magazine Bull@Bullet
+in : in_initBullets
+in : in_initMagSeating
+in : in_bulletLoaded
+out : out_bulletReady
+out : out_isDud
+[Mag]
+[Bull]
+
+rifle | TrigAssyMA | 
+[top]
+components : TA@TrigAssy
+in : in_triggerPressed
+in : in_firingSelector
+in : in_boltBack
+out : out_releaseBolt
+[TA]
+
+#################ModelProject  69  #########################
+robotvehicle | RobotVehicle | 
+[top]
+components : RadarSystem MovingSystem
+out : Out1
+out : Out2
+out : Out3
+in : In1  
+in : In2
+in : In3
+in : In4 
+in : In5 
+[RadarSystem]
+components : sonar1@Sonar1 compass1@Compass1 motor1@Motor1 radarcontroller@RadarController
+in : RS_In1 
+in : RS_In2
+in : RS_In3
+out : RS_Out1 
+out : RS_Out2 
+[Sonar1]
+[compass1]
+[Motor1]
+[RadarController]
+[MovingSystem]
+components : motor2@Motor2 motor3@Motor3 movementController@MovementController compass2@Compass2 sonar2@Sonar2
+in : MS_In1 
+in : MS_In2
+in : MS_In3
+in : MS_In4
+out : MS_Out1
+out : MS_Out2 
+out : MS_Out3 
+[Motor2]
+[Sonar2]
+[Motor3]
+[compass2]
+[MovementController]
+
+#################ModelProject  70  #########################
+rockpaperscissors | actionMaker | 
+[top]
+components : actionMaker@ActionMaker 
+out : out 
+in : in 
+[actionMaker]
+
+rockpaperscissors | comparer | 
+[top]
+components : comparer@Comparer 
+out : out1
+out : out2
+out : out3
+in : in0
+in : in1
+in : in2
+[comparer]
+
+rockpaperscissors | player | 
+[top]
+components : requestReceiver@RequestReceiver
+components : actionMaker@ActionMaker
+in : in
+out : out
+[requestReceiver]
+[actionMaker]
+
+rockpaperscissors | requestReceiver | 
+[top]
+components : requestReceiver@requestReceiver 
+out : out 
+in : in 
+[requestReceiver]
+
+rockpaperscissors | rockPaperScissors | 
+[top]
+components : comparer@Comparer
+components : Player1
+components : Player2
+out : out
+in : in
+[comparer]
+[Player1]
+components : requestReceiver1@RequestReceiver
+components : actionMaker1@ActionMaker
+in : in
+out : out
+[requestReceiver1]
+[actionMaker1]
+[Player2]
+components : requestReceiver2@RequestReceiver
+components : actionMaker2@ActionMaker
+in : in
+out : out
+[requestReceiver2]
+[actionMaker2]
+
+#################ModelProject  71  #########################
+routingIP | red | 
+[Top]
+components : router1 router2 router3
+out : out1 out2 out3
+in : in1 in2 in3
+[router1]
+components : queue1@Queue cola11@cola_sal cola12@cola_sal cola13@cola_sal ruteo1@ruteo_ip
+out : sal1 sal2 sal3
+in : in
+[router2]
+components : queue2@Queue cola21@cola_sal cola22@cola_sal cola23@cola_sal ruteo2@ruteo_ip
+out : sal1 sal2 sal3
+in : in
+[router3]
+components : queue3@Queue cola31@cola_sal cola32@cola_sal cola33@cola_sal ruteo3@ruteo_ip
+out : sal1 sal2 sal3
+in : in
+[queue1]
+[queue2]
+[queue3]
+[cola11]
+[cola12]
+[cola13]
+[cola21]
+[cola22]
+[cola23]
+[cola31]
+[cola32]
+[cola33]
+
+#################ModelProject  72  #########################
+SecureAreaAccess | AlarmAdmin | 
+[top]
+components : adm@AlarmAdmin
+in : ArmReq_In DisarmReq_In AlarmPin_Ok
+out : Admin_Out Alarm_Status1 Alarm_Status2 Error Alarm_Req
+
+SecureAreaAccess | Authentication | 
+[top]
+components : auth@Authentication
+in : Pin_In Alarm_Req Alarm_Status2
+out : AlarmPin_Ok Error DoorPin_Ok
+
+SecureAreaAccess | Display | 
+[top]
+components : disp@Display
+in : PinPrompt_In AlarmStatus_In Error_In DoorOk_In 
+out : Msg_Out
+
+SecureAreaAccess | SecureAreaAccessSystem | 
+[top]
+components : ADMIN disp@Display
+in : Arm Disarm PIN
+out : Msg
+[ADMIN]
+components : adm@AlarmAdmin auth@Authentication
+in : Arm_In Disarm_In PIN_In
+out : Pin_Prompt AlarmStatus_Out Error_Out DoorOk_Out
+
+SecureAreaAccess | SystemAdmin | 
+[top]
+components : adm@AlarmAdmin auth@Authentication
+in : Arm_In Disarm_In PIN_In
+out : Pin_Prompt AlarmStatus_Out Error_Out DoorOk_Out
+
+#################ModelProject  73  #########################
+securityctl | pinreaderMA | 
+[top]
+components : pinreader@PinReader 
+[top]
+components : pinreader@PinReader
+in : in
+out : out
+[pinreader]
+
+securityctl | sub1MA | 
+[top]
+components : pinreader@PinReader queue@Queue cpu@CPU1
+in : in
+out : out
+[pinreader]
+[queue]
+[cpu]
+
+securityctl | sub2MA | 
+[top]
+components : cpu@CPU2 doorlatch@DoorLatch
+in : in
+out : out
+[cpu]
+[doorlatch]
+
+securityctl | systemMA | 
+[top]
+components : pinreader@PinReader queue@Queue cpu1@CPU1 cpu2@CPU2 doorlatch@DoorLatch
+in : in
+out : out
+[pinreader]
+[queue]
+[cpu1]
+[cpu2]
+[doorlatch]
+
+#################ModelProject  74  #########################
+soccer | ballPlayTest | 
+[top]
+components : bp@BallPlay
+in : c_start_period c_score c_end_game
+out : c_game_on c_game_score
+
+soccer | ModelTest | 
+[top]
+components : tk@Timekeeper bp@BallPlay
+in : c_start_game c_score
+out : c_start_period c_game_score c_game_on c_end_game
+
+soccer | Timertest | 
+[top]
+components : tk@Timekeeper
+in : c_start_game
+out : c_end_game c_start_period
+
+#################ModelProject  75  #########################
+solarwind | solar | 
+[top]
+components : genSustancias@NodeGenerator system
+[genSustancias]
+[system]
+in: in
+initialvalue : 0
+in : in
+[establecerViento]
+[Energy]
+[Energy_max]
+[Energy_min]
+[Conductivity]
+
+solarwind | solarwind | 
+[top]
+components : genSustancias@NodeGenerator system
+[genSustancias]
+[system]
+initialvalue : 0
+in : in
+[establecerViento]
+[Energy]
+[Energy_max]
+[Energy_min]
+[Conductivity]
+
+#################ModelProject  76  #########################
+SpikingNeuronTerminal | amp_1MA | 
+[top]
+components : amp_1@Amp_1
+in : in_1  
+out : out_1 
+[amp_1]
+
+SpikingNeuronTerminal | amp_blockMA | 
+[top]
+components : amp_1@Amp_1 amp_2@Amp_2
+in : in_1  in_2
+out : out_1 out_2
+[amp_1]
+[amp_2]
+
+SpikingNeuronTerminal | controllerMA | 
+[top]
+components : controller@Controller 
+in : m_in m_inCount 
+out : m_outFire m_outOff 
+[controller] 
+
+SpikingNeuronTerminal | NeuronMA | 
+[top]
+components : timer@Timer controller@Controller 
+in : neuron_on neuron_off
+out : neuron_out clk_control
+[timer]
+in : m_inTurnOn m_inTurnOff 
+out : out_clk out_count
+[controller]
+in : m_in m_inCount 
+out : m_outFire m_outOff 
+
+SpikingNeuronTerminal | SpikingNeuronTerminalMA | 
+[top]
+components : Transformer Neuron
+in : in_1 in_2
+out : terminal_output control_output
+[Transformer]
+components : amp_1@Amp_1 amp_2@Amp_2
+in : in_1  in_2
+out : out_1 out_2
+[amp_1]
+[amp_2]
+[Neuron]
+components : timer@Timer controller@Controller 
+in : neuron_on neuron_off
+out : neuron_out clk_control
+[timer]
+in : m_inTurnOn m_inTurnOff 
+out : out_clk out_count
+[controller]
+in : m_in m_inCount 
+out : m_outFire m_outOff 
+
+SpikingNeuronTerminal | TimerMA | 
+[top]
+components : timer@Timer
+in : m_inTurnOn m_inTurnOff 
+out : out_clk out_count
+[timer]
+
+#################ModelProject  77  #########################
+srsim_dg | LANcoupled_dg | 
+[Top]
+components : LAN
+out : LANOut
+out : packetsGenerated1 packetsGenerated2 packetsGenerated3
+out : packetsReceived1 packetsReceived2 packetsReceived3
+in : LANIn
+[LAN]
+components : workstation1 workstation2 workstation3 LANswitch_coupled  
+out : LANOut
+out : packetsGenerated1 packetsGenerated2 packetsGenerated3
+out : packetsReceived1 packetsReceived2 packetsReceived3
+in : LANIn
+[workstation1]
+components : source1@ggad sink1@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source1]
+[sink1]
+[workstation2]
+components : source2@ggad sink2@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source2]
+[sink2]
+[workstation3]
+components : source3@ggad sink3@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source3]
+[sink3]
+[LANswitch_coupled]
+components : queue1@Queue switch1@ggad queue2@Queue switch2@ggad queue3@Queue switch3@ggad queue4@Queue switch4@ggad 
+out : switchOut1 switchOut2 switchOut3 gateWay 
+in : switchIn1 switchIn2 switchIn3 switchIn4 
+[queue1]
+[switch1]
+[queue2]
+[switch2]
+[queue3]
+[switch3]
+[queue4]
+[switch4]
+
+srsim_dg | LANswitch_atomic_dg | 
+[Top]
+components : LANswitch@ggad 
+out : switchOut1 switchOut2 switchOut3 gateWay 
+in : switchIn 
+[LANswitch]
+
+srsim_dg | LANswitch_coupled_dg | 
+[Top]
+components : LANswitch_coupled 
+out : switchOut1 switchOut2 switchOut3 gateWay 
+in : switchIn1 switchIn2 switchIn3 switchIn4 
+[LANswitch_coupled]
+components : queue1@Queue queue2@Queue queue3@Queue queue4@Queue switch1@ggad switch2@ggad switch3@ggad switch4@ggad 
+out : switchOut1 switchOu2 switchOut3 gateWay 
+in : switchIn1 switchIn2 switchIn3 switchIn4 
+[queue1]
+[queue2]
+[queue3]
+[queue4]
+[switch1]
+[switch2]
+[switch3]
+[switch4]
+
+srsim_dg | LAN_WAN_coupled_dg | 
+[Top]
+components : LANWAN
+out : packetsGenerated1 packetsGenerated2 packetsGenerated3
+out : packetsGenerated4 packetsGenerated5 packetsGenerated6
+out : packetsGenerated7 packetsGenerated8 packetsGenerated9
+out : packetsReceived1 packetsReceived2 packetsReceived3
+out : packetsReceived4 packetsReceived5 packetsReceived6
+out : packetsReceived7 packetsReceived8 packetsReceived9
+out : packetsDropped1 packetsDropped2 packetsDropped3
+[LANWAN]
+components : WAN LAN1 LAN2 LAN3
+out : packetsGenerated1 packetsGenerated2 packetsGenerated3
+out : packetsGenerated4 packetsGenerated5 packetsGenerated6
+out : packetsGenerated7 packetsGenerated8 packetsGenerated9
+out : packetsReceived1 packetsReceived2 packetsReceived3
+out : packetsReceived4 packetsReceived5 packetsReceived6
+out : packetsReceived7 packetsReceived8 packetsReceived9
+out : packetsDropped1 packetsDropped2 packetsDropped3
+[WAN]
+components : WANrouter1 WANrouter2 WANrouter3
+out : WANOut1 WANOut2 WANOut3 packetsDropped1 packetsDropped2 packetsDropped3 
+in : WANIn1 WANIn2 WANIn3
+[WANrouter1]
+components : queue1@Queue queue2@Queue queue3@Queue switch1@ggad switch2@ggad switch3@ggad 
+out : routerOut1 routerOut2 routerOut3 packetsDropped 
+in : routerIn1 routerIn2 routerIn3 
+[queue1]
+[queue2]
+[queue3]
+[switch1]
+[switch2]
+[switch3]
+[WANrouter2]
+components : queue4@Queue queue5@Queue queue6@Queue switch4@ggad switch5@ggad switch6@ggad 
+out : routerOut1 routerOut2 routerOut3 packetsDropped 
+in : routerIn1 routerIn2 routerIn3 
+[queue4]
+[queue5]
+[queue6]
+[switch4]
+[switch5]
+[switch6]
+[WANrouter3]
+components : queue7@Queue queue8@Queue queue9@Queue switch7@ggad switch8@ggad switch9@ggad 
+out : routerOut1 routerOut2 routerOut3 packetsDropped 
+in : routerIn1 routerIn2 routerIn3 
+[queue7]
+[queue8]
+[queue9]
+[switch7]
+[switch8]
+[switch9]
+[LAN1]
+components : workstation1 workstation2 workstation3 LANswitch_coupled1  
+out : LANOut
+out : packetsGenerated1 packetsGenerated2 packetsGenerated3
+out : packetsReceived1 packetsReceived2 packetsReceived3
+in : LANIn
+[workstation1]
+components : source1@ggad sink1@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source1]
+[sink1]
+[workstation2]
+components : source2@ggad sink2@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source2]
+[sink2]
+[workstation3]
+components : source3@ggad sink3@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source3]
+[sink3]
+[LANswitch_coupled1]
+components : queue11@Queue switch11@ggad queue21@Queue switch21@ggad queue31@Queue switch31@ggad queue41@Queue switch41@ggad 
+out : switchOut1 switchOut2 switchOut3 gateWay 
+in : switchIn1 switchIn2 switchIn3 switchIn4 
+[queue11]
+[switch11]
+[queue21]
+[switch21]
+[queue31]
+[switch31]
+[queue41]
+[switch41]
+[LAN2]
+components : workstation4 workstation5 workstation6 LANswitch_coupled2  
+out : LANOut
+out : packetsGenerated1 packetsGenerated2 packetsGenerated3
+out : packetsReceived1 packetsReceived2 packetsReceived3
+in : LANIn
+[workstation4]
+components : source4@ggad sink4@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source4]
+[sink4]
+[workstation5]
+components : source5@ggad sink5@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source5]
+[sink5]
+[workstation6]
+components : source6@ggad sink6@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source6]
+[sink6]
+[LANswitch_coupled2]
+components : queue51@Queue switch51@ggad queue61@Queue switch61@ggad queue71@Queue switch71@ggad queue81@Queue switch81@ggad 
+out : switchOut1 switchOut2 switchOut3 gateWay 
+in : switchIn1 switchIn2 switchIn3 switchIn4 
+[queue51]
+[switch51]
+[queue61]
+[switch61]
+[queue71]
+[switch71]
+[queue81]
+[switch81]
+[LAN3]
+components : workstation7 workstation8 workstation9 LANswitch_coupled3  
+out : LANOut
+out : packetsGenerated1 packetsGenerated2 packetsGenerated3
+out : packetsReceived1 packetsReceived2 packetsReceived3
+in : LANIn
+[workstation7]
+components : source7@ggad sink7@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source7]
+[sink7]
+[workstation8]
+components : source8@ggad sink8@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source8]
+[sink8]
+[workstation9]
+components : source9@ggad sink9@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source9]
+[sink9]
+[LANswitch_coupled3]
+components : queue91@Queue switch91@ggad queue101@Queue switch101@ggad queue111@Queue switch111@ggad queue121@Queue switch121@ggad 
+out : switchOut1 switchOut2 switchOut3 gateWay 
+in : switchIn1 switchIn2 switchIn3 switchIn4 
+[queue91]
+[switch91]
+[queue101]
+[switch101]
+[queue111]
+[switch111]
+[queue121]
+[switch121]
+
+srsim_dg | sink_dg | 
+[Top]
+components : sink@ggad 
+out : packetsReceived 
+in : packetIn 
+[sink]
+
+srsim_dg | source_dg | 
+[Top]
+components : source@ggad 
+out : packetOut packetsGenerated 
+[source]
+
+srsim_dg | WANrouter_coupled_dg | 
+[Top]
+components : WANrouter 
+out : routerOut1 routerOut2 routerOut3 packetsDropped 
+in : routerIn1 routerIn2 routerIn3 
+[WANrouter]
+components : queue1@Queue queue2@Queue queue3@Queue switch1@ggad switch2@ggad switch3@ggad 
+out : routerOut1 routerOut2 routerOut3 packetsDropped 
+in : routerIn1 routerIn2 routerIn3 
+[queue1]
+[queue2]
+[queue3]
+[switch1]
+[switch2]
+[switch3]
+
+srsim_dg | WANswitch_atomic_dg | 
+[Top]
+components : WANswitch@ggad 
+out : switchOut1 switchOut2 switchOut3 packetsDropped 
+in : switchIn 
+[WANswitch]
+
+srsim_dg | WAN_coupled_dg | 
+[Top]
+components : WAN 
+out : WANOut1 WANOut2 WANOut3 packetsDropped1 packetsDropped2 packetsDropped3 
+in : WANIn1 WANIn2 WANIn3
+[WAN]
+components : WANrouter1 WANrouter2 WANrouter3
+out : WANOut1 WANOut2 WANOut3 packetsDropped1 packetsDropped2 packetsDropped3 
+in : WANIn1 WANIn2 WANIn3
+[WANrouter1]
+components : queue1@Queue queue2@Queue queue3@Queue switch1@ggad switch2@ggad switch3@ggad 
+out : routerOut1 routerOut2 routerOut3 packetsDropped 
+in : routerIn1 routerIn2 routerIn3 
+[queue1]
+[queue2]
+[queue3]
+[switch1]
+[switch2]
+[switch3]
+[WANrouter2]
+components : queue4@Queue queue5@Queue queue6@Queue switch4@ggad switch5@ggad switch6@ggad 
+out : routerOut1 routerOut2 routerOut3 packetsDropped 
+in : routerIn1 routerIn2 routerIn3 
+[queue4]
+[queue5]
+[queue6]
+[switch4]
+[switch5]
+[switch6]
+[WANrouter3]
+components : queue7@Queue queue8@Queue queue9@Queue switch7@ggad switch8@ggad switch9@ggad 
+out : routerOut1 routerOut2 routerOut3 packetsDropped 
+in : routerIn1 routerIn2 routerIn3 
+[queue7]
+[queue8]
+[queue9]
+[switch7]
+[switch8]
+[switch9]
+
+srsim_dg | workstation_dg | 
+[Top]
+components : workstation 
+out : packetOut packetsReceived packetsGenerated 
+in : packetIn 
+[workstation]
+components : source@ggad sink@ggad 
+out : packetOut packetsGenerated packetsReceived 
+in : packetIn 
+[source]
+[sink]
+
+#################ModelProject  78  #########################
+Surgery | surgery | 
+[top]
+components : inquiry
+components : laboratory
+components : diagnosis 
+components : operation
+out : out
+in : in
+[inquiry]
+components : queue1@MSQueue
+components : nurse@Server
+out : out
+in : in  
+[queue1]
+[nurse]
+[laboratory]
+components : queue2@MSQueue
+components : lab@Server
+out : out
+in : in  
+[queue2]
+[lab]
+[diagnosis]
+components : queue3@MSQueue
+components : doctor@Server
+out : out
+in : in  
+[queue3]
+[doctor]
+[operation]
+components : queue4@MSQueue
+components : surgeon@Server
+out : out
+in : in  
+[queue4]
+[surgeon]
+
+#################ModelProject  79  #########################
+switching | sinkMA | 
+[top]
+components : sink@Sink
+in : sinkIn
+out : packetsReceived
+[sink]
+
+switching | sourceMA | 
+[top]
+components : source@Source
+out : packetOut
+out: packetTotal
+[source]
+
+switching | switchMA | 
+[top]
+components : switch@Switch
+in : switchIn
+out : switchOut1
+out : switchOut2
+out : gateWay
+[switch]
+
+switching | switchNodeMA | 
+[top]
+components : queue@Queue
+components : switch@Switch
+in : In
+out : Out1
+out : Out2
+out : gateWay
+[queue]
+[switch]
+
+#################ModelProject  80  #########################
+Tank_Fire | Barrel | 
+[top]
+components : Barrel@Barrel 
+in : Sfin Ain Fin
+out : Ammu_out 
+
+Tank_Fire | Elec_Fire | 
+[top]
+components : Electric_Fire@Electric_Fire 
+in : in
+out : out 
+[Electric_Fire]
+
+Tank_Fire | Emergency | 
+[top]
+components : Emergency_Fire@Emergency_Fire 
+in : in
+out : out 
+
+Tank_Fire | Fire | 
+[top]
+components : Fire@Fire 
+in : Ecin Min Emin
+out : out 
+
+Tank_Fire | GUNNER | 
+[top]
+components : Electric_Fire@Electric_Fire  Manual_Fire@Manual_Fire Emergency_Fire@Emergency_Fire Fire@Fire
+in : Ecin Min Emin
+out : out 
+
+Tank_Fire | LOADER | 
+[top]
+components : Barrel@Barrel  Safety_Loader@Safety_Loader 
+in : Ain Sin Fin
+out : Ammu_out 
+
+Tank_Fire | Manu_Fire | 
+[top]
+components : Manual_Fire@Manual_Fire 
+in : in
+out : out 
+[Manual_Fire]
+
+Tank_Fire | Safety_Loder | 
+[top]
+components : Safety_Loader@Safety_Loader 
+in : Sin
+out : out 
+
+Tank_Fire | tank | 
+[top]
+components : LOADER GUNNER 
+in : Ammu_in Safety_in Elec_in Manu_in Emerg_in 
+out :  Amm_out
+[LOADER]
+components : Barrel@Barrel  Safety_Loader@Safety_Loader 
+in : Ain Sin Fin
+out : Ammu_out 
+[GUNNER]
+components : Electric_Fire@Electric_Fire  Manual_Fire@Manual_Fire Emergency_Fire@Emergency_Fire Fire@Fire
+in : Ecin Min Emin
+out : out 
+
+#################ModelProject  81  #########################
+techsupportfinancialdept | coverage_plan_manager | 
+[top]
+components : coverage_plan_manager@Coverage_Plan_Manager
+out : Plan_Ok
+out : Request_Validation
+out : Problem
+in : Call_In
+in : Validation_Result
+[coverage_plan_manager]
+
+techsupportfinancialdept | financial_manager | 
+[top]
+components : coverage_plan_manager@Coverage_Plan_Manager validation@Validation
+out : Plan_Ok 
+out : Problem
+in  : Call_In
+[coverage_plan_manager]
+[validation]
+
+techsupportfinancialdept | financial_queue | 
+[top]
+components : financial_queue@Financial_Q
+out : FQ_Out
+in : Call_In
+in : Release_Next
+[financial_queue]
+
+techsupportfinancialdept | financial_queue_control | 
+[top]
+components : financial_queue_control@Financial_Q_Control
+out : Control_Out
+in : Control_In
+[financial_queue_control]
+
+techsupportfinancialdept | technical_support_fd | 
+[top]
+components : financial_queue@Financial_Q
+components : financial_queue_control@Financial_Q_Control
+components : financial_manager
+out	: Done
+out : Problem
+in	: Call_In
+[financial_queue_control]
+[financial_queue]
+[financial_manager]
+components : coverage_plan_manager@Coverage_Plan_Manager validation@Validation
+out : Plan_Ok 
+out : Problem
+in  : Call_In
+[coverage_plan_manager]
+[validation]
+
+techsupportfinancialdept | validation | 
+[top]
+components : validation@Validation
+out : Result
+in  : Request_Validation
+[validation]
+
+#################ModelProject  82  #########################
+telephoneLQNb | phone | 
+[top]
+components : phone@Telephone
+in : in dial switch
+
+#################ModelProject  83  #########################
+temperature_detector | AType | 
+[top]
+components : A@AType 
+out : out 
+in : in1 in2 
+[A]
+
+temperature_detector | BType | 
+[top]
+components : B@BType 
+out : out 
+in : in 
+[B]
+
+temperature_detector | CType | 
+[top]
+components : C@CType 
+out : out 
+in : in1 in2 
+[C]
+
+temperature_detector | DType | 
+[top]
+components : D@DType 
+out : out 
+in : in 
+[D]
+
+temperature_detector | D_average | 
+[top]
+components : D@DType E@EType 
+out : out1 out2 
+in : in 
+[D]
+[E]
+
+temperature_detector | EType | 
+[top]
+components : E@EType 
+out : out 
+in : in1 in2 
+[E]
+
+temperature_detector | H_average | 
+[top]
+components : A@AType B@BType C@CType Time@TimeType 
+out : out1 out2 
+in : in1 in2 
+[A]
+[B]
+[C]
+[Time]
+
+temperature_detector | Temperature_detector | 
+[Top]
+components : H_average D_average 
+out : out1 out2 out3 out4 
+in : in1 in2 
+[H_average]
+components : A@AType B@BType C@CType Time@TimeType 
+out : out1 out2 
+in : in1 in2 
+[A]
+[B]
+[C]
+[Time]
+[D_average]
+components : D@DType E@EType 
+out : out1 out2 
+in : in 
+[D]
+[E]
+
+temperature_detector | Time | 
+[top]
+components : Time@TimeType 
+out : out 
+in : in 
+[Time]
+
+#################ModelProject  84  #########################
+testqueue | testQueue | 
+[top]
+components : adm@queue
+[adm]
+
+#################ModelProject  85  #########################
+tollstation | barrera | 
+[top]
+components : barrera@Barrera
+in : levantar bajar
+
+tollstation | cajero1 | 
+[top]
+components : cajero@Cajero
+in : detectoPase yaSalio monedas
+out : devolver pago multar
+[cajero]
+
+tollstation | carril1 | 
+[top]
+components : cajero@Cajero cola@Cola genPago@GenPago sensor@Sensor control@Control lector@Lector barrera@Barrera timer@Timer
+in : llegaAuto
+out : monedas log
+[cajero]
+[timer]
+[genPago]
+
+tollstation | cola | 
+[top]
+components : cola@Cola
+in : yaSalio llegaAuto
+out : saleAuto
+
+tollstation | control | 
+[top]
+components : control@Control
+in : pago multar timeout yaSalio yaEntro
+out : logInfo levantarBarrera
+
+tollstation | genautos | 
+[top]
+components : genAutos@GenAutos
+out : automovil
+[genAutos]
+
+tollstation | genpago | 
+[top]
+components : genPago@GenPago
+in : generar
+out : monedas pase
+[genPago]
+
+tollstation | lector | 
+[top]
+components : lector@Lector
+in : paso
+out : detecto
+
+tollstation | sensor | 
+[top]
+components : sensor@Sensor
+in : paso
+out : detecto
+
+tollstation | timer | 
+[top]
+components : timer@Timer
+out : timeout
+[timer]
+
+#################ModelProject  86  #########################
+trafficlight | 1gen | 
+[top]
+components : car_gen_N@Generator
+out : car_N
+[car_gen_N]
+
+trafficlight | alight | 
+[top]
+components : light_NS@Light
+in : opp_light_red walk_stop
+out : light_red light_green
+
+trafficlight | aqueue | 
+[top]
+components : queue@Queue
+in : enqueue empty_Q fill_Q
+out : remove add
+
+trafficlight | awalksignal | 
+[top]
+components : NS@Walk_But_Sen
+in : button_on sensor_on light_green
+out : walk_stop walk
+
+trafficlight | intersection | 
+[top]
+components : Gens
+components : Qs
+components : Lights
+components : button@Button
+components : sensor@Sensor
+[Qs]
+components : car_E_Q@Queue
+components : car_N_Q@Queue
+components : ped_EW_Q@Queue
+components : ped_NS_Q@Queue
+in : car_N
+in : car_E
+in : ped_NS
+in : ped_EW
+in : fill_Q_car_EW
+in : fill_Q_car_NS
+in : fill_Q_ped_EW
+in : fill_Q_ped_NS
+in : empty_Q_car_EW
+in : empty_Q_car_NS
+in : empty_Q_ped_EW
+in : empty_Q_ped_NS
+out : EW_car_Q
+out : EW_ped_Q
+[Gens]
+components : car_gen_N@Generator
+components : car_gen_E@Generator
+components : ped_gen_NS@Generator
+components : ped_get_EW@Generator
+out : car_N
+out : car_E
+out : ped_EW
+out : ped_NS
+[Lights]
+components : Traffic
+components : Walk
+in : sensor_set
+in : button_on
+out : light_green_NS
+out : light_red_NS
+out : light_green_EW
+out : light_red_EW
+out : walk_EW
+out : walk_NS
+out : walk_stop_EW
+out : walk_stop_NS
+[Traffic]
+components : light_NS@Light
+components : light_EW@Light
+in : walk_stop_NS
+in : walk_stop_EW
+out : light_green_NS
+out : light_green_EW
+out : light_red_NS
+out : light_red_EW
+[Walk]
+components : EW@Walk_No_But_Sen
+components : NS@Walk_But_Sen
+in : sensor_set
+in : button_on
+in : light_green_NS
+in : light_green_EW
+out : walk_EW
+out : walk_stop_EW
+out : walk_NS
+out : walk_stop_NS
+[car_gen_N]
+[car_gen_E]
+[ped_gen_NS]
+[ped_gen_EW]
+
+trafficlight | onebutton | 
+[top]
+in : ped_in_Q walk_stop
+out : button_on
+
+trafficlight | onesensor | 
+[top]
+in : car_in_Q light_red
+out : sensor_set
+
+#################ModelProject  87  #########################
+trafficlightsys | group_controller | 
+[top]
+components : groupAB@LightGroupController
+components : groupCD@LightGroupController
+out : light_ab light_cd
+[groupAB]
+[groupCD]
+
+trafficlightsys | intersection | 
+[top]
+components : intersection_queue@IntersectionQueue
+components : intersection_controller@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue]
+input : disable
+output : enable
+[intersection_controller]
+
+trafficlightsys | intersection_controller | 
+[top]
+components : gen@Generator queue@Queue server@IntersectionController
+out : value busy timeout
+[gen]
+initial : 1
+increment : 1
+[queue]
+[server]
+
+trafficlightsys | intersection_queue | 
+[top]
+components : intersection_queue@IntersectionQueue
+in : in done stop_in stop_out
+out : out next block
+[intersection_queue]
+input : enable
+output : enable
+
+trafficlightsys | lane | 
+[top]
+components : generator@Generator lane_queue@GenericQueue intersection
+in : stop
+out : car_out car_in
+[generator]
+initial : 1
+increment : 1
+[lane_queue]
+input : enable
+output : enable
+[intersection]
+components : intersection_queue@IntersectionQueue
+components : intersection_controller@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue]
+input : disable
+output : enable
+[intersection_controller]
+
+trafficlightsys | lane_queue_limited | 
+[top]
+components : lane_queue@GenericQueue
+in : in done stop_in stop_out
+out : out next block
+[lane_queue]
+input : enable
+output : enable
+
+trafficlightsys | lane_queue_unlimited | 
+[top]
+components : lane_queue@GenericQueue
+in : in done stop_in stop_out
+out : out next block
+[lane_queue]
+input : enable
+output : enable
+
+trafficlightsys | light_controller | 
+[top]
+components : light_controller@TrafficLightController
+in : in
+out : light signal
+[light_controller]
+
+trafficlightsys | top | 
+[top]
+components : light_group_controller_ab@LightGroupController
+components : light_group_controller_cd@LightGroupController
+components : traffic_light_a
+components : traffic_light_b
+components : traffic_light_c
+components : traffic_light_d
+out : light_a throughput_a curlen_a avelen_a
+out : light_b throughput_b curlen_b avelen_b
+out : light_c throughput_c curlen_c avelen_c
+out : light_d throughput_d curlen_d avelen_d
+[light_group_controller_ab]
+[light_group_controller_cd]
+[traffic_light_a]
+components : collector_a@TrafficCollector
+components : traffic_light_controller_a@TrafficLightController
+components : lane_a
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_a]
+[collector_a]
+[lane_a]
+components : generator_a@Generator lane_queue_a@GenericQueue intersection_a
+in : stop
+out : car_out car_in
+[generator_a]
+initial : 1
+increment : 1
+[lane_queue_a]
+input : enable
+output : enable
+[intersection_a]
+components : intersection_queue_a@IntersectionQueue
+components : intersection_controller_a@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_a]
+input : disable
+output : enable
+[intersection_controller_a]
+[traffic_light_b]
+components : collector_b@TrafficCollector
+components : traffic_light_controller_b@TrafficLightController
+components : lane_b
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_b]
+[collector_b]
+[lane_b]
+components : generator_b@Generator lane_queue_b@GenericQueue intersection_b
+in : stop
+out : car_out car_in
+[generator_b]
+initial : 1
+increment : 1
+[lane_queue_b]
+input : enable
+output : enable
+[intersection_b]
+components : intersection_queue_b@IntersectionQueue
+components : intersection_controller_b@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_b]
+input : disable
+output : enable
+[intersection_controller_b]
+[traffic_light_c]
+components : collector_c@TrafficCollector
+components : traffic_light_controller_c@TrafficLightController
+components : lane_c
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_c]
+[collector_c]
+[lane_c]
+components : generator_c@Generator lane_queue_c@GenericQueue intersection_c
+in : stop
+out : car_out car_in
+[generator_c]
+initial : 1
+increment : 1
+[lane_queue_c]
+input : enable
+output : enable
+[intersection_c]
+components : intersection_queue_c@IntersectionQueue
+components : intersection_controller_c@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_c]
+input : disable
+output : enable
+[intersection_controller_c]
+[traffic_light_d]
+components : collector_d@TrafficCollector
+components : traffic_light_controller_d@TrafficLightController
+components : lane_d
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_d]
+[collector_d]
+[lane_d]
+components : generator_d@Generator lane_queue_d@GenericQueue intersection_d
+in : stop
+out : car_out car_in
+[generator_d]
+initial : 1
+increment : 1
+[lane_queue_d]
+input : enable
+output : enable
+[intersection_d]
+components : intersection_queue_d@IntersectionQueue
+components : intersection_controller_d@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_d]
+input : disable
+output : enable
+[intersection_controller_d]
+
+trafficlightsys | traffic_collector | 
+[top]
+components : gen_in@Generator gen_out@Generator collector@TrafficCollector
+out : throughput curlength avelength
+[gen_in]
+initial : 1
+increment : 1
+[gen_out]
+initial : 1
+increment : 1
+[collector]
+
+trafficlightsys | traffic_light | 
+[top]
+components : collector@TrafficCollector
+components : traffic_light_controller@TrafficLightController
+components : lane
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller]
+[collector]
+[lane]
+components : generator@Generator lane_queue@GenericQueue intersection
+in : stop
+out : car_out car_in
+[generator]
+initial : 1
+increment : 1
+[lane_queue]
+input : enable
+output : enable
+[intersection]
+components : intersection_queue@IntersectionQueue
+components : intersection_controller@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue]
+input : disable
+output : enable
+[intersection_controller]
+
+#################ModelProject  88  #########################
+Traffic_Intersection_Connector | ConnectionGenerator | 
+[top]
+components : connection_generator@ConnectionGenerator
+out : out
+in : in
+in : reset
+[connection_generator]
+
+Traffic_Intersection_Connector | group_controller | 
+[top]
+components : groupAB@LightGroupController
+components : groupCD@LightGroupController
+out : light_ab light_cd
+[groupAB]
+[groupCD]
+
+Traffic_Intersection_Connector | intersection | 
+[top]
+components : intersection_queue@IntersectionQueue
+components : intersection_controller@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue]
+input : disable
+output : enable
+[intersection_controller]
+
+Traffic_Intersection_Connector | intersection_1 | 
+[intersection_1]
+components : light_group_controller_ab@LightGroupController
+components : light_group_controller_cd@LightGroupController
+components : traffic_light_a
+components : traffic_light_b
+components : traffic_light_c
+components : traffic_light_d
+out : light_a throughput_a curlen_a avelen_a
+out : light_b throughput_b curlen_b avelen_b
+out : light_c throughput_c curlen_c avelen_c
+out : light_d throughput_d curlen_d avelen_d
+[light_group_controller_ab]
+[light_group_controller_cd]
+[traffic_light_a]
+components : collector_a@TrafficCollector
+components : traffic_light_controller_a@TrafficLightController
+components : lane_a
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_a]
+[collector_a]
+[lane_a]
+components : generator_a@Generator lane_queue_a@GenericQueue intersection_a
+in : stop
+out : car_out car_in
+[generator_a]
+initial : 1
+increment : 1
+[lane_queue_a]
+input : enable
+output : enable
+[intersection_a]
+components : intersection_queue_a@IntersectionQueue
+components : intersection_controller_a@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_a]
+input : disable
+output : enable
+[intersection_controller_a]
+[traffic_light_b]
+components : collector_b@TrafficCollector
+components : traffic_light_controller_b@TrafficLightController
+components : lane_b
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_b]
+[collector_b]
+[lane_b]
+components : generator_b@Generator lane_queue_b@GenericQueue intersection_b
+in : stop
+out : car_out car_in
+[generator_b]
+initial : 1
+increment : 1
+[lane_queue_b]
+input : enable
+output : enable
+[intersection_b]
+components : intersection_queue_b@IntersectionQueue
+components : intersection_controller_b@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_b]
+input : disable
+output : enable
+[intersection_controller_b]
+[traffic_light_c]
+components : collector_c@TrafficCollector
+components : traffic_light_controller_c@TrafficLightController
+components : lane_c
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_c]
+[collector_c]
+[lane_c]
+components : generator_c@Generator lane_queue_c@GenericQueue intersection_c
+in : stop
+out : car_out car_in
+[generator_c]
+initial : 1
+increment : 1
+[lane_queue_c]
+input : enable
+output : enable
+[intersection_c]
+components : intersection_queue_c@IntersectionQueue
+components : intersection_controller_c@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_c]
+input : disable
+output : enable
+[intersection_controller_c]
+[traffic_light_d]
+components : collector_d@TrafficCollector
+components : traffic_light_controller_d@TrafficLightController
+components : lane_d
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_d]
+[collector_d]
+[lane_d]
+components : generator_d@Generator lane_queue_d@GenericQueue intersection_d
+in : stop
+out : car_out car_in
+[generator_d]
+initial : 1
+increment : 1
+[lane_queue_d]
+input : enable
+output : enable
+[intersection_d]
+components : intersection_queue_d@IntersectionQueue
+components : intersection_controller_d@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_d]
+input : disable
+output : enable
+[intersection_controller_d]
+
+Traffic_Intersection_Connector | intersection_controller | 
+[top]
+components : gen@Generator queue@Queue server@IntersectionController
+out : value busy timeout
+[gen]
+initial : 1
+increment : 1
+[queue]
+[server]
+
+Traffic_Intersection_Connector | intersection_queue | 
+[top]
+components : intersection_queue@IntersectionQueue
+in : in done stop_in stop_out
+out : out next block
+[intersection_queue]
+input : enable
+output : enable
+
+Traffic_Intersection_Connector | lane | 
+[top]
+components : generator@Generator lane_queue@GenericQueue intersection
+in : stop
+out : car_out car_in
+[generator]
+initial : 1
+increment : 1
+[lane_queue]
+input : enable
+output : enable
+[intersection]
+components : intersection_queue@IntersectionQueue
+components : intersection_controller@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue]
+input : disable
+output : enable
+[intersection_controller]
+
+Traffic_Intersection_Connector | lane_queue_limited | 
+[top]
+components : lane_queue@GenericQueue
+in : in done stop_in stop_out
+out : out next block
+[lane_queue]
+input : enable
+output : enable
+
+Traffic_Intersection_Connector | lane_queue_unlimited | 
+[top]
+components : lane_queue@GenericQueue
+in : in done stop_in stop_out
+out : out next block
+[lane_queue]
+input : enable
+output : enable
+
+Traffic_Intersection_Connector | light_controller | 
+[top]
+components : light_controller@TrafficLightController
+in : in
+out : light signal
+[light_controller]
+
+Traffic_Intersection_Connector | Queue | 
+[top]
+components : queue@Queue
+in : in done
+out : out
+[queue]
+input : enable
+output : enable
+Traffic_Intersection_Connector | top | 
+[top]
+components : intersection_1
+components : intersection_2
+components : intersection_connector
+out : time_output  
+[intersection_connector]
+components : connection_generator@ConnectionGenerator
+components : connector_queue@Queue
+components : connector_controller@IntersectionController
+in : carIn
+out : carOut 
+[connection_generator]
+[connector_queue]
+input : enable
+output : enable
+[connector_controller]
+[intersection_1]
+components : light_group_controller_ab@LightGroupController
+components : light_group_controller_cd@LightGroupController
+components : traffic_light_a
+components : traffic_light_b
+components : traffic_light_c
+components : traffic_light_d
+out : light_a throughput_a curlen_a avelen_a
+out : light_b throughput_b curlen_b avelen_b
+out : light_c throughput_c curlen_c avelen_c
+out : light_d throughput_d curlen_d avelen_d
+out : carOut
+[light_group_controller_ab]
+[light_group_controller_cd]
+[traffic_light_a]
+components : collector_a@TrafficCollector
+components : traffic_light_controller_a@TrafficLightController
+components : lane_a
+in : signal
+out :  light throughput curlength avelength
+out : carOut
+[traffic_light_controller_a]
+[collector_a]
+[lane_a]
+components : generator_a@Generator lane_queue_a@GenericQueue intersection_a
+in : stop
+out : car_out car_in
+[generator_a]
+initial : 1
+increment : 1
+[lane_queue_a]
+input : enable
+output : enable
+[intersection_a]
+components : intersection_queue_a@IntersectionQueue
+components : intersection_controller_a@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_a]
+input : disable
+output : enable
+[intersection_controller_a]
+[traffic_light_b]
+components : collector_b@TrafficCollector
+components : traffic_light_controller_b@TrafficLightController
+components : lane_b
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_b]
+[collector_b]
+[lane_b]
+components : generator_b@Generator lane_queue_b@GenericQueue intersection_b
+in : stop
+out : car_out car_in
+[generator_b]
+initial : 1
+increment : 1
+[lane_queue_b]
+input : enable
+output : enable
+[intersection_b]
+components : intersection_queue_b@IntersectionQueue
+components : intersection_controller_b@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_b]
+input : disable
+output : enable
+[intersection_controller_b]
+[traffic_light_c]
+components : collector_c@TrafficCollector
+components : traffic_light_controller_c@TrafficLightController
+components : lane_c
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_c]
+[collector_c]
+[lane_c]
+components : generator_c@Generator lane_queue_c@GenericQueue intersection_c
+in : stop
+out : car_out car_in
+[generator_c]
+initial : 1
+increment : 1
+[lane_queue_c]
+input : enable
+output : enable
+[intersection_c]
+components : intersection_queue_c@IntersectionQueue
+components : intersection_controller_c@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_c]
+input : disable
+output : enable
+[intersection_controller_c]
+[traffic_light_d]
+components : collector_d@TrafficCollector
+components : traffic_light_controller_d@TrafficLightController
+components : lane_d
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_d]
+[collector_d]
+[lane_d]
+components : generator_d@Generator lane_queue_d@GenericQueue intersection_d
+in : stop
+out : car_out car_in
+[generator_d]
+initial : 1
+increment : 1
+[lane_queue_d]
+input : enable
+output : enable
+[intersection_d]
+components : intersection_queue_d@IntersectionQueue
+components : intersection_controller_d@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_d]
+input : disable
+output : enable
+[intersection_controller_d]
+[intersection_2]
+components : light_group_controller_ab@LightGroupController
+components : light_group_controller_cd@LightGroupController
+components : traffic_light_a
+components : traffic_light_b
+components : traffic_light_c
+components : traffic_light_d
+out : light_a throughput_a curlen_a avelen_a
+out : light_b throughput_b curlen_b avelen_b
+out : light_c throughput_c curlen_c avelen_c
+out : light_d throughput_d curlen_d avelen_d
+in : carIn
+[light_group_controller_ab]
+[light_group_controller_cd]
+[traffic_light_a]
+components : collector_a@TrafficCollector
+components : traffic_light_controller_a@TrafficLightController
+components : lane_a
+in : signal
+out :  light throughput curlength avelength
+in : carIn
+[traffic_light_controller_a]
+[collector_a]
+[lane_a]
+components : lane_queue_a@GenericQueue intersection_a  
+in : stop
+out : car_out car_in
+in : carIn
+[lane_queue_a]
+input : enable
+output : enable
+[intersection_a]
+components : intersection_queue_a@IntersectionQueue
+components : intersection_controller_a@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_a]
+input : disable
+output : enable
+[intersection_controller_a]
+[traffic_light_b]
+components : collector_b@TrafficCollector
+components : traffic_light_controller_b@TrafficLightController
+components : lane_b
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_b]
+[collector_b]
+[lane_b]
+components : generator_b@Generator lane_queue_b@GenericQueue intersection_b
+in : stop
+out : car_out car_in
+[generator_b]
+initial : 1
+increment : 1
+[lane_queue_b]
+input : enable
+output : enable
+[intersection_b]
+components : intersection_queue_b@IntersectionQueue
+components : intersection_controller_b@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_b]
+input : disable
+output : enable
+[intersection_controller_b]
+[traffic_light_c]
+components : collector_c@TrafficCollector
+components : traffic_light_controller_c@TrafficLightController
+components : lane_c
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_c]
+[collector_c]
+[lane_c]
+components : generator_c@Generator lane_queue_c@GenericQueue intersection_c
+in : stop
+out : car_out car_in
+[generator_c]
+initial : 1
+increment : 1
+[lane_queue_c]
+input : enable
+output : enable
+[intersection_c]
+components : intersection_queue_c@IntersectionQueue
+components : intersection_controller_c@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_c]
+input : disable
+output : enable
+[intersection_controller_c]
+[traffic_light_d]
+components : collector_d@TrafficCollector
+components : traffic_light_controller_d@TrafficLightController
+components : lane_d
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_d]
+[collector_d]
+[lane_d]
+components : generator_d@Generator lane_queue_d@GenericQueue intersection_d
+in : stop
+out : car_out car_in
+[generator_d]
+initial : 1
+increment : 1
+[lane_queue_d]
+input : enable
+output : enable
+[intersection_d]
+components : intersection_queue_d@IntersectionQueue
+components : intersection_controller_d@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_d]
+input : disable
+output : enable
+[intersection_controller_d]
+
+Traffic_Intersection_Connector | TopIntersectionandGeneratorandQueue | 
+[top]
+components : intersection_1
+components : connection_generator@ConnectionGenerator
+components : connector_queue@Queue
+in : done 
+in : stop
+out : out
+[intersection_1]
+components : light_group_controller_ab@LightGroupController
+components : light_group_controller_cd@LightGroupController
+components : traffic_light_a
+components : traffic_light_b
+components : traffic_light_c
+components : traffic_light_d
+out : light_a throughput_a curlen_a avelen_a
+out : light_b throughput_b curlen_b avelen_b
+out : light_c throughput_c curlen_c avelen_c
+out : light_d throughput_d curlen_d avelen_d
+out : carOut
+[light_group_controller_ab]
+[light_group_controller_cd]
+[traffic_light_a]
+components : collector_a@TrafficCollector
+components : traffic_light_controller_a@TrafficLightController
+components : lane_a
+in : signal
+out :  light throughput curlength avelength
+out : carOut
+[traffic_light_controller_a]
+[collector_a]
+[lane_a]
+components : generator_a@Generator lane_queue_a@GenericQueue intersection_a
+in : stop
+out : car_out car_in
+[generator_a]
+initial : 1
+increment : 1
+[lane_queue_a]
+input : enable
+output : enable
+[intersection_a]
+components : intersection_queue_a@IntersectionQueue
+components : intersection_controller_a@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_a]
+input : disable
+output : enable
+[intersection_controller_a]
+[traffic_light_b]
+components : collector_b@TrafficCollector
+components : traffic_light_controller_b@TrafficLightController
+components : lane_b
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_b]
+[collector_b]
+[lane_b]
+components : generator_b@Generator lane_queue_b@GenericQueue intersection_b
+in : stop
+out : car_out car_in
+[generator_b]
+initial : 1
+increment : 1
+[lane_queue_b]
+input : enable
+output : enable
+[intersection_b]
+components : intersection_queue_b@IntersectionQueue
+components : intersection_controller_b@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_b]
+input : disable
+output : enable
+[intersection_controller_b]
+[traffic_light_c]
+components : collector_c@TrafficCollector
+components : traffic_light_controller_c@TrafficLightController
+components : lane_c
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_c]
+[collector_c]
+[lane_c]
+components : generator_c@Generator lane_queue_c@GenericQueue intersection_c
+in : stop
+out : car_out car_in
+[generator_c]
+initial : 1
+increment : 1
+[lane_queue_c]
+input : enable
+output : enable
+[intersection_c]
+components : intersection_queue_c@IntersectionQueue
+components : intersection_controller_c@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_c]
+input : disable
+output : enable
+[intersection_controller_c]
+[traffic_light_d]
+components : collector_d@TrafficCollector
+components : traffic_light_controller_d@TrafficLightController
+components : lane_d
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_d]
+[collector_d]
+[lane_d]
+components : generator_d@Generator lane_queue_d@GenericQueue intersection_d
+in : stop
+out : car_out car_in
+[generator_d]
+initial : 1
+increment : 1
+[lane_queue_d]
+input : enable
+output : enable
+[intersection_d]
+components : intersection_queue_d@IntersectionQueue
+components : intersection_controller_d@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_d]
+input : disable
+output : enable
+[intersection_controller_d]
+[connection_generator]
+[connector_queue]
+input : enable
+output : enable
+Traffic_Intersection_Connector | TopOfIntersection1AndConnectionGenerator | 
+[top]
+components : intersection_1
+components : connection_generator@ConnectionGenerator
+out : out goosfand
+[intersection_1]
+components : light_group_controller_ab@LightGroupController
+components : light_group_controller_cd@LightGroupController
+components : traffic_light_a
+components : traffic_light_b
+components : traffic_light_c
+components : traffic_light_d
+out : light_a throughput_a curlen_a avelen_a
+out : light_b throughput_b curlen_b avelen_b
+out : light_c throughput_c curlen_c avelen_c
+out : light_d throughput_d curlen_d avelen_d
+out : carOut kharchang
+[light_group_controller_ab]
+[light_group_controller_cd]
+[traffic_light_a]
+components : collector_a@TrafficCollector
+components : traffic_light_controller_a@TrafficLightController
+components : lane_a
+in : signal
+out :  light throughput curlength avelength kharchang
+out : carOut
+[traffic_light_controller_a]
+[collector_a]
+[lane_a]
+components : generator_a@Generator lane_queue_a@GenericQueue intersection_a
+in : stop
+out : car_out car_in
+[generator_a]
+initial : 1
+increment : 1
+[lane_queue_a]
+input : enable
+output : enable
+[intersection_a]
+components : intersection_queue_a@IntersectionQueue
+components : intersection_controller_a@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_a]
+input : disable
+output : enable
+[intersection_controller_a]
+[traffic_light_b]
+components : collector_b@TrafficCollector
+components : traffic_light_controller_b@TrafficLightController
+components : lane_b
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_b]
+[collector_b]
+[lane_b]
+components : generator_b@Generator lane_queue_b@GenericQueue intersection_b
+in : stop
+out : car_out car_in
+[generator_b]
+initial : 1
+increment : 1
+[lane_queue_b]
+input : enable
+output : enable
+[intersection_b]
+components : intersection_queue_b@IntersectionQueue
+components : intersection_controller_b@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_b]
+input : disable
+output : enable
+[intersection_controller_b]
+[traffic_light_c]
+components : collector_c@TrafficCollector
+components : traffic_light_controller_c@TrafficLightController
+components : lane_c
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_c]
+[collector_c]
+[lane_c]
+components : generator_c@Generator lane_queue_c@GenericQueue intersection_c
+in : stop
+out : car_out car_in
+[generator_c]
+initial : 1
+increment : 1
+[lane_queue_c]
+input : enable
+output : enable
+[intersection_c]
+components : intersection_queue_c@IntersectionQueue
+components : intersection_controller_c@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_c]
+input : disable
+output : enable
+[intersection_controller_c]
+[traffic_light_d]
+components : collector_d@TrafficCollector
+components : traffic_light_controller_d@TrafficLightController
+components : lane_d
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_d]
+[collector_d]
+[lane_d]
+components : generator_d@Generator lane_queue_d@GenericQueue intersection_d
+in : stop
+out : car_out car_in
+[generator_d]
+initial : 1
+increment : 1
+[lane_queue_d]
+input : enable
+output : enable
+[intersection_d]
+components : intersection_queue_d@IntersectionQueue
+components : intersection_controller_d@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_d]
+input : disable
+output : enable
+[intersection_controller_d]
+[connection_generator]
+
+Traffic_Intersection_Connector | topOriginal | 
+[top]
+components : light_group_controller_ab@LightGroupController
+components : light_group_controller_cd@LightGroupController
+components : traffic_light_a
+components : traffic_light_b
+components : traffic_light_c
+components : traffic_light_d
+out : light_a throughput_a curlen_a avelen_a
+out : light_b throughput_b curlen_b avelen_b
+out : light_c throughput_c curlen_c avelen_c
+out : light_d throughput_d curlen_d avelen_d
+out : carOut kharchang
+[light_group_controller_ab]
+[light_group_controller_cd]
+[traffic_light_a]
+components : collector_a@TrafficCollector
+components : traffic_light_controller_a@TrafficLightController
+components : lane_a
+in : signal
+out :  light throughput curlength avelength kharchang
+out : carOut
+[traffic_light_controller_a]
+[collector_a]
+[lane_a]
+components : generator_a@Generator lane_queue_a@GenericQueue intersection_a
+in : stop
+out : car_out car_in
+[generator_a]
+initial : 1
+increment : 1
+[lane_queue_a]
+input : enable
+output : enable
+[intersection_a]
+components : intersection_queue_a@IntersectionQueue
+components : intersection_controller_a@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_a]
+input : disable
+output : enable
+[intersection_controller_a]
+[traffic_light_b]
+components : collector_b@TrafficCollector
+components : traffic_light_controller_b@TrafficLightController
+components : lane_b
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_b]
+[collector_b]
+[lane_b]
+components : generator_b@Generator lane_queue_b@GenericQueue intersection_b
+in : stop
+out : car_out car_in
+[generator_b]
+initial : 1
+increment : 1
+[lane_queue_b]
+input : enable
+output : enable
+[intersection_b]
+components : intersection_queue_b@IntersectionQueue
+components : intersection_controller_b@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_b]
+input : disable
+output : enable
+[intersection_controller_b]
+[traffic_light_c]
+components : collector_c@TrafficCollector
+components : traffic_light_controller_c@TrafficLightController
+components : lane_c
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_c]
+[collector_c]
+[lane_c]
+components : generator_c@Generator lane_queue_c@GenericQueue intersection_c
+in : stop
+out : car_out car_in
+[generator_c]
+initial : 1
+increment : 1
+[lane_queue_c]
+input : enable
+output : enable
+[intersection_c]
+components : intersection_queue_c@IntersectionQueue
+components : intersection_controller_c@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_c]
+input : disable
+output : enable
+[intersection_controller_c]
+[traffic_light_d]
+components : collector_d@TrafficCollector
+components : traffic_light_controller_d@TrafficLightController
+components : lane_d
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller_d]
+[collector_d]
+[lane_d]
+components : generator_d@Generator lane_queue_d@GenericQueue intersection_d
+in : stop
+out : car_out car_in
+[generator_d]
+initial : 1
+increment : 1
+[lane_queue_d]
+input : enable
+output : enable
+[intersection_d]
+components : intersection_queue_d@IntersectionQueue
+components : intersection_controller_d@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue_d]
+input : disable
+output : enable
+[intersection_controller_d]
+
+Traffic_Intersection_Connector | traffic_collector | 
+[top]
+components : gen_in@Generator gen_out@Generator collector@TrafficCollector
+out : throughput curlength avelength
+[gen_in]
+initial : 1
+increment : 1
+[gen_out]
+initial : 1
+increment : 1
+[collector]
+
+Traffic_Intersection_Connector | traffic_light | 
+[top]
+components : collector@TrafficCollector
+components : traffic_light_controller@TrafficLightController
+components : lane
+in : signal
+out :  light throughput curlength avelength
+[traffic_light_controller]
+[collector]
+[lane]
+components : generator@Generator lane_queue@GenericQueue intersection
+in : stop
+out : car_out car_in
+[generator]
+initial : 1
+increment : 1
+[lane_queue]
+input : enable
+output : enable
+[intersection]
+components : intersection_queue@IntersectionQueue
+components : intersection_controller@IntersectionController
+in : stop in
+out : next block out
+[intersection_queue]
+input : disable
+output : enable
+[intersection_controller]
+
+#################ModelProject  89  #########################
+transport | gen | 
+[top]
+components : gen@Gen
+out : go
+[gen]
+
+transport | load | 
+[top]
+components : loadque@Loadqueue loadser@Loadserver 
+out : exitload
+in : arriveload
+[loadque]
+[loadser]
+
+transport | Loadqueue | 
+[top]
+components : loadque@Loadqueue
+out : readygoload
+in:  arriveload loaddone
+[loadque]
+
+transport | loadserver | 
+[top]
+components : loadser@Loadserver
+out : exitload
+out : readyaccept
+in: enterload
+[loadser]
+
+transport | transport | 
+[top]
+components : gen@Gen load unload
+out : exitunload
+[load]
+components : loadque@Loadqueue loadser@Loadserver 
+out : exitload
+in: arriveload
+[unload]
+components : unloadque@Unloadqueue unloadser@Unloadserver 
+out : exitunload
+in: arriveunload
+[gen]
+[loadser]
+[loadque]
+[unloadser]
+[unloadque]
+
+transport | transportadv | 
+[top]
+components : gen@Gen load unload
+out : exitunload
+[load]
+components : loadque@Loadqueue loadser@Loadserver 
+out : exitload
+in: arriveload
+[unload]
+components : unloadque@Unloadqueue unloadser@Unloadserver 
+out : exitunload
+in: arriveunload
+[gen]
+[loadser]
+[loadque]
+[unloadser]
+[unloadque]
+
+transport | transportgen | 
+[top]
+components : gen@Gen load unload
+out : exitunload
+[load]
+components : loadque@Loadqueue loadser@Loadserver 
+out : exitload
+in: arriveload
+[unload]
+components : unloadque@Unloadqueue unloadser@Unloadserver 
+out : exitunload
+in: arriveunload
+[gen]
+[loadser]
+[loadque]
+[unloadser]
+[unloadque]
+
+transport | unload | 
+[top]
+components : unloadque@Unloadqueue unloadser@Unloadserver 
+in :   arriveunload
+out : exitunload
+[unloadque]
+[unloadser]
+
+transport | unloadqueue | 
+[top]
+components : unloadque@Unloadqueue
+out : readygounload
+in: arriveunload unloaddone
+[unloadque]
+
+transport | unloadserver | 
+[top]
+components : unloadser@Unloadserver
+out : exitunload readyreceive
+in: enterunload
+[unloadser]
+
+#################ModelProject  90  #########################
+unmannedgroundv | HeadingSensorMA | 
+[top]
+components : hs1@HeadingSensor
+out : out
+in : in
+[hs1]
+
+unmannedgroundv | IntruderSensorMA | 
+[top]
+components : is1@IntruderSensor
+out : out
+in : in
+[is1]
+
+unmannedgroundv | MainComputerMA | 
+[top]
+components : mc1@MainComputer
+in : heading inputHeading intruder
+out : status turningPort turnLeft turnRight
+[mc1]
+
+unmannedgroundv | ugvMA | 
+[top]
+components : mc1@MainComputer
+components : is1@IntruderSensor
+components : hs1@HeadingSensor
+components : WheelAssembly
+in :  inputHeading intruder 
+out : status leftWheel rightWheel
+[mc1]
+[is1]
+[hs1]
+[WheelAssembly]
+components : ws1@WheelSet
+components : ws2@WheelSet
+in : turnLeft turnRight
+out : leftWheel rightWheel
+[ws1]
+[ws2]
+
+unmannedgroundv | WheelAssemblyMA | 
+[top]
+components : ws1@WheelSet
+components : ws2@WheelSet
+in : turnLeft turnRight
+out : leftWheel rightWheel
+[ws1]
+[ws2]
+
+unmannedgroundv | WheelSetMA | 
+[top]
+components : ws1@WheelSet
+out : out
+in : in
+[ws1]
+
+#################ModelProject  91  #########################
+Vending | couple | 
+[top]
+components : coin@CoinCollector
+components : item@ItemSelector
+components : changemaker@ChangeMaker
+components : balance@BalanceDisplay
+components : ServiceController
+in : coin_in item_in request_in service_in
+out : change_out out item_out
+[ServiceController]
+components : VendingController
+components : itemProc@ItemProcessor
+components : service@ServicePanel
+in : inc ini inm ins
+out : outm outb outp
+[VendingController]
+components : message@MessageQueue
+components : central@CentralControl
+in :  inc ini inm ins
+out : outm2 outb outp
+[coin]
+[item]
+[changemaker]
+[balance]
+[itemProc]
+[service]
+[message]
+[central]
+[ServiceController]
+[VendingController]
+
+#################ModelProject  92  #########################
+WirelessModemSimulator | DataTransmitter | 
+[top]
+components : datatransmitter@DataTransmitter 
+out : out3 
+out : out4  
+in : in3 in4
+[datatransmitter]
+
+WirelessModemSimulator | PINChecker | 
+[top]
+components : pinchecker@PINChecker 
+out : out2 
+in : in2
+[pinchecker]
+
+WirelessModemSimulator | UserLaptop | 
+[top]
+components : userlaptop@UserLaptop 
+out : search_network 
+out : send_PIN 
+out : data_out
+out : internet_data 
+in : connect availability connection data_in
+[userlaptop]
+
+WirelessModemSimulator | WirelessManager | 
+[top]
+components : wirelessmanager@WirelessManager  
+out : out1  
+in : in1 
+[wirelessmanager] 
+
+WirelessModemSimulator | WirelessModem | 
+[top]
+components : wirelessmanager@WirelessManager
+components : pinchecker@PINChecker
+components : datatransmitter@DataTransmitter
+in : in1 in2 in3 in4
+out : out1 out2 out3 out4
+[wirelessmanager]
+[pinchecker]
+[datatransmitter]
+
+WirelessModemSimulator | WirelessModemSimulator | 
+[top]
+components : userlaptop@UserLaptop 
+components : WirelessModem
+out : internet_data 
+out : out4 
+in : in4 
+in : connect 
+[userlaptop]
+[WirelessModem]
+components : wirelessmanager@WirelessManager
+components : pinchecker@PINChecker
+components : datatransmitter@DataTransmitter
+in : in1 in2 in3 in4
+out : out1 out2 out3 out4
+[wirelessmanager]
+[pinchecker]
+[datatransmitter]
+

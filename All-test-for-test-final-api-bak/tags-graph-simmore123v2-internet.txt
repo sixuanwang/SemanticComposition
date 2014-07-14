@@ -1,0 +1,83 @@
+system: { info:5,  information:4,  domain:6,  name:5,  service:5,  zone:4, }
+Web: { week:4,  van:5,  language:4,  service:3,  country:4,  hypertext:4,  site:5,  day:4,  range:4,  provider:4,  toe:5,  type:8,  markup:4,  op:4, }
+domain: { week:21,  info:5,  entrance:16,  service:6,  hour:8,  point:3,  Internet:4,  country:8,  goal:3,  counter:41,  system:6,  month:18,  information:3,  key:4,  provider:3,  zone:4,  day:23,  name:8, }
+code: { name:3,  simular:6,  image:11,  URL:5,  session:8,  template:3,  document:3,  method:15, }
+hour: { week:23,  domain:8,  goal:3,  country:5,  counter:13,  entrance:20,  stat:9,  month:10,  provider:7,  day:22, }
+point: { week:16,  key:5,  stat:13,  goal:14,  counter:24,  entrance:12,  month:11,  blog:3,  user:6,  domain:3,  provider:4,  property:4,  day:19, }
+photo: { status:4,  name:3,  forum:6,  blog:4,  e-mail:4,  tag:7,  user:10,  message:5,  property:4,  folder:5,  friend:5, }
+hypertext: { Web:4,  van:7,  language:6,  markup:6,  site:6,  range:6,  toe:7,  type:12,  op:6, }
+add-on: { network:3,  service:9,  advice:6,  contract:9,  connection:4,  master:9,  belt:9, }
+number: { information:3,  transaction:16,  zone:6,  service:17,  exchange:13,  detail:7,  contract:20,  phone:13,  connection:11,  task:4,  provider:5,  date:4,  range:10,  line:14,  provision:7,  id:8,  block:4,  network:4, }
+month: { week:48,  stat:20,  goal:10,  hour:10,  point:11,  country:11,  counter:51,  entrance:30,  value:13,  domain:18,  provider:17,  property:13,  day:47, }
+date: { transaction:15,  service:4,  number:4,  e-mail:3,  range:3,  event:4, }
+session: { status:5,  information:5,  code:8,  service:4,  format:3,  URL:4,  doc:12,  image:7,  request:7,  e-mail:3,  version:4,  template:6,  document:7,  method:21,  simular:6, }
+value: { week:13,  stat:11,  counter:33,  entrance:10,  month:13,  key:5,  provider:4,  property:16,  day:20, }
+file: { status:3,  request:9,  service:3,  space:8, }
+Internet: { information:3,  domain:4,  transaction:5,  name:4,  service:7, }
+request: { image:4,  session:7,  file:9,  id:3,  belt:3,  information:3,  service:5,  space:12,  detail:4,  e-mail:5,  master:3,  document:7,  method:10,  friend:3,  status:15,  URL:3,  user:3,  report:7,  loss:4,  zone:3,  doc:13,  dodo:4,  contract:8,  connection:3,  tag:3,  block:5, }
+message: { status:3,  name:7,  forum:6,  photo:5,  blog:8,  e-mail:13,  tag:11,  user:15,  folder:8,  property:7,  friend:10, }
+event: { task:10,  format:10,  club:10,  advice:7,  dodo:6,  contract:6,  telco:10,  date:4,  provision:10, }
+belt: { loss:4,  service:6,  zone:3,  dodo:4,  request:3,  detail:4,  contract:13,  connection:7,  master:5,  add-on:9,  report:4,  id:3,  block:5, }
+category: { blog:5,  property:3,  tag:3,  user:16,  forum:4, }
+information: { status:3,  info:3,  domain:3,  name:3,  service:4,  doc:3,  advice:15,  provider:9,  request:3,  number:3,  contract:13,  id:3,  phone:3,  connection:3,  session:5,  Internet:3,  line:9,  method:4,  system:4, }
+language: { Web:4,  van:7,  hypertext:6,  site:6,  range:6,  op:6,  type:12,  markup:7,  toe:7, }
+management: { transaction:5,  service:6, }
+van: { Web:5,  language:7,  markup:7,  site:7,  range:6,  op:7,  type:12,  hypertext:7,  toe:7, }
+network: { number:4,  service:7,  exchange:3,  range:3,  contract:4,  detail:3,  phone:5,  connection:12,  add-on:3, }
+zone: { info:4,  domain:4,  transaction:7,  name:4,  service:9,  request:3,  number:6,  contract:9,  system:4,  connection:3,  master:3,  template:4,  line:5,  id:3,  block:6,  belt:3, }
+space: { status:13,  request:12,  service:8,  file:8, }
+simular: { code:6,  URL:4,  doc:9,  image:5,  session:6,  document:3,  method:13, }
+image: { info:4,  code:11,  resource:4,  name:5,  URL:9,  request:4,  simular:5,  session:7,  method:11, }
+exchange: { transaction:11,  network:3,  service:10,  detail:6,  contract:5,  number:13,  phone:11,  connection:7,  range:6,  line:3,  provision:4, }
+connection: { exchange:7,  loss:4,  transaction:12,  network:12,  zone:3,  information:3,  request:3,  add-on:4,  dodo:4,  number:11,  contract:20,  detail:4,  phone:16,  service:22,  master:7,  provider:5,  report:4,  line:5,  id:7,  block:5,  belt:7, }
+id: { loss:4,  task:5,  service:6,  zone:3,  information:3,  request:3,  dodo:4,  detail:6,  contract:17,  number:8,  phone:6,  range:5,  connection:7,  master:3,  provider:6,  report:4,  line:7,  provision:5,  block:5,  belt:3, }
+blog: { category:5,  name:8,  forum:7,  point:3,  photo:4,  e-mail:4,  tag:4,  user:13,  folder:5,  message:8,  friend:4, }
+telco: { task:7,  format:6,  club:6,  advice:5,  dodo:4,  contract:4,  provision:6,  event:10, }
+version: { user:7,  session:4,  method:4,  service:4,  name:3, }
+master: { loss:4,  service:6,  zone:3,  dodo:4,  request:3,  detail:4,  contract:13,  connection:7,  add-on:9,  report:4,  id:3,  block:5,  belt:5, }
+template: { status:3,  code:3,  zone:4,  doc:4,  e-mail:3,  session:6,  document:4,  method:9, }
+provider: { Web:4,  domain:3,  point:4,  entrance:4,  month:17,  contract:11,  id:6,  information:9,  service:7,  week:25,  stat:6,  number:5,  phone:4,  line:6,  day:23,  transaction:5,  hour:7,  country:11,  counter:21,  value:4,  connection:5,  site:4,  property:3, }
+e-mail: { status:7,  service:3,  forum:7,  request:5,  photo:4,  tag:7,  site:3,  blog:4,  session:3,  user:9,  template:3,  doc:3,  date:3,  folder:6,  property:7,  message:13,  friend:8,  name:4, }
+folder: { name:4,  forum:4,  photo:5,  blog:5,  e-mail:6,  tag:8,  user:10,  message:8,  property:3,  friend:6, }
+document: { status:9,  code:3,  simular:3,  doc:18,  request:7,  URL:6,  session:7,  template:4,  report:6,  method:15, }
+type: { Web:8,  van:12,  service:4,  language:12,  markup:12,  site:12,  range:12,  op:12,  hypertext:12,  toe:12, }
+method: { session:21,  information:4,  code:15,  resource:3,  name:4,  service:4,  format:3,  URL:9,  doc:14,  image:11,  request:10,  simular:13,  version:4,  status:7,  template:9,  report:3,  document:15, }
+friend: { status:4,  name:4,  forum:6,  photo:5,  request:3,  blog:4,  e-mail:8,  tag:5,  user:5,  message:10,  property:5,  folder:6, }
+toe: { Web:5,  van:7,  language:7,  hypertext:7,  site:6,  range:6,  type:12,  markup:7,  op:7, }
+week: { Web:4,  stat:24,  goal:13,  hour:23,  point:16,  country:17,  counter:58,  entrance:34,  domain:21,  value:13,  month:48,  service:4,  provider:25,  site:4,  property:8,  day:51,  name:5, }
+info: { information:3,  domain:5,  zone:4,  service:3,  image:4,  system:5,  user:5,  name:6, }
+entrance: { week:34,  stat:26,  goal:12,  hour:20,  point:12,  counter:43,  domain:16,  value:10,  month:30,  key:6,  provider:4,  day:36,  name:10, }
+format: { task:7,  telco:6,  advice:5,  dodo:3,  contract:3,  method:3,  club:6,  session:3,  provision:5,  event:10, }
+URL: { code:5,  resource:3,  simular:4,  doc:3,  image:9,  request:3,  session:4,  document:6,  method:9, }
+detail: { loss:7,  network:3,  service:6,  exchange:6,  dodo:7,  request:4,  number:7,  contract:11,  phone:3,  connection:4,  master:4,  report:7,  range:4,  line:5,  provision:6,  id:6,  block:4,  belt:4, }
+advice: { information:15,  task:5,  service:3,  format:5,  telco:5,  dodo:3,  contract:18,  club:5,  loss:14,  add-on:6,  provision:5,  event:7, }
+site: { week:4,  Web:5,  van:7,  service:4,  language:6,  country:4,  hypertext:6,  day:4,  e-mail:3,  range:4,  provider:4,  op:6,  type:12,  markup:6,  toe:6, }
+stat: { week:24,  entrance:26,  goal:13,  hour:9,  point:13,  counter:32,  value:11,  month:20,  key:5,  provider:6,  property:9,  day:29,  name:6, }
+phone: { information:3,  transaction:9,  network:5,  service:9,  exchange:11,  detail:3,  connection:16,  contract:9,  number:13,  range:6,  provider:4,  line:5,  provision:3,  id:6, }
+club: { task:7,  format:6,  telco:6,  advice:5,  dodo:4,  contract:4,  provision:6,  event:10, }
+user: { category:16,  status:5,  info:5,  version:7,  forum:16,  point:6,  photo:10,  request:3,  blog:13,  e-mail:9,  tag:15,  message:15,  property:10,  folder:10,  friend:5,  name:14, }
+key: { stat:5,  domain:4,  goal:5,  point:5,  counter:30,  entrance:6,  value:5,  property:10,  day:8, }
+report: { status:5,  loss:6,  doc:4,  dodo:6,  request:7,  contract:7,  detail:7,  connection:4,  master:4,  id:4,  document:6,  method:3,  block:4,  belt:4, }
+line: { information:9,  transaction:6,  zone:5,  service:6,  exchange:3,  detail:5,  range:3,  contract:18,  number:14,  phone:5,  connection:5,  provider:6,  provision:3,  id:7,  block:3, }
+provision: { telco:6,  loss:4,  task:8,  service:4,  format:5,  club:6,  advice:5,  exchange:4,  dodo:4,  detail:6,  contract:9,  number:7,  phone:3,  range:4,  id:5,  line:3,  event:10, }
+day: { week:51,  Web:4,  stat:29,  name:6,  hour:22,  point:19,  country:17,  counter:79,  entrance:36,  site:4,  value:20,  month:47,  service:4,  key:8,  provider:23,  domain:23,  property:18,  goal:17, }
+goal: { week:13,  entrance:12,  hour:3,  point:14,  counter:24,  stat:13,  month:10,  key:5,  domain:3,  property:4,  day:17, }
+service: { Web:3,  domain:6,  connection:22,  Internet:7,  number:17,  system:5,  session:4,  file:3,  add-on:9,  id:6,  belt:6,  information:4,  management:6,  network:7,  zone:9,  space:8,  detail:6,  e-mail:3,  version:4,  master:6,  provider:7,  type:4,  method:4,  week:4,  exchange:10,  advice:3,  site:4,  phone:9,  date:4,  line:6,  provision:4,  day:4,  info:3,  transaction:14,  resource:3,  name:8,  country:5,  request:5,  contract:19,  range:8,  status:3,  block:3, }
+loss: { dodo:8,  advice:14,  request:4,  detail:7,  contract:9,  connection:4,  master:4,  report:6,  provision:4,  id:4,  block:4,  belt:4, }
+task: { format:7,  club:7,  advice:5,  dodo:4,  number:4,  contract:8,  id:5,  telco:7,  range:3,  provision:8,  event:10, }
+resource: { URL:3,  image:4,  method:3,  service:3, }
+name: { domain:8,  code:3,  photo:3,  image:5,  stat:6,  tag:4,  Internet:4,  message:7,  information:3,  service:8,  system:5,  blog:8,  e-mail:4,  version:3,  folder:4,  method:4,  friend:4,  week:5,  entrance:10,  user:14,  day:6,  info:6,  zone:4,  forum:6,  counter:8, }
+forum: { category:4,  name:6,  photo:6,  blog:7,  e-mail:7,  tag:6,  user:16,  folder:4,  property:3,  message:6,  friend:6, }
+country: { week:17,  Web:4,  domain:8,  hour:5,  service:5,  counter:13,  site:4,  month:11,  provider:11,  day:17, }
+markup: { Web:4,  van:7,  language:7,  hypertext:6,  site:6,  range:6,  toe:7,  type:12,  op:6, }
+counter: { week:58,  stat:32,  name:8,  hour:13,  point:24,  country:13,  entrance:43,  domain:41,  value:33,  month:51,  key:30,  provider:21,  property:34,  day:79,  goal:24, }
+dodo: { loss:8,  task:4,  format:3,  club:4,  advice:3,  request:4,  detail:7,  contract:9,  event:6,  telco:4,  connection:4,  master:4,  report:6,  provision:4,  id:4,  block:4,  belt:4, }
+contract: { dodo:9,  number:20,  add-on:9,  range:8,  event:6,  belt:13,  information:13,  network:4,  service:19,  exchange:5,  detail:11,  id:17,  telco:4,  master:13,  provider:11,  format:3,  club:4,  advice:18,  phone:9,  task:8,  report:7,  line:18,  provision:9,  loss:9,  transaction:13,  zone:9,  request:8,  connection:20,  block:9, }
+range: { Web:4,  hypertext:6,  site:4,  id:5,  van:6,  network:3,  service:8,  detail:4,  type:12,  toe:6,  exchange:6,  number:10,  phone:6,  transaction:15,  date:3,  line:3,  provision:4,  task:3,  language:6,  markup:6,  contract:8,  op:6, }
+tag: { category:3,  status:4,  name:4,  forum:6,  photo:7,  request:3,  blog:4,  e-mail:7,  user:15,  folder:8,  property:8,  message:11,  friend:5, }
+status: { information:3,  document:9,  photo:4,  template:3,  service:3,  space:13,  doc:14,  request:15,  e-mail:7,  session:5,  user:5,  file:3,  tag:4,  report:5,  message:3,  property:3,  method:7,  friend:4, }
+doc: { status:14,  information:3,  e-mail:3,  URL:3,  request:13,  simular:9,  session:12,  template:4,  report:4,  document:18,  method:14, }
+transaction: { management:5,  zone:7,  service:14,  exchange:11,  provider:5,  number:16,  contract:13,  phone:9,  connection:12,  Internet:5,  date:15,  range:15,  line:6, }
+property: { category:3,  status:3,  stat:9,  goal:4,  forum:3,  point:4,  photo:4,  message:7,  counter:34,  value:16,  month:13,  e-mail:7,  tag:8,  week:8,  user:10,  key:10,  provider:3,  folder:3,  day:18,  friend:5, }
+block: { loss:4,  zone:6,  service:3,  request:5,  dodo:4,  number:4,  contract:9,  detail:4,  connection:5,  master:5,  report:4,  line:3,  id:5,  belt:5, }
+op: { Web:4,  van:7,  language:6,  hypertext:6,  site:6,  range:6,  type:12,  markup:6,  toe:7, }

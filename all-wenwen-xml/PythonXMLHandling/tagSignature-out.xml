@@ -1,0 +1,53 @@
+<?xml version = "1.0"?>
+<TagSignatureList>
+    <TagSignature>
+        <TagType>Model</TagType>
+        <NameTag> tn1, tn2 </NameTag>
+	<Inputs>
+	        <Port>
+		    <PortName> tip1, tip2 </PortName>
+		    <Type> tipp1, tipp2 </Type>
+		    <Description>inputportdescription  </Description>
+		</Port>
+
+	        <Port>
+		    <PortName> tip1 </PortName>
+		    <Type> tipp1, tipp2 </Type>
+		    <Description>inputport, description  </Description>
+		</Port>
+	</Inputs>
+	<Outputs>
+		<Port>
+		    <PortName> top1, top2 </PortName>
+		    <Type> topp1, topp2 </Type>
+		    <Description> outputportdescription </Description>
+		</Port>
+	</Outputs>
+    </TagSignature>
+
+
+    <TagSignature>
+        <TagType>Model2</TagType>
+        <NameTag> tn1, tn2 </NameTag>
+	<Inputs>
+	        <Port>
+		    <PortName> tip1, tip2 </PortName>
+		    <Type> tipp1, tipp2 </Type>
+		    <Description>inputportdescription  </Description>
+		</Port>
+
+	        <Port>
+		    <PortName> tip1 </PortName>
+		    <Type> tipp1, tipp2 </Type>
+		    <Description>inputport, description  </Description>
+		</Port>
+	</Inputs>
+	<Outputs>
+		<Port>
+		    <PortName> top1, top2 </PortName>
+		    <Type> topp1, topp2 </Type>
+		    <Description> outputportdescription </Description>
+		</Port>
+	</Outputs>
+    </TagSignature>
+</TagSignatureList>

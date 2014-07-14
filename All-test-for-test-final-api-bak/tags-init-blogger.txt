@@ -1,0 +1,68 @@
+blog blog id 
+
+blog doc reference blog 
+blog identification 
+
+blog 
+URL 
+blog doc reference blog URL 
+blog resource locator 
+
+user user id blog 
+user 
+blog doc reference blog user 
+blog 
+
+
+blog blog id id comment comment id 
+
+blog doc reference comment 
+comment resource comment identification 
+
+
+blog blog id 
+
+blog doc reference 
+
+
+blog blog id id 
+
+blog doc reference 
+identification 
+
+blog blog id 
+
+blog doc reference 
+match query 
+
+blog blog id 
+
+blog doc reference 
+
+
+blog blog id id 
+
+blog doc reference 
+identification 
+
+blog blog id bypath 
+path 
+blog doc reference path 
+path 
+
+patch blog blog id id 
+patch 
+blog doc reference patch 
+method patch 
+
+blog blog id id 
+
+blog doc reference 
+
+
+user user id 
+
+blog doc reference user 
+user user identification 
+
+

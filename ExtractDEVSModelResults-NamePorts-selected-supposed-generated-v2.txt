@@ -1,0 +1,339 @@
+
+#################ModelProject 1 - 3v3basketballpark  #########################
+3v3basketballpark | audience | audienceOut, audience  | audienceIn, audience
+3v3basketballpark | basketballcourt | scoreOut, totalOut  | totalRoundNumIn
+3v3basketballpark | basketballpark | audienceOut moneyOut out totalScoreOut  | totalRoundNumIn audienceIn workerIn
+3v3basketballpark | court | scoreOut, totalScoreOut  | totalRoundNumIn
+3v3basketballpark | score | totalScoreOut  | totalScoreIn
+3v3basketballpark | ticketwindow | moneyOut, audienceOut  | audienceIn, workerIn
+
+#################ModelProject 2 - airportboarding  #########################
+airportboarding | airportboarding | luggageOverWeight, customFail, securityFail  | passengersBoarding
+airportboarding | buffer | bufferOut  | notifyDone, bufferIn
+airportboarding | custom | customOut, customFailOut  | customIn
+airportboarding | luggage | luggageOut, overWeightOut  | luggageIn
+airportboarding | proc | procOut, procFeedback  | procIn
+airportboarding | queue | queueOut  | queueIn
+airportboarding | security | securityOut, securityFailOut  | securityIn
+airportboarding | servicecenter | overWeightPassengerNo, customFailPassengerNo, securityFailPassengerNo  | checkIn
+
+#################ModelProject 3 - alternatebitprot  #########################
+alternatebitprot | abp | packetSent ackReceived  | controlIn
+alternatebitprot | network | in1 in2, out1 out2  | 
+alternatebitprot | receiver | receiver  | receiver
+alternatebitprot | sender | dataOut, packetSent, ackReceived  | controlIn, ackIn
+alternatebitprot | subnet | subnet  | subnet
+
+#################ModelProject 4 - ambulancedispatch  #########################
+ambulancedispatch | AmbulanceDispatch | response_out  | AmbulanceDispatch
+
+#################ModelProject 5 - autopilot  #########################
+autopilot | APSystem | actualPitch_out  | desiredPitch_in
+
+#################ModelProject 6 - barbershop  #########################
+barbershop | barberMA1 | finished cutcontinue  | cust progress
+barbershop | barbershopMA1 | cust finished  | newcust next
+barbershop | checkhairMA1 | cutcontinue finished  | cust progress
+barbershop | cuthairMA1 | progress  | cutcontinue
+barbershop | receptionMA1 | cust  | newcust next
+
+#################ModelProject 7 - BluetoothSimulator  #########################
+BluetoothSimulator | bluetoothSimulator | newMsgArrival  | enableBT
+BluetoothSimulator | connectionManager | deviceID getID reqPermission connected  | search IDin connectDevice granted
+BluetoothSimulator | dataTransmission | dataSent, dataPort  | dataOut gotData
+BluetoothSimulator | pairedDeviceFinder | getID, deviceID  | search IDin
+BluetoothSimulator | permissionVerifier | connected, reqPermission  | connectDevice granted
+BluetoothSimulator | ReceiverMobile | IDout, accepted, gotData, newMsgArrival  | permit data IDrequested
+BluetoothSimulator | SenderMobile | searchDevice, connect, dataOut  | enableBT deviceFound start dataSent
+
+#################ModelProject 8 - Cable_Anchor_Robot  #########################
+Cable_Anchor_Robot | engager | engager  | engager
+Cable_Anchor_Robot | generator | motorOut1, motorOut2, generator  | generator, done
+Cable_Anchor_Robot | motor | motor  | motor
+Cable_Anchor_Robot | pathGenerator | pathGenerator, engaged, nextPosition  | pathGenerator, done
+Cable_Anchor_Robot | planner | nextPosition, ready, engaged, planner  | planner, done
+Cable_Anchor_Robot | queue | queue  | queue, ready
+Cable_Anchor_Robot | robot | robot  | robot
+Cable_Anchor_Robot | robotGenerator | robotGenerator, engaged, motorOut1, motorOut2  | robotGenerator, done
+Cable_Anchor_Robot | translator | motorOut1, motorOut2, translator  | translator, done
+
+#################ModelProject 9 - casebasedreasoner  #########################
+casebasedreasoner | casebase | prov  | ret, stor
+casebasedreasoner | casebasedreasoner | output  | input
+casebasedreasoner | cbrcycle | solution  | query, feedback
+casebasedreasoner | interface | query, feedback, output  | input, solution
+casebasedreasoner | retain | retain  | retain
+casebasedreasoner | retrieve | ret, prop  | que, prov
+casebasedreasoner | reuse | sol, adpt  | prop
+casebasedreasoner | revise | solution, fixed  | feed, adapt
+
+#################ModelProject 10 - city_water  #########################
+city_water | city_water | flow_out, state_out1, state_out2, level  | start_in1, stop_in1, start_in2, stop_in2, wstart_in1, wstop_in1, wstart_in2, wstop_in2, power_in
+city_water | pump | state_out1, state_out2, flow_out  | start_in1, start_in2, stop_in1, stop_in2, level_in, low_level_in, power_in
+city_water | pump_station | flow_out, state_out1, state_out2, level  | q_in, start_in1, stop_in1, start_in2, stop_in2, power_in
+city_water | reservoir | level_out, low_level_out  | q_in, qp_in
+city_water | well_pump | flow_out  | start_in1, start_in2, stop_in1, stop_in2
+
+#################ModelProject 11 - clock  #########################
+clock | alarmClock | displayed_time buzzer_on  | hours minutes time_set alarm_set alarm_on snooze
+clock | alarmController | alarm_time buzzer_on  | time_of_day hours minutes alarm_set time_set snooze alarm_on
+clock | alarmRegTest | c_alarm_time  | c_alarm_set c_hours c_minutes
+clock | buzzerDriverTest | c_buzzer_on  | c_time_set c_alarm_set c_alarm_on c_time_match c_snooze
+clock | hrRegTest | c_time_hours  | c_time_set c_hours c_wrap_around
+clock | minRegTest | c_time_minutes c_wrap_around  | c_time_set c_minutes
+clock | timeReg | c_time_of_day  | c_time_set c_hours c_minutes
+clock | timeRegister | time_of_day  | time_set hours minutes
+
+#################ModelProject 13 - garagedoor  #########################
+garagedoor | alarmGen | minor_alarm major_alarm  | unauth_attempt emerg alarm_reset
+garagedoor | codeCont | incre validCode emerg  | input_code open_request emerg_open
+garagedoor | counter | unauth_attempt  | incre
+garagedoor | doorCont | validCode emerg unauth_attempt doorOpen  | input_code open_request emerg_open
+garagedoor | doorTimer | doorOpen  | validCode
+garagedoor | garageDoor | doorOpen minor_alarm major_alarm inlon outlon  | input_code open_request emerg_open alarm_reset motion light
+garagedoor | lightIn | inlon  | validCode
+garagedoor | lightOut | outlon  | motion light
+
+#################ModelProject 14 - GSM_Authentication_Sim  #########################
+GSM_Authentication_Sim | AccessControl | Rand, SRES_1  | MaxValidId, Id
+GSM_Authentication_Sim | GSM_Auth_Sim_ | Ok  | MaxValidId, On
+GSM_Authentication_Sim | MobileNetwork | RAND, Ok  | MaxValidId, Id, SRES_2
+GSM_Authentication_Sim | MobileSwitchingCenter | Ok  | SRES_1, SRES_2
+GSM_Authentication_Sim | SIMCard | Id, SRES_2  | On, Rand
+
+#################ModelProject 15 - hospitalLaundry  #########################
+hospitalLaundry | hospitalLaundry | shortAmount shipped dirty  | 
+hospitalLaundry | hospitalMA-test1 | dirty  | clean
+hospitalLaundry | laundromatMA-test1 | shipped shortAmount  | dirty
+hospitalLaundry | laundryCleaningMA-test1 | clean  | dirty
+hospitalLaundry | laundryShippingMA-test1 | shipped shortAmount  | clean
+
+#################ModelProject 16 - HouseHeating  #########################
+HouseHeating | controller | HeaterCntrSignal  | Troom
+HouseHeating | generat | Tout  | 
+HouseHeating | heater | HeatGain  | HeaterCntrSignal, Troom
+HouseHeating | HouseHeatSystem |   | 
+HouseHeating | HouseHeatSystemReport | Tout Troom HeaterCntrSignal HeatLosses HeatGain  | 
+HouseHeating | tempsensor | Troom  | HeatLosses, HeatGain
+HouseHeating | Thermostat | Troom HeaterCntrSignal  | HeatLosses HeatGain
+HouseHeating | transduc | HeatLosses  | Tout, Troom
+
+#################ModelProject 17 - HumanMotionClassification  #########################
+HumanMotionClassification | cameras | cam_pc  | pc_cam
+HumanMotionClassification | classifier | result, trainAcc  | DP
+HumanMotionClassification | hmc | result  | init
+HumanMotionClassification | motion_capture_system | pcI tr_ts, DOut  | 
+HumanMotionClassification | pc | DOut, pc_cam  | tr_ts, pcI, cam_pc
+HumanMotionClassification | preprocessor | DP  | DIn
+
+#################ModelProject 18 - ImitationLearning  #########################
+ImitationLearning | imitator_robot | imitator_robot  | intouch, insonar
+ImitationLearning | observer_robot | observer_robot  | intt, ins
+
+#################ModelProject 19 - IndustrialImagingSystem  #########################
+IndustrialImagingSystem | buffer | imageOut, responseOut  | commandIn
+IndustrialImagingSystem | camera | imageDataOut  | trigIn
+IndustrialImagingSystem | cont_cameraMa | imageDataOut  | trigIn
+IndustrialImagingSystem | FrameGrabber | imageOut, responseOut, timerOut  | commandIn, trigIn, imageIn
+IndustrialImagingSystem | hsi | imageOut, responseOut, buf, ia, tim  | commandIn, responseIn, imageIn
+IndustrialImagingSystem | iis_cont_cam | imageBufOut respOut  | triggerIn cmndIn
+IndustrialImagingSystem | iis_fast_cam | imageBufOut respOut  | triggerIn cmndIn
+IndustrialImagingSystem | iis_trig_cam | imageBufOut respOut  | triggerIn cmndIn
+IndustrialImagingSystem | im_acq | imageOut, responseOut  | imageIn, commandIn
+IndustrialImagingSystem | timer | timerOut, responseOut  | trigIn, commandIn
+
+#################ModelProject 20 - MemoryHierarchy  #########################
+MemoryHierarchy | cachel1 | AddressOut, DataOut, ErrorOut  | AddressIn, DataIn
+MemoryHierarchy | cachel2 | AddressOut, DataOut, ErrorOut  | AddressIn, DataIn
+MemoryHierarchy | cache | cachedataout cacheaddressout  | cpuaddressin  mainmemorydatain
+MemoryHierarchy | centralprocessingunit | AddressOut, DataReceived, ErrorOut  | ControlIn, DataIn
+MemoryHierarchy | mainmemory | out errorout  | mainmemory
+MemoryHierarchy | mh | AddressOut, DataReceived  | ControlIn
+
+#################ModelProject 21 - microwaveoven  #########################
+microwaveoven | beepTest | beep_out  | beep_in
+microwaveoven | cookTimeTest | c_time_seconds c_time_minutes  | c_time_set c_seconds c_minutes
+microwaveoven | curTimeRegTest | n_cur_time  | n_time_set n_hours n_minutes
+microwaveoven | displayTest | c_cur_time c_rem_time  | c_day_time c_counter_time
+microwaveoven | microwaveoven | beep_out c_powerlevel_out c_cur_time c_rem_time  | c_phase_set c_powerlevel_in c_seconds c_minutes c_hours c_time_set c_start c_stop c_clear
+microwaveoven | minCookRegTest | c_time_minutes  | c_time_set c_minutes
+microwaveoven | phaseRegTest | c_time_seconds c_time_minutes c_powerlevel_out  | c_phase_set c_powerlevel_in c_seconds c_minutes
+microwaveoven | powerDrvTest | c_powerlevel_out  | c_power_set c_powerlevel_in
+microwaveoven | powerLvlTest | c_powerlevel_out  | c_phase_set c_powerlevel_in
+microwaveoven | secCookRegTest | c_time_seconds  | c_time_set c_seconds
+microwaveoven | timeCounterTest | c_time_remaining c_powerswitch c_beep  | c_phase_set c_start c_stop c_clear c_seconds c_minutes
+
+#################ModelProject 22 - newspaper  #########################
+newspaper | news | news  | news
+newspaper | newspaper |   | 
+newspaper | news_atomic | news_atomic  | news_atomic
+newspaper | news_couple | news_couple  | news_couple
+
+#################ModelProject 23 - offlineft  #########################
+offlineft | AccessNetwork | in1 in2, out1 out2  | 
+offlineft | FileServer | outFToA outFToB  | inAToF inBToF requestIn
+offlineft | FileServerSender | requestData ackReceived fileSent dataOut  | requestIn dataIn ackIn
+offlineft | Network | outNToA outNToB  | inAtoN inBToN requestIn
+offlineft | offLineFileTransfer | fileSent ackReceived outData  | controlIn requestIn
+offlineft | receiver | out outData  | receiver
+offlineft | sender | dataOut, fileSent, ackReceived  | controlIn, ackIn
+offlineft | subnet | subnet  | subnet
+offlineft | tmpFileExchange | readDataOut  | deleteData requestData, storeData
+offlineft | tmpFileReadThread | dataOut  | deleteData requestData
+offlineft | tmpFileWriteThread | dataOut  | storeData
+
+#################ModelProject 24 - omniengine_with_batch  #########################
+omniengine_with_batch | CreateCapture | capture_created, filter_code  | CreateCapture
+omniengine_with_batch | CreateFilter | filter_done  | CreateFilter
+omniengine_with_batch | OmniEngineControl | capture_created, filter_code, capture_started, channel_num, capture_stopped  | create_capture, start_capture, stop_capture
+omniengine_with_batch | StartCapture | capture_started, channel_num  | StartCapture
+omniengine_with_batch | StopCapture | capture_stopped  | StopCapture
+omniengine_with_batch | WirelessChannel | channel_done  | WirelessChannel
+
+#################ModelProject 25 - otrain  #########################
+otrain | InTrainQueue | PassengerOut  | StationNumber, PassengerIn
+otrain | O-Train | PassengerArrived, PassengerInitial  | 
+otrain | StationGenerator | PassengerInitial  | 
+otrain | StationQueue | PassengerOut  | StationNumber, PassengerIn
+otrain | StrationArrivalGenerator | StationNumber  | 
+
+#################ModelProject 26 - Panama_Canal  #########################
+Panama_Canal | controller | controlLocks, controlQueue  | controlIn
+Panama_Canal | gate | gate, controlOut  | gate, controlIn
+Panama_Canal | gatun_locks | gatun_locks, controlOut  | gatun_locks, controlIn
+Panama_Canal | lock | lock, controlOut  | lock, controlIn
+Panama_Canal | panama_canal | panama_canal  | panama_canal
+Panama_Canal | queue | queue  | queue, controlIn
+
+#################ModelProject 27 - Pendulum_clock  #########################
+Pendulum_clock | AgujaHour | VALUE  | INCREMENT DECREMENT
+Pendulum_clock | AgujaMin | VALUE OUT_INCREMENT OUT_DECREMENT  | TIC IN_INCREMENT IN_DECREMENT
+Pendulum_clock | Agujas | HOUR_VALUE MIN_VALUE  | TIC INCREMENT DECREMENT
+Pendulum_clock | Alarma | ALARM_ON ALARM_OFF SOUND_ALARM  | ACTIVATE DEACTIVATE ALARM_HOUR ALARM_MIN CLOCK_HOUR CLOCK_MIN
+Pendulum_clock | ControlAlarma | ALARM_ON ALARM_OFF SOUND_ALARM ALARM_MIN ALARM_HOUR  | ACTIVATE DEACTIVATE CLOCK_HOUR CLOCK_MIN INCREMENT DECREMENT
+Pendulum_clock | ControlEncendido | CLOCK_ON CLOCK_OFF  | TURN_ON TURN_OFF
+Pendulum_clock | Motor | TIC CLOCK_ON CLOCK_OFF  | TURN_ON TURN_OFF
+Pendulum_clock | Pendulo | TIC  | TURN_ON TURN_OFF
+Pendulum_clock | Reloj | CLOCK_ON CLOCK_OFF ALARM_ON ALARM_OFF SOUND_ALARM CLOCK_HOUR CLOCK_MIN ALARM_HOUR ALARM_MIN  | TURN_ON TURN_OFF ACTIVATE DEACTIVATE INCREMENT DECREMENT INC_ALARM DEC_ALARM
+
+#################ModelProject 28 - Queue  #########################
+Queue | Queue | Queue  | in done stop
+
+#################ModelProject 29 - Resin  #########################
+Resin | computer | computer, mixtankControl_out, storetankControl_out  | computer, mixtankTemp_in, mixtankEmpty_in, mouldtankTemp_in, mouldtankEmpty_in, storetankEmpty_in
+Resin | csystem | csystem, mixtankControl_out, storetankControl_out  | csystem, storetankEmpty_in, mixtankTemp_in, mixtankEmpty_in, mouldtankTemp_in, mouldtankEmpty_in
+Resin | mixtank | mixtank, mixtankTemp_out, mixtankEmpty_out  | mixtank, start_in, mixtankControl_in
+Resin | mouldtank | mouldtank, mouldtankTemp_out  | mouldtank, start_in
+Resin | pline | storetankEmpty_out, mixtankTemp_out, mixtankEmpty_out, mouldtankTemp_out, mouldtankEmpty_out  | start_in, mixtankControl_in, storetankControl_in
+Resin | resin | resin  | resin
+Resin | stk | stk  | stk, storetankControl_in
+
+#################ModelProject 30 - SecureAreaAccess  #########################
+SecureAreaAccess | AlarmAdmin | Admin_Out Alarm_Status1 Alarm_Status2 Error Alarm_Req  | ArmReq_In DisarmReq_In AlarmPin_Ok
+SecureAreaAccess | Authentication | AlarmPin_Ok Error DoorPin_Ok  | Pin_In Alarm_Req Alarm_Status2
+SecureAreaAccess | Display | Msg_Out  | PinPrompt_In AlarmStatus_In Error_In DoorOk_In
+SecureAreaAccess | SecureAreaAccessSystem | Msg  | Arm Disarm PIN
+SecureAreaAccess | SystemAdmin | Pin_Prompt AlarmStatus_Out Error_Out DoorOk_Out  | Arm_In Disarm_In PIN_In
+
+#################ModelProject 31 - soccer  #########################
+soccer | ballPlayTest | c_game_on c_game_score  | c_start_period c_score c_end_game
+soccer | ModelTest | c_start_period c_game_score c_game_on c_end_game  | c_start_game c_score
+soccer | Timertest | c_end_game c_start_period  | c_start_game
+
+#################ModelProject 32 - switching  #########################
+switching | sink | packetsReceived  | sinkIn
+switching | source | packetOut, packetTotal  | 
+switching | switch | switchOut1, switchOut2, gateWay  | switchIn
+switching | switchNode | Out1, Out2, gateWay  | switchNode
+
+#################ModelProject 33 - Tank_Fire  #########################
+Tank_Fire | Barrel | Ammu_out  | Sfin Ain Fin
+Tank_Fire | Elec_Fire | Elec_Fire  | Elec_Fire
+Tank_Fire | Emergency | Emergency  | Emergency
+Tank_Fire | Fire | Fire  | Ecin Min Emin
+Tank_Fire | GUNNER | GUNNER  | Ecin Min Emin
+Tank_Fire | LOADER | Ammu_out  | Ain Sin Fin
+Tank_Fire | Manu_Fire | Manu_Fire  | Manu_Fire
+Tank_Fire | Safety_Loder | Safety_Loder  | Sin
+Tank_Fire | tank | Amm_out  | Ammu_in Safety_in Elec_in Manu_in Emerg_in
+
+#################ModelProject 34 - techsupportfinancialdept  #########################
+techsupportfinancialdept | coverage_plan_manager | Plan_Ok, Request_Validation, Problem  | Call_In, Validation_Result
+techsupportfinancialdept | financial_manager | Plan_Ok, Problem  | Call_In
+techsupportfinancialdept | financial_queue | FQ_Out  | Call_In, Release_Next
+techsupportfinancialdept | financial_queue_control | Control_Out  | Control_In
+techsupportfinancialdept | technical_support_fd | Done, Problem  | Call_In
+techsupportfinancialdept | validation | Result  | Request_Validation
+
+#################ModelProject 35 - tollstation  #########################
+tollstation | barrera |   | levantar bajar
+tollstation | cajero1 | devolver pago multar  | detectoPase yaSalio monedas
+tollstation | carril1 | monedas log  | llegaAuto
+tollstation | cola | saleAuto  | yaSalio llegaAuto
+tollstation | control | logInfo levantarBarrera  | pago multar timeout yaSalio yaEntro
+tollstation | genautos | automovil  | 
+tollstation | genpago | monedas pase  | generar
+tollstation | lector | detecto  | paso
+tollstation | sensor | detecto  | paso
+tollstation | timer | timeout  | 
+
+#################ModelProject 36 - trafficlight  #########################
+trafficlight | 1gen | car_N  | 
+trafficlight | alight | light_red light_green  | opp_light_red walk_stop
+trafficlight | aqueue | remove add  | enqueue empty_Q fill_Q
+trafficlight | awalksignal | walk_stop walk  | button_on sensor_on light_green
+trafficlight | intersection |   | 
+trafficlight | onebutton | button_on  | ped_in_Q walk_stop
+trafficlight | onesensor | sensor_set  | car_in_Q light_red
+
+#################ModelProject 37 - trafficlightsys  #########################
+trafficlightsys | group_controller | light_ab light_cd  | 
+trafficlightsys | intersection | next block out  | stop in
+trafficlightsys | intersection_controller | value busy timeout  | 
+trafficlightsys | intersection_queue | out next block  | in done stop_in stop_out
+trafficlightsys | lane | car_out car_in  | stop
+trafficlightsys | lane_queue_limited | out next block  | in done stop_in stop_out
+trafficlightsys | lane_queue_unlimited | out next block  | in done stop_in stop_out
+trafficlightsys | light_controller | light signal  | light_controller
+trafficlightsys | top | light_a throughput_a curlen_a avelen_a, light_b throughput_b curlen_b avelen_b, light_c throughput_c curlen_c avelen_c, light_d throughput_d curlen_d avelen_d  | 
+trafficlightsys | traffic_collector | throughput curlength avelength  | 
+trafficlightsys | traffic_light | light throughput curlength avelength  | signal
+
+#################ModelProject 38 - Traffic_Intersection_Connector  #########################
+Traffic_Intersection_Connector | ConnectionGenerator | ConnectionGenerator  | ConnectionGenerator, reset
+Traffic_Intersection_Connector | group_controller | light_ab light_cd  | 
+Traffic_Intersection_Connector | intersection | next block out  | stop in
+Traffic_Intersection_Connector | intersection_1 |   | 
+Traffic_Intersection_Connector | intersection_controller | value busy timeout  | 
+Traffic_Intersection_Connector | intersection_queue | out next block  | in done stop_in stop_out
+Traffic_Intersection_Connector | lane | car_out car_in  | stop
+Traffic_Intersection_Connector | lane_queue_limited | out next block  | in done stop_in stop_out
+Traffic_Intersection_Connector | lane_queue_unlimited | out next block  | in done stop_in stop_out
+Traffic_Intersection_Connector | light_controller | light signal  | light_controller
+Traffic_Intersection_Connector | Queue | Queue  | in done
+Traffic_Intersection_Connector | top | time_output  | 
+Traffic_Intersection_Connector | TopIntersectionandGeneratorandQueue | TopIntersectionandGeneratorandQueue  | done, stop
+Traffic_Intersection_Connector | TopOfIntersection1AndConnectionGenerator | out goosfand  | 
+Traffic_Intersection_Connector | topOriginal | light_a throughput_a curlen_a avelen_a, light_b throughput_b curlen_b avelen_b, light_c throughput_c curlen_c avelen_c, light_d throughput_d curlen_d avelen_d, carOut kharchang  | 
+Traffic_Intersection_Connector | traffic_collector | throughput curlength avelength  | 
+Traffic_Intersection_Connector | traffic_light | light throughput curlength avelength  | signal
+
+#################ModelProject 39 - transport  #########################
+transport | gen | go  | 
+transport | load | exitload  | arriveload
+transport | Loadqueue | readygoload  | arriveload loaddone
+transport | loadserver | exitload, readyaccept  | enterload
+transport | transport | exitunload  | 
+transport | transportadv | exitunload  | 
+transport | transportgen | exitunload  | 
+transport | unload | exitunload  | arriveunload
+transport | unloadqueue | readygounload  | arriveunload unloaddone
+transport | unloadserver | exitunload readyreceive  | enterunload
+
+#################ModelProject 40 - unmannedgroundv  #########################
+unmannedgroundv | HeadingSensor | HeadingSensor  | HeadingSensor
+unmannedgroundv | IntruderSensor | IntruderSensor  | IntruderSensor
+unmannedgroundv | MainComputer | status turningPort turnLeft turnRight  | heading inputHeading intruder
+unmannedgroundv | ugv | status leftWheel rightWheel  | inputHeading intruder
+unmannedgroundv | WheelAssembly | leftWheel rightWheel  | turnLeft turnRight
+unmannedgroundv | WheelSet | WheelSet  | WheelSet

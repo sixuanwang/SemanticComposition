@@ -1,0 +1,298 @@
+
+#################ModelProject 1 - basketball park  #########################
+basketball park | audience | audience| audience
+basketball park | basketball court | score total  | total_round_number
+basketball park | basketball park | audience money total_score | total_round_number audience worker
+basketball park | court | score total_score  | total_round_number
+basketball park | score | total_score  | total_score
+basketball park | ticket_window | money audience  | audience worker
+
+#################ModelProject 2 - airport boarding  #########################
+airport boarding | airport boarding | luggage_over_weight custom_fail security_fail  | passenger_boarding
+airport boarding | buffer | buffer | notify buffer
+airport boarding | custom | custom custom_fail | custom
+airport boarding | luggage | luggage over_weight  | luggage
+airport boarding | process | process process_feedback  | process
+airport boarding | queue | queue | queue
+airport boarding | security | security security_fail | security
+airport boarding | service_center | over_weight_passenger_number custom_fail_passenger_number security_fail_passenger_number | check
+
+#################ModelProject 3 - alternate bit protocol  #########################
+alternate bit protocol | alternate bit protocol | packet_sent ack_received | control
+alternate bit protocol | network | network | network
+alternate bit protocol | receiver | receiver | receiver
+alternate bit protocol | sender | data packet_sent ack_received  | control ack
+alternate bit protocol | subnet | subnet | subnet
+
+#################ModelProject 4 - ambulance dispatch  #########################
+ambulance dispatch | ambulance dispatch | response  | ambulance dispatch
+
+#################ModelProject 5 - auto pilot  #########################
+auto pilot | auto pilot system | actual_pitch| desired_pitch
+
+#################ModelProject 6 - barbershop  #########################
+barbershop | barber | finished cut_continue  | custom progress
+barbershop | barbershop | custom finished  | new_custom next
+barbershop | check hair | cut_continue finished  | custom progress
+barbershop | cut hair | progress  | cut_continue
+barbershop | reception | custom  | new_custom next
+
+#################ModelProject 7 - bluetooth simulator  #########################
+bluetooth simulator | bluetooth simulator | new_message_arrival| enable_bluetooth
+bluetooth simulator | connection manager | device_ID get_ID request_permission connected  | search ID connect_device granted
+bluetooth simulator | data transmission | data_sent data_port  | data got_data
+bluetooth simulator | paired device finder | get_ID device_ID  | search ID
+bluetooth simulator | permission verifier | connected request_permission  | connect_device granted
+bluetooth simulator | receiver mobile | ID accepted got_data new_message_arrival| permit data ID_requested
+bluetooth simulator | sender mobile | search_device connect data  | enable_bluetooth device_found start data_sent
+
+#################ModelProject 8 - cable_anchor_robot  #########################
+cable_anchor_robot | engager | engager  | engager
+cable_anchor_robot | generator | motor generator  | generator done
+cable_anchor_robot | motor | motor  | motor
+cable_anchor_robot | path generator | path_generator engaged next_position  | path_generator done
+cable_anchor_robot | planner | next_position ready engaged planner  | planner done
+cable_anchor_robot | queue | queue  | queue ready
+cable_anchor_robot | robot | robot  | robot
+cable_anchor_robot | robot generator | robot_generator engaged motor| robot_generator done
+cable_anchor_robot | translator | motor translator  | translator done
+
+#################ModelProject 9 - case based reasoner  #########################
+case based reasoner | case based | provide  | retain store
+case based reasoner | case based reasoner | case_based_reasoner  | case_based_reasoner
+case based reasoner | case based reasoner cycle | solution  | query feedback
+case based reasoner | interface | query feedback output  | input solution
+case based reasoner | retain | retain  | retain
+case based reasoner | retrieve | retrieve proposed  | query provide
+case based reasoner | reuse | solution adapt  | proposed
+case based reasoner | revise | solution fixed  | feed adapt
+
+#################ModelProject 10 - city water  #########################
+city water | city water | flow state level  | start stop water_start water_stop power
+city water | pump | state flow  | start stop level low_level power
+city water | pump station | flow state level  | flow_water_well start stop power
+city water | reservoir | level low_level  | flow_water_well flow_pump_station
+city water | water well pump | flow  | start stop
+
+#################ModelProject 11 - clock  #########################
+clock | alarm clock | displayed_time buzzer_on  | hour minute time_set alarm_set alarm_on snooze
+clock | alarm controller | alarm_time buzzer_on  | time_of_day hour minute alarm_set time_set snooze alarm_on
+clock | alarm register test | alarm_time  | alarm_set hour minute
+clock | buzzer driver test | buzzer_on  | time_set alarm_set alarm_on time_match snooze
+clock | hour register test | time_hour  | time_set hour wrap_around
+clock | minute register test | time_minute wrap_around  | time_set minute
+clock | time register | time_of_day  | time_set hour minute
+
+#################ModelProject 13 - garage door  #########################
+garage door | alarm generator | minor_alarm major_alarm  | unauth_attempt emergence alarm_reset
+garage door | code counter | increment validCode emergence  | input_code open_request emergence_open
+garage door | counter | unauth_attempt  | increment
+garage door | door counter | valid_code emergence unauth_attempt door_open  | input_code open_request emergence_open
+garage door | door timer | door_open  | validCode
+garage door | garage door | door_open minor_alarm major_alarm inside_light_on outside_light_on  | input_code open_request emergence_open alarm_reset motion light
+garage door | light in | inside_light_on  | validCode
+garage door | light out | outside_light_on  | motion light
+
+#################ModelProject 14 - global system mobile authentication  #########################
+global system mobile authentication | access control | random_challeng signed_response  | max_valid_id id
+global system mobile authentication | global system mobile authentication | ok  | max_valid_id on
+global system mobile authentication | mobile network | random_challeng ok  | max_valid_id id signed_response
+global system mobile authentication | mobile switching centre | ok  | signed_response
+global system mobile authentication | subscriber identity module card | id signed_response  | on random_challeng
+
+#################ModelProject 15 - hospital laundry  #########################
+hospital laundry | hospital laundry | short_amount shipped dirty  | 
+hospital laundry | hospital | dirty  | clean
+hospital laundry | laundromat | shipped short_amount  | dirty
+hospital laundry | laundry cleaning | clean  | dirty
+hospital laundry | laundry shipping | shipped short_amount  | clean
+
+#################ModelProject 16 - house heating  #########################
+house heating | controller | heater_centrl_signal| temperature
+house heating | temperature generator | temperature  | 
+house heating | heater | heat_gain  | heater_centrl_signal temperature
+house heating | house heat system report | temperature temperature heater_centrl_signal heat_loss heat_gain  | 
+house heating | temperature sensor | temperature  | heat_loss heat_gain
+house heating | thermostat | temperature heater_centrl_signal  | heat_loss heat_gain
+house heating | transducer | heat_loss  | temperature temperature
+
+#################ModelProject 19 - industrial imaging system  #########################
+industrial imaging system | buffer | image response  | command
+industrial imaging system | camera | image_data  | trigger
+industrial imaging system | cont_camera | image_data  | trigger
+industrial imaging system | frame grabber | image response timer  | command trigger image
+industrial imaging system | host system interface | image response buffer image_acquisition_command time_command  | command responseIn image
+industrial imaging system | image acquisition | image response  | image command
+industrial imaging system | timer | timer response  | trigger command
+
+#################ModelProject 20 - Memory Hierarchy  #########################
+memory hierarchy | cache logic  | address data error  | address data
+memory hierarchy | cache logic advance | address data error  | address data
+memory hierarchy | cache | cache_data cache_address  | cpu_address  main_memory_data
+memory hierarchy | central processing unit | address data_received error  | control data
+memory hierarchy | main memory | main_memory error  | main_memory
+memory hierarchy | memory hierarchy | address data_received  | control
+
+#################ModelProject 21 - micro wave oven  #########################
+micro wave oven | beep | beep  | beep
+micro wave oven | cook time  | time_second time_minutes  | time_set second minute
+micro wave oven | current time register | current_time  | time_set hours minute
+micro wave oven | display  | current_time remining_time  | day_time counter_time
+micro wave oven | micro wave oven | beep power_level current_time remining_time  | phase_set power_level second minute hour time_set start stop clear
+micro wave oven | minute cook register | time_minute  | time_set minute
+micro wave oven | phase register | time_second time_minutes power_level  | phase_set powerlevel second minute
+micro wave oven | power driver | power_level  | power_set power_level
+micro wave oven | power level | power_level  | phase_set power_level
+micro wave oven | second cook register | time_second  | time_set second
+micro wave oven | time counter  | time_remaining power_switch beep  | phase_set start stop clear second minute
+
+#################ModelProject 22 - newspaper  #########################
+newspaper | news | news  | news
+newspaper | newspaper |   | 
+newspaper | news atomic | news_atomic  | news_atomic
+newspaper | news couple | news_couple  | news_couple
+
+#################ModelProject 23 - offline file transfer  #########################
+offline file transfer | access network | access_network | access_network 
+offline file transfer | file server | file  | file request
+offline file transfer | file server sender | requestData ack_received file_sent data  | request data ack
+offline file transfer | network | network  | network request
+offline file transfer | offline file transfer | file_sent ack_received data  | control request
+offline file transfer | receiver | receiver data  | receiver
+offline file transfer | sender | data file_sent ack_received  | control ack
+offline file transfer | subnet | subnet  | subnet
+offline file transfer | temporary file exchange | read_data  | delete_data request_data store_data
+offline file transfer | temporary file read thread | data  | delete_data request_data
+offline file transfer | temporary file write thread | data  | store_data
+
+#################ModelProject 24 - omniengine_with_batch  #########################
+omniengine_with_batch | CreateCapture | capture_created filter_code  | CreateCapture
+omniengine_with_batch | CreateFilter | filter_done  | CreateFilter
+omniengine_with_batch | OmniEngineControl | capture_created filter_code capture_started channel_num capture_stopped  | create_capture start_capture stop_capture
+omniengine_with_batch | StartCapture | capture_started channel_num  | StartCapture
+omniengine_with_batch | StopCapture | capture_stopped  | StopCapture
+omniengine_with_batch | WirelessChannel | channel_done  | WirelessChannel
+
+#################ModelProject 25 - o train  #########################
+o train | in train queue | passenger  | station_number passenger
+o train | o-train | passenger_arrived passenger_initial  | 
+o train | station generator | passenger_initial  | 
+o train | station queue | passenger  | station_number passenger
+o train | station arrival generator | station_number  | 
+
+#################ModelProject 26 - Panama Canal  #########################
+Panama Canal | controller | control_lock control_queue  | control
+Panama Canal | gate | gate control  | gate control
+Panama Canal | lack lock | lack_lock control  | lack_lock control
+Panama Canal | lock | lock control  | lock control
+Panama Canal | panama canal | panama_canal  | panama_canal
+Panama Canal | queue | queue  | queue control
+
+
+#################ModelProject 28 - queue  #########################
+queue | queue | queue  | in done stop
+
+#################ModelProject 29 - Resin  #########################
+Resin | computer | computer mix_tank_control store_tank_control  | computer mix_tank_temp mix_tank_empty mould_tank_temp mould_tank_empty store_tank_empty
+resin | computer system | computer_system mix_tank_control store_tank_control  | computer_system store_tank_empty mix_tank_temp mix_tank_empty mould_tank_temp mould_tank_empty
+resin | mix tank | mix_tank mix_tank_temp mix_tank_empty  | mix_tank start mix_tank_control
+resin | mould tank | mould_tank mould_tank_temp  | mould_tank start
+resin | Production line model | store_tank_empty mix_tank_temp mix_tank_empty mould_tank_temp mould_tank_empty  | start mix_tank_control store_tank_control
+resin | resin | resin  | resin
+resin | store tank | store_tank  | store_tank store_tank_control
+
+#################ModelProject 30 - Secure Area Access  #########################
+secure area access  | alarm admin | admin alarm_status error alarm_request  | alarm_request disalarm_request alarm_pin_ok
+secure area access  | authentication | alarm_pin_ok error door_pin_ok  | pin alarm_req alarm_status
+secure area access  | display | message  | pin_prompt alarm_status error door_ok
+secure area access  | secure area access system | message  | arm disarm pin
+secure area access  | system admin | pin_prompt alarm_status error door_ok  | alarm disalarm pin
+
+#################ModelProject 31 - soccer  #########################
+soccer | ball Play | game_on game_score  | start_period score end_game
+soccer | Model | start_period game_score game_on end_game  | start_game score
+soccer | Timer | end_game start_period  | start_game
+
+#################ModelProject 32 - switching  #########################
+switching | sink | packets_received  | sink
+switching | source | packet packet_total  | 
+switching | switch | switch gateway  | switch
+switching | switch node | swith_node gateway  | switch_node
+
+#################ModelProject 33 - Tank_Fire  #########################
+tank fire | barrel | ammunition  | safe ammunition gunner
+tank fire | electric file | electric_file  | electric_file
+tank fire | emergency | emergency_file  | emergency_file
+tank fire | fire | fire  | electric_file manual_file emergency_file
+tank fire | gunner | gunner  | electric_file manual_file emergency_file
+tank fire | loader | ammunition  | safe ammunition gunner
+tank fire | manual fire | manual_fire  | manual_fire
+tank fire | safety loader | safety_loader  | safe
+tank fire | tank | ammunition  | ammunition safety electric_file manual_file emergency_file
+
+#################ModelProject 34 - financial department  #########################
+financial department | coverage plan manager | plan_ok request_validation problem  | customer validation_result
+financial department | financial manager | plan_ok problem  | customer
+financial department | financial queue | financial_queue  | customer release_next
+financial department | financial queue control | financial_queue_control  | financial_queue_control
+financial department | technical support financial_department | done problem  | customer
+financial department | validation | result  | request_validation
+
+
+#################ModelProject 36 - traffic light  #########################
+traffic light | generator | car_number  | 
+traffic light | light | light_red light_green  | opp_light_red walk_stop
+traffic light | queue | remove add  | enqueue empty_queue fill_queue
+traffic light | walk signal | walk_stop walk  | button_on sensor_on light_green
+traffic light | intersection |  intersection | intersection
+traffic light | button | button_on  | ped_queue walk_stop
+traffic light | sensor | sensor_set  | car_ped_queue light_red
+
+#################ModelProject 37 - traffic light system  #########################
+traffic light system | group_controller | light_ab light_cd  | 
+traffic light system | intersection | next block intersection  | stop intersection
+traffic light system | intersection_controller | value busy timeout  | 
+traffic light system | intersection_queue | intersection_queue next block  | intersection_queue done stop
+traffic light system | lane | car  | stop
+traffic light system | lane queue limited | lane_queue_limited next block  | lane_queue_limited done stop
+traffic light system | lane queue unlimited | lane_queue_unlimited next block  | lane_queue_unlimited done stop
+traffic light system | light controller | light signal  | light_controller
+traffic light system | top | light throughput current_length average_length| 
+traffic light system | traffic collector | throughput current_length average_length  | 
+traffic light system | traffic light | light throughput current_length average_length  | signal
+
+#################ModelProject 38 - traffic intersection connector  #########################
+traffic intersection connector | connection generator | connection generator  | connection generator reset
+traffic intersection connector | group controller | light | 
+traffic intersection connector | intersection | next block intersection  | stop intersection
+traffic intersection connector | intersection controller | value busy timeout  | 
+traffic intersection connector | intersection queue | intersection_queue next block  | intersection_queue done stop
+traffic intersection connector | lane | car  | stop
+traffic intersection connector | lane queue limited | lane_queue_limited next block  | lane_queue_limited done stop
+traffic intersection connector | lane queue unlimited | lane_queue_unlimited next block  | lane_queue_unlimited done stop
+traffic intersection connector | light controller | light signal  | light_controller
+traffic intersection connector | queue | queue  | queue done
+traffic intersection connector | top | timeput  | 
+traffic intersection connector | toptersection_and_generatorand_queue | toptersection_and_generatorand_queue  | done stop
+traffic intersection connector | top of intersection and connection generator | intersection_and_connection_generator  | 
+traffic intersection connector | top original | light throughput current_length average_length car | 
+traffic intersection connector | traffic connector | throughput current_length average_length  | 
+traffic intersection connector | traffic light | light throughput current_length average_length  | signal
+
+#################ModelProject 39 - transport  #########################
+transport | generator | go  | 
+transport | load | exit_load  | arrive_load
+transport | load queue | ready_go_load  | arrive_load load_done
+transport | load server | exit_unload ready_accept  | enter_load
+transport | transport | exit_unload  | 
+transport | unload | exit_unload  | arrive_unload
+transport | unload queue | ready_go_unload  | arrive_unload unload_done
+transport | unload server | exit_unload ready_receive  | enter_unload
+
+#################ModelProject 40 - unmanned ground vehicles   #########################
+unmanned ground vehicles | heading sensor | heading_sensor  | heading_sensor
+unmanned ground vehicles | intruder sensor | intruder_sensor  | intruder_sensor
+unmanned ground vehicles | main computer | status turning_port turn_left turn_right  | heading input_heading intruder
+unmanned ground vehicles | unmanned ground vehicles | status left_wheel right_wheel  | input_heading intruder
+unmanned ground vehicles | wheel assembly | left_wheel right_wheel  | turn_left turn_right
+unmanned ground vehicles | wheel set | wheel_set  | wheel_set

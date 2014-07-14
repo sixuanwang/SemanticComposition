@@ -1,0 +1,20 @@
+
+centrality decreasing tag list (with0 tags removed):
+[blog]= -> 0.000999263421735
+[id]= -> 0.00099903653522
+[reference]= -> 0.000998937086698
+[doc]= -> 0.000998937086698
+[user]= -> 0.000998465237903
+[comment]= -> 0.000997846315037
+[patch]= -> 0.00099727035017
+[identification]= -> 0.000996012178513
+[path]= -> 0.000125125125125
+
+similarity: 0.04545455 | tag: id | tagto:  blog
+similarity: 0.06250000 | tag: reference | tagto:  blog
+similarity: 0.05859375 | tag: doc | tagto:  blog
+similarity: 0.20000000 | tag: user | tagto:  blog
+similarity: 0.33333333 | tag: comment | tagto:  blog
+similarity: 0.33333333 | tag: patch | tagto:  blog
+similarity: 0.49107143 | tag: identification | tagto:  user
+similarity: 10.00000000 | tag: path | tagto:  root

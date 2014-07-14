@@ -1,0 +1,17 @@
+<?xml version = "1.0"?>
+<TagTreeList>
+	<TagTree id='1'>
+		<Tree name = "n1" type="t1" description="d1"/>
+		<Tag name="t1" index="0" />
+		<Tag name="t12" index="1" />
+		<Tag name="t23" index="2" />
+		<Tag name="t13" index="1" />
+	</TagTree>
+	<TagTree id='2'>
+		<Tree name = "n2" type="t2" description="d2"/>
+		<Tag name="d1" index="0" />
+		<Tag name="d12" index="1" />
+		<Tag name="d23" index="2" />
+		<Tag name="d13" index="1" />
+	</TagTree>
+</TagTreeList>

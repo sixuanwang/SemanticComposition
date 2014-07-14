@@ -1,0 +1,9 @@
+development: { llvm:145,  virtual_machine:101,  compiler:145,  programming:145,  vm:145,  software:73,  compilers:131, }
+software: { development:73,  llvm:73,  virtual_machine:73,  programming:73,  vm:73,  opensource:59,  compiler:73,  compilers:73, }
+llvm: { development:145,  virtual_machine:101,  programming:200,  compilers:131,  vm:157,  software:73,  compiler:200, }
+virtual_machine: { development:101,  software:73,  llvm:101,  programming:101,  vm:101,  compilers:101,  compiler:101, }
+programming: { development:145,  llvm:200,  virtual_machine:101,  compiler:236,  vm:157,  compilers:131,  software:73, }
+vm: { development:145,  llvm:157,  virtual_machine:101,  programming:157,  compilers:131,  compiler:157,  software:73, }
+opensource: { software:59, }
+compiler: { development:145,  llvm:200,  virtual_machine:101,  programming:236,  vm:157,  software:73,  compilers:131, }
+compilers: { development:131,  llvm:131,  virtual_machine:101,  programming:131,  vm:131,  software:73,  compiler:131, }

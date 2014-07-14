@@ -1,0 +1,184 @@
+
+centrality decreasing tag list (with10 tags removed):
+[format]= -> 0.0692079825899
+[user]= -> 0.0682676293731
+[id]= -> 0.0630149490455
+[status]= -> 0.061679521187
+[page]= -> 0.0612228605154
+[cursor]= -> 0.060235977432
+[member]= -> 0.0590869869574
+[name]= -> 0.0581422382966
+[photo]= -> 0.0578777065564
+[request]= -> 0.0574339289096
+[team]= -> 0.0570029547599
+[repository]= -> 0.0563405666384
+[slug]= -> 0.0556021546549
+[query]= -> 0.0555482266993
+[parameter]= -> 0.0551296005713
+[source]= -> 0.0520342379364
+[account]= -> 0.051548516775
+[identification]= -> 0.051548516775
+[information]= -> 0.0508654073173
+[tag]= -> 0.0490557923541
+[friendship]= -> 0.0484573593367
+[organization]= -> 0.0484573593367
+[are]= -> 0.0475077431765
+[calling]= -> 0.0470858348354
+[lat]= -> 0.0465133580751
+[part]= -> 0.0463272624953
+[comment]= -> 0.0459183000302
+[topic]= -> 0.0456090308904
+[token]= -> 0.0454339648842
+[tweet]= -> 0.0453214962198
+[match]= -> 0.0450782034496
+[kind]= -> 0.0446365187037
+[block]= -> 0.0442947330695
+[place]= -> 0.044054415511
+[suggestion]= -> 0.0439298767332
+[use]= -> 0.0426140974675
+[image]= -> 0.0422725967962
+[playlist]= -> 0.0421550440227
+[people]= -> 0.0419028688325
+[person]= -> 0.0410911457274
+[screen]= -> 0.0410691106624
+[time]= -> 0.0410691106624
+[contact]= -> 0.0410690465417
+[video]= -> 0.0408347073834
+[permission]= -> 0.040171622298
+[top]= -> 0.0394130961444
+[academic]= -> 0.0390331078804
+[index]= -> 0.0390331078804
+[performance]= -> 0.0390331078804
+[favorite]= -> 0.0389890438365
+[method]= -> 0.0383312473728
+[view]= -> 0.0380549220523
+[check]= -> 0.0376536281225
+[description]= -> 0.0375582153308
+[friend]= -> 0.0374612171261
+[access]= -> 0.0374517141367
+[profile]= -> 0.0373842952424
+[message]= -> 0.0373377670388
+[response]= -> 0.0373288325821
+[collection]= -> 0.0370160819535
+[bundle]= -> 0.0358764805925
+[channel]= -> 0.0355189848967
+[language]= -> 0.0350477112993
+[text]= -> 0.0349747479143
+[follower]= -> 0.0349747479143
+[resource]= -> 0.0346012195537
+[criterion]= -> 0.0333395825158
+[size]= -> 0.0332871787093
+[web]= -> 0.0324898640917
+[project]= -> 0.0324859549648
+[mode]= -> 0.0324400978871
+[line]= -> 0.0323110126147
+[callback]= -> 0.0323110126147
+[accuracy]= -> 0.0323110126147
+[category]= -> 0.0323082436265
+[box]= -> 0.0318261864035
+[date]= -> 0.0308363000375
+[URL]= -> 0.0305957872282
+[activity]= -> 0.030377635504
+[subscription]= -> 0.029735027359
+[device]= -> 0.0293031297729
+[tube]= -> 0.0292671040301
+[location]= -> 0.0292390405679
+[example]= -> 0.0289366831358
+[rating]= -> 0.0286324129429
+[day]= -> 0.0256984059172
+[type]= -> 0.0255947604498
+[notification]= -> 0.0255911245557
+[sent]= -> 0.0255767494443
+[object]= -> 0.0255107245398
+[ticket]= -> 0.0251325588443
+
+similarity: 0.00492611 | tag: user | tagto:  format
+similarity: 0.01612903 | tag: id | tagto:  format
+similarity: 0.01818182 | tag: status | tagto:  format
+similarity: 0.02631579 | tag: page | tagto:  format
+similarity: 0.02028986 | tag: cursor | tagto:  format
+similarity: 0.02500000 | tag: member | tagto:  format
+similarity: 0.02592593 | tag: name | tagto:  format
+similarity: 0.04000000 | tag: photo | tagto:  user
+similarity: 0.03251232 | tag: request | tagto:  format
+similarity: 0.02916667 | tag: team | tagto:  format
+similarity: 0.03200000 | tag: repository | tagto:  format
+similarity: 0.03571429 | tag: slug | tagto:  format
+similarity: 0.03524904 | tag: query | tagto:  user
+similarity: 0.03333333 | tag: parameter | tagto:  format
+similarity: 0.04444444 | tag: source | tagto:  query
+similarity: 0.04714286 | tag: account | tagto:  format
+similarity: 0.04714286 | tag: identification | tagto:  format
+similarity: 0.04114833 | tag: information | tagto:  format
+similarity: 0.03571429 | tag: tag | tagto:  photo
+similarity: 0.06000000 | tag: friendship | tagto:  format
+similarity: 0.05625000 | tag: organization | tagto:  format
+similarity: 0.06222222 | tag: are | tagto:  format
+similarity: 0.02125273 | tag: calling | tagto:  name
+similarity: 0.06190476 | tag: lat | tagto:  format
+similarity: 0.05333333 | tag: part | tagto:  page
+similarity: 0.04545455 | tag: comment | tagto:  photo
+similarity: 0.07179487 | tag: topic | tagto:  format
+similarity: 0.06133333 | tag: token | tagto:  page
+similarity: 0.07179487 | tag: tweet | tagto:  format
+similarity: 0.05750000 | tag: match | tagto:  page
+similarity: 0.06666667 | tag: kind | tagto:  page
+similarity: 0.08333333 | tag: block | tagto:  format
+similarity: 0.08333333 | tag: place | tagto:  format
+similarity: 0.07076923 | tag: suggestion | tagto:  photo
+similarity: 0.06363636 | tag: use | tagto:  user
+similarity: 0.09333333 | tag: image | tagto:  format
+similarity: 0.04473684 | tag: playlist | tagto:  part
+similarity: 0.05777778 | tag: people | tagto:  photo
+similarity: 0.06190476 | tag: person | tagto:  photo
+similarity: 0.09333333 | tag: screen | tagto:  format
+similarity: 0.09333333 | tag: time | tagto:  format
+similarity: 0.06734694 | tag: contact | tagto:  photo
+similarity: 0.08400000 | tag: video | tagto:  id
+similarity: 0.07076923 | tag: permission | tagto:  photo
+similarity: 0.08444444 | tag: top | tagto:  topic
+similarity: 0.09000000 | tag: academic | tagto:  page
+similarity: 0.09200000 | tag: index | tagto:  page
+similarity: 0.08909091 | tag: performance | tagto:  page
+similarity: 0.09863164 | tag: favorite | tagto:  format
+similarity: 0.12500000 | tag: method | tagto:  format
+similarity: 0.09090909 | tag: view | tagto:  photo
+similarity: 0.03934211 | tag: check | tagto:  match
+similarity: 0.11590909 | tag: description | tagto:  format
+similarity: 0.11666667 | tag: friend | tagto:  format
+similarity: 0.11666667 | tag: access | tagto:  user
+similarity: 0.11785714 | tag: profile | tagto:  format
+similarity: 0.11785714 | tag: message | tagto:  format
+similarity: 0.12342980 | tag: response | tagto:  user
+similarity: 0.09200000 | tag: collection | tagto:  playlist
+similarity: 0.07692308 | tag: bundle | tagto:  tag
+similarity: 0.09428571 | tag: channel | tagto:  part
+similarity: 0.13571429 | tag: language | tagto:  format
+similarity: 0.13333333 | tag: text | tagto:  format
+similarity: 0.12857143 | tag: follower | tagto:  format
+similarity: 0.10000000 | tag: resource | tagto:  channel
+similarity: 0.13650794 | tag: criterion | tagto:  page
+similarity: 0.14285714 | tag: size | tagto:  photo
+similarity: 0.12500000 | tag: web | tagto:  source
+similarity: 0.05028571 | tag: project | tagto:  image
+similarity: 0.15555556 | tag: mode | tagto:  format
+similarity: 0.05949159 | tag: line | tagto:  channel
+similarity: 0.15833333 | tag: callback | tagto:  format
+similarity: 0.15833333 | tag: accuracy | tagto:  format
+similarity: 0.15000000 | tag: category | tagto:  user
+similarity: 0.13142857 | tag: box | tagto:  photo
+similarity: 0.11250000 | tag: date | tagto:  tag
+similarity: 0.12500000 | tag: URL | tagto:  tag
+similarity: 0.19000000 | tag: activity | tagto:  request
+similarity: 0.18000000 | tag: subscription | tagto:  user
+similarity: 0.20000000 | tag: device | tagto:  format
+similarity: 0.10222222 | tag: tube | tagto:  video
+similarity: 0.18000000 | tag: location | tagto:  format
+similarity: 0.10555556 | tag: example | tagto:  playlist
+similarity: 0.05989247 | tag: rating | tagto:  place
+similarity: 0.20000000 | tag: day | tagto:  date
+similarity: 0.23333333 | tag: type | tagto:  source
+similarity: 0.21428571 | tag: notification | tagto:  identification
+similarity: 0.06666667 | tag: sent | tagto:  place
+similarity: 0.23333333 | tag: object | tagto:  format
+similarity: 0.05333333 | tag: ticket | tagto:  tag

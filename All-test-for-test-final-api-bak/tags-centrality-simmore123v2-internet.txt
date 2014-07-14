@@ -1,0 +1,152 @@
+
+centrality decreasing tag list (with8 tags removed):
+[contract]= -> 0.0607505809575
+[service]= -> 0.0573213063969
+[number]= -> 0.0536161486381
+[provider]= -> 0.0534630266237
+[connection]= -> 0.0528630303428
+[transaction]= -> 0.050720744322
+[week]= -> 0.0507132479437
+[day]= -> 0.0506228469825
+[counter]= -> 0.0505799950144
+[information]= -> 0.0491694667667
+[advice]= -> 0.0491609104217
+[name]= -> 0.048996279864
+[line]= -> 0.0481945362871
+[month]= -> 0.0480512606017
+[entrance]= -> 0.0473056227004
+[id]= -> 0.0471204996229
+[domain]= -> 0.0471131398525
+[property]= -> 0.0467806710198
+[request]= -> 0.0456028385837
+[stat]= -> 0.045356723669
+[value]= -> 0.0449939551318
+[key]= -> 0.0445024711398
+[belt]= -> 0.0442192327709
+[master]= -> 0.0442192327709
+[range]= -> 0.0438212633153
+[hour]= -> 0.0433901116592
+[point]= -> 0.043322759687
+[user]= -> 0.0432461309622
+[goal]= -> 0.0432268730593
+[phone]= -> 0.0431081433204
+[country]= -> 0.0428488425194
+[detail]= -> 0.0425992083813
+[exchange]= -> 0.0424105927344
+[zone]= -> 0.0422536483242
+[space]= -> 0.0413746922873
+[add-on]= -> 0.0411148772238
+[provision]= -> 0.0407464754041
+[loss]= -> 0.0405553497822
+[dodo]= -> 0.0404065361044
+[date]= -> 0.0403811021928
+[status]= -> 0.0402947326587
+[block]= -> 0.0401576902746
+[task]= -> 0.0390915345815
+[network]= -> 0.0389608185454
+[report]= -> 0.0388654346434
+[doc]= -> 0.0385029266574
+[e-mail]= -> 0.0375276420199
+[method]= -> 0.0369858651835
+[tag]= -> 0.0369700861777
+[message]= -> 0.0368869191089
+[type]= -> 0.0357129665692
+[Internet]= -> 0.0356463454927
+[forum]= -> 0.0356203336803
+[category]= -> 0.035478661973
+[blog]= -> 0.0354044648513
+[event]= -> 0.0353826274946
+[session]= -> 0.034917243685
+[system]= -> 0.0348867719409
+[document]= -> 0.0340547932358
+[version]= -> 0.0338443778668
+[site]= -> 0.0329387288773
+[image]= -> 0.0328440899609
+[file]= -> 0.0326646486401
+[photo]= -> 0.0326465525342
+[management]= -> 0.0326324646005
+[folder]= -> 0.0322964677354
+[info]= -> 0.0321632463268
+[code]= -> 0.0314334975867
+[friend]= -> 0.0308986284019
+[simular]= -> 0.0303521891293
+[Web]= -> 0.030215345857
+[format]= -> 0.0293290285778
+[van]= -> 0.0292250313345
+[toe]= -> 0.0288819897619
+[markup]= -> 0.0288353913054
+
+similarity: 0.05000000 | tag: service | tagto:  contract
+similarity: 0.04750000 | tag: number | tagto:  contract
+similarity: 0.09090909 | tag: provider | tagto:  contract
+similarity: 0.04181818 | tag: connection | tagto:  service
+similarity: 0.06022727 | tag: transaction | tagto:  number
+similarity: 0.03800000 | tag: week | tagto:  provider
+similarity: 0.01960784 | tag: day | tagto:  week
+similarity: 0.01265823 | tag: counter | tagto:  day
+similarity: 0.07132867 | tag: information | tagto:  contract
+similarity: 0.05277778 | tag: advice | tagto:  contract
+similarity: 0.11500000 | tag: name | tagto:  day
+similarity: 0.05277778 | tag: line | tagto:  contract
+similarity: 0.01624650 | tag: month | tagto:  counter
+similarity: 0.02209302 | tag: entrance | tagto:  counter
+similarity: 0.05882353 | tag: id | tagto:  contract
+similarity: 0.02299652 | tag: domain | tagto:  counter
+similarity: 0.02794118 | tag: property | tagto:  counter
+similarity: 0.11875000 | tag: request | tagto:  contract
+similarity: 0.02946429 | tag: stat | tagto:  counter
+similarity: 0.02857143 | tag: value | tagto:  counter
+similarity: 0.03131783 | tag: key | tagto:  name
+similarity: 0.07307692 | tag: belt | tagto:  contract
+similarity: 0.07307692 | tag: master | tagto:  contract
+similarity: 0.05939394 | tag: range | tagto:  transaction
+similarity: 0.04347826 | tag: hour | tagto:  week
+similarity: 0.03452381 | tag: point | tagto:  counter
+similarity: 0.07142857 | tag: user | tagto:  name
+similarity: 0.03928571 | tag: goal | tagto:  counter
+similarity: 0.05750000 | tag: phone | tagto:  connection
+similarity: 0.05105840 | tag: country | tagto:  counter
+similarity: 0.05422078 | tag: detail | tagto:  point
+similarity: 0.07692308 | tag: exchange | tagto:  number
+similarity: 0.10000000 | tag: zone | tagto:  contract
+similarity: 0.07857143 | tag: space | tagto:  request
+similarity: 0.11111111 | tag: add-on | tagto:  contract
+similarity: 0.10617284 | tag: provision | tagto:  contract
+similarity: 0.07142857 | tag: loss | tagto:  advice
+similarity: 0.10555556 | tag: dodo | tagto:  contract
+similarity: 0.06181818 | tag: date | tagto:  transaction
+similarity: 0.06285714 | tag: status | tagto:  request
+similarity: 0.10555556 | tag: block | tagto:  contract
+similarity: 0.11250000 | tag: task | tagto:  contract
+similarity: 0.07333333 | tag: network | tagto:  connection
+similarity: 0.11836735 | tag: report | tagto:  request
+similarity: 0.07142857 | tag: doc | tagto:  status
+similarity: 0.11111111 | tag: e-mail | tagto:  user
+similarity: 0.06666667 | tag: method | tagto:  doc
+similarity: 0.06666667 | tag: tag | tagto:  user
+similarity: 0.06285714 | tag: message | tagto:  user
+similarity: 0.07666667 | tag: type | tagto:  range
+similarity: 0.13571429 | tag: Internet | tagto:  service
+similarity: 0.06250000 | tag: forum | tagto:  user
+similarity: 0.05625000 | tag: category | tagto:  user
+similarity: 0.07692308 | tag: blog | tagto:  user
+similarity: 0.09555556 | tag: event | tagto:  provision
+similarity: 0.04217687 | tag: session | tagto:  method
+similarity: 0.16666667 | tag: system | tagto:  domain
+similarity: 0.04722222 | tag: document | tagto:  doc
+similarity: 0.13469388 | tag: version | tagto:  user
+similarity: 0.07500000 | tag: site | tagto:  type
+similarity: 0.07407273 | tag: image | tagto:  range
+similarity: 0.10476190 | tag: file | tagto:  request
+similarity: 0.10000000 | tag: photo | tagto:  user
+similarity: 0.16000000 | tag: management | tagto:  service
+similarity: 0.08666667 | tag: folder | tagto:  user
+similarity: 0.05696970 | tag: info | tagto:  information
+similarity: 0.06222222 | tag: code | tagto:  method
+similarity: 0.10000000 | tag: friend | tagto:  message
+similarity: 0.07692308 | tag: simular | tagto:  method
+similarity: 0.08328571 | tag: Web | tagto:  network
+similarity: 0.09333333 | tag: format | tagto:  event
+similarity: 0.08333333 | tag: van | tagto:  type
+similarity: 0.06666667 | tag: toe | tagto:  type
+similarity: 0.08333333 | tag: markup | tagto:  type

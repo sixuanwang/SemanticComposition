@@ -1,0 +1,154 @@
+
+centrality decreasing tag list (with8 tags removed):
+[design]= -> 3996.18265991
+[webdesign]= -> 3996.19092565
+[web]= -> 3996.19403186
+[tools]= -> 3996.19601402
+[reference]= -> 3996.19872006
+[software]= -> 3996.20539208
+[linux]= -> 3996.21565147
+[usability]= -> 3996.22140637
+[inspiration]= -> 3996.22672822
+[css]= -> 3996.2283293
+[blog]= -> 3996.22887669
+[art]= -> 3996.23040771
+[opensource]= -> 3996.23240837
+[development]= -> 3996.23341752
+[howto]= -> 3996.23414886
+[free]= -> 3996.24122479
+[logo]= -> 3996.24403787
+[programming]= -> 3996.24444881
+[tutorial]= -> 3996.24472529
+[web2.0]= -> 3996.2478394
+[ubuntu]= -> 3996.24846595
+[shopping]= -> 3996.251376
+[logos]= -> 3996.26139718
+[ia]= -> 3996.26249736
+[ui]= -> 3996.2667655
+[graphics]= -> 3996.26923038
+[javascript]= -> 3996.27502284
+[flash]= -> 3996.27667349
+[branding]= -> 3996.28156101
+[webdev]= -> 3996.2825954
+[ajax]= -> 3996.28317057
+[illustration]= -> 3996.28543596
+[windows]= -> 3996.28589847
+[actionscript]= -> 3996.29831965
+[blogs]= -> 3996.29883185
+[tips]= -> 3996.29989546
+[interface]= -> 3996.30757755
+[architecture]= -> 3996.30990297
+[games]= -> 3996.31147625
+[audio]= -> 3996.31389924
+[as3]= -> 3996.32057831
+[ux]= -> 3996.32176921
+[portfolio]= -> 3996.32269581
+[social]= -> 3996.32280471
+[patterns]= -> 3996.32294768
+[music]= -> 3996.32301006
+[community]= -> 3996.32660994
+[sysadmin]= -> 3996.32723946
+[cool]= -> 3996.32927645
+[applications]= -> 3996.33119853
+[code]= -> 3996.33517255
+[history]= -> 3996.33556217
+[books]= -> 3996.33715358
+[freeware]= -> 3996.33863115
+[flex]= -> 3996.34129488
+[html]= -> 3996.34208844
+[hardware]= -> 3996.34373029
+[education]= -> 3996.34785964
+[fun]= -> 3996.34911708
+[shell]= -> 3996.34921312
+[bash]= -> 3996.36063289
+[marketing]= -> 3996.36125967
+[unix]= -> 3996.36450644
+[news]= -> 3996.36452886
+[mp3]= -> 3996.36654374
+[online]= -> 3996.36888437
+[photography]= -> 3996.3695611
+[library]= -> 3996.37620556
+[download]= -> 3996.38356056
+[language]= -> 3996.38916124
+[shop]= -> 3996.4055262
+[advertising]= -> 3996.41322585
+[brand]= -> 3996.43390476
+[literature]= -> 3996.43818985
+[humor]= -> 3996.44366341
+[puzzles]= -> 3996.44665823
+
+similarity: 0.00021651 | tag: webdesign | tagto:  design
+similarity: 0.00041417 | tag: web | tagto:  webdesign
+similarity: 0.00064103 | tag: tools | tagto:  web
+similarity: 0.00104167 | tag: reference | tagto:  design
+similarity: 0.00057912 | tag: software | tagto:  tools
+similarity: 0.00045537 | tag: linux | tagto:  software
+similarity: 0.00050216 | tag: usability | tagto:  design
+similarity: 0.00051904 | tag: inspiration | tagto:  design
+similarity: 0.00048261 | tag: css | tagto:  webdesign
+similarity: 0.00073133 | tag: blog | tagto:  design
+similarity: 0.00062461 | tag: art | tagto:  design
+similarity: 0.00042844 | tag: opensource | tagto:  software
+similarity: 0.00102285 | tag: development | tagto:  web
+similarity: 0.00061958 | tag: howto | tagto:  linux
+similarity: 0.00088574 | tag: free | tagto:  tools
+similarity: 0.00075697 | tag: logo | tagto:  design
+similarity: 0.00052235 | tag: programming | tagto:  development
+similarity: 0.00065610 | tag: tutorial | tagto:  howto
+similarity: 0.00078678 | tag: web2.0 | tagto:  tools
+similarity: 0.00039966 | tag: ubuntu | tagto:  linux
+similarity: 0.00087025 | tag: shopping | tagto:  design
+similarity: 0.00015850 | tag: logos | tagto:  logo
+similarity: 0.00097938 | tag: ia | tagto:  design
+similarity: 0.00103939 | tag: ui | tagto:  design
+similarity: 0.00033389 | tag: graphics | tagto:  art
+similarity: 0.00093180 | tag: javascript | tagto:  css
+similarity: 0.00117456 | tag: flash | tagto:  reference
+similarity: 0.00132212 | tag: branding | tagto:  design
+similarity: 0.00107731 | tag: webdev | tagto:  web
+similarity: 0.00071756 | tag: ajax | tagto:  javascript
+similarity: 0.00095670 | tag: illustration | tagto:  art
+similarity: 0.00111908 | tag: windows | tagto:  tools
+similarity: 0.00096059 | tag: actionscript | tagto:  flash
+similarity: 0.00013632 | tag: blogs | tagto:  blog
+similarity: 0.00120482 | tag: tips | tagto:  howto
+similarity: 0.00155163 | tag: interface | tagto:  design
+similarity: 0.00159054 | tag: architecture | tagto:  design
+similarity: 0.00142045 | tag: games | tagto:  linux
+similarity: 0.00143678 | tag: audio | tagto:  linux
+similarity: 0.00102088 | tag: as3 | tagto:  flash
+similarity: 0.00164960 | tag: ux | tagto:  usability
+similarity: 0.00179533 | tag: portfolio | tagto:  design
+similarity: 0.00097371 | tag: social | tagto:  web2.0
+similarity: 0.00034622 | tag: patterns | tagto:  design
+similarity: 0.00068323 | tag: music | tagto:  audio
+similarity: 0.00094467 | tag: community | tagto:  social
+similarity: 0.00143062 | tag: sysadmin | tagto:  linux
+similarity: 0.00187970 | tag: cool | tagto:  design
+similarity: 0.00157258 | tag: applications | tagto:  software
+similarity: 0.00119061 | tag: code | tagto:  programming
+similarity: 0.00175439 | tag: history | tagto:  reference
+similarity: 0.00182149 | tag: books | tagto:  reference
+similarity: 0.00144558 | tag: freeware | tagto:  free
+similarity: 0.00172840 | tag: flex | tagto:  reference
+similarity: 0.00193798 | tag: html | tagto:  webdesign
+similarity: 0.00164204 | tag: hardware | tagto:  linux
+similarity: 0.00191205 | tag: education | tagto:  reference
+similarity: 0.00186220 | tag: fun | tagto:  games
+similarity: 0.00171233 | tag: shell | tagto:  linux
+similarity: 0.00185874 | tag: bash | tagto:  linux
+similarity: 0.00089903 | tag: marketing | tagto:  branding
+similarity: 0.00167939 | tag: unix | tagto:  linux
+similarity: 0.00173913 | tag: news | tagto:  blog
+similarity: 0.00090385 | tag: mp3 | tagto:  music
+similarity: 0.00155483 | tag: online | tagto:  free
+similarity: 0.00179744 | tag: photography | tagto:  blog
+similarity: 0.00159705 | tag: library | tagto:  programming
+similarity: 0.00182482 | tag: download | tagto:  free
+similarity: 0.00175409 | tag: language | tagto:  programming
+similarity: 0.00033597 | tag: shop | tagto:  shopping
+similarity: 0.00131853 | tag: advertising | tagto:  marketing
+similarity: 0.00031738 | tag: brand | tagto:  branding
+similarity: 0.00129534 | tag: literature | tagto:  books
+similarity: 0.00116481 | tag: humor | tagto:  fun
+similarity: 0.00158455 | tag: puzzles | tagto:  games

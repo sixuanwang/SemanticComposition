@@ -1,0 +1,110 @@
+
+centrality decreasing tag list (with6 tags removed):
+[traffic]= -> 41.9429995443
+[light]= -> 42.1525233538
+[system]= -> 43.1410514924
+[intersection]= -> 43.4602301208
+[on]= -> 43.8549043062
+[connector]= -> 43.8641774892
+[queue]= -> 44.3401856915
+[next]= -> 45.0851731602
+[done]= -> 45.4354237867
+[block]= -> 45.4532809296
+[stop]= -> 46.043732145
+[alarm]= -> 46.1116142629
+[current]= -> 46.2168090681
+[controller]= -> 46.2168090681
+[response]= -> 46.3163761677
+[door]= -> 46.5092333105
+[industrial]= -> 46.7330428344
+[imaging]= -> 46.7330428344
+[mobile]= -> 47.4925666439
+[garage]= -> 48.080661882
+[id]= -> 48.5849908863
+[level]= -> 48.9119139632
+[set]= -> 49.3152689416
+[time]= -> 49.6826923077
+[start]= -> 49.7151607165
+[data]= -> 49.7738095238
+[file]= -> 50.1071428571
+[oven]= -> 50.3569966583
+[wave]= -> 50.3569966583
+[micro]= -> 50.3569966583
+[transfer]= -> 50.4071428571
+[offline]= -> 50.4071428571
+[ok]= -> 50.5122636136
+[request]= -> 50.5476190476
+[clock]= -> 50.6666666667
+[register]= -> 51.5238095238
+[received]= -> 52.0
+[tank]= -> 52.2964285714
+[fire]= -> 52.4214285714
+[access]= -> 52.4439735703
+[error]= -> 52.4439735703
+[control]= -> 52.9904761905
+[simulator]= -> 54.0238095238
+[bluetooth]= -> 54.0238095238
+[resin]= -> 54.5630952381
+[canal]= -> 56.2619047619
+[panama]= -> 56.2619047619
+[cable]= -> 57.25
+[robot]= -> 57.25
+[anchor]= -> 57.25
+[case]= -> 57.2857142857
+[reasoner]= -> 57.2857142857
+[based]= -> 57.2857142857
+[airport]= -> 58.1428571429
+
+similarity: 0.04666667 | tag: light | tagto:  traffic
+similarity: 0.08863636 | tag: system | tagto:  traffic
+similarity: 0.05003289 | tag: intersection | tagto:  traffic
+similarity: 0.25000000 | tag: on | tagto:  light
+similarity: 0.06380000 | tag: connector | tagto:  intersection
+similarity: 0.08961039 | tag: queue | tagto:  traffic
+similarity: 0.12500000 | tag: next | tagto:  traffic
+similarity: 0.12045833 | tag: done | tagto:  queue
+similarity: 0.13809524 | tag: block | tagto:  traffic
+similarity: 0.32500000 | tag: stop | tagto:  traffic
+similarity: 0.32857143 | tag: alarm | tagto:  on
+similarity: 0.16458333 | tag: current | tagto:  traffic
+similarity: 0.16151852 | tag: controller | tagto:  traffic
+similarity: 0.13905612 | tag: response | tagto:  system
+similarity: 0.24091667 | tag: door | tagto:  alarm
+similarity: 0.16333333 | tag: industrial | tagto:  system
+similarity: 0.16061111 | tag: imaging | tagto:  industrial
+similarity: 0.19750000 | tag: mobile | tagto:  system
+similarity: 0.14000000 | tag: garage | tagto:  door
+similarity: 0.24232143 | tag: id | tagto:  mobile
+similarity: 0.32500000 | tag: level | tagto:  stop
+similarity: 0.23683333 | tag: set | tagto:  level
+similarity: 0.07307692 | tag: time | tagto:  set
+similarity: 0.18560000 | tag: start | tagto:  stop
+similarity: 0.63948718 | tag: data | tagto:  garage
+similarity: 0.14081633 | tag: file | tagto:  data
+similarity: 0.10734848 | tag: oven | tagto:  set
+similarity: 0.09685000 | tag: wave | tagto:  oven
+similarity: 0.10000000 | tag: micro | tagto:  oven
+similarity: 0.09677500 | tag: transfer | tagto:  file
+similarity: 0.09571429 | tag: offline | tagto:  file
+similarity: 0.32916667 | tag: ok | tagto:  system
+similarity: 0.32093750 | tag: request | tagto:  transfer
+similarity: 0.15000000 | tag: clock | tagto:  time
+similarity: 0.13464286 | tag: register | tagto:  set
+similarity: 0.19714286 | tag: received | tagto:  data
+similarity: 0.19666667 | tag: tank | tagto:  file
+similarity: 0.12250000 | tag: fire | tagto:  tank
+similarity: 0.24173611 | tag: access | tagto:  alarm
+similarity: 0.24642857 | tag: error | tagto:  alarm
+similarity: 0.32222222 | tag: control | tagto:  received
+similarity: 0.32341880 | tag: simulator | tagto:  data
+similarity: 0.16481481 | tag: bluetooth | tagto:  simulator
+similarity: 0.19846154 | tag: resin | tagto:  tank
+similarity: 0.31373016 | tag: canal | tagto:  control
+similarity: 0.15657407 | tag: panama | tagto:  canal
+similarity: 0.93416667 | tag: cable | tagto:  mobile
+similarity: 0.12005000 | tag: robot | tagto:  cable
+similarity: 0.12045833 | tag: anchor | tagto:  robot
+similarity: 0.92433333 | tag: case | tagto:  cable
+similarity: 0.13475000 | tag: reasoner | tagto:  case
+similarity: 0.13160000 | tag: based | tagto:  case
+similarity: 0.94757143 | tag: airport | tagto:  anchor

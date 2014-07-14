@@ -1,0 +1,20 @@
+
+centrality decreasing tag list (with0 tags removed):
+[opensource]= -> 0.0666666666667
+[development]= -> 0.111111111111
+[llvm]= -> 0.111111111111
+[virtual_machine]= -> 0.111111111111
+[programming]= -> 0.111111111111
+[vm]= -> 0.111111111111
+[compiler]= -> 0.111111111111
+[compilers]= -> 0.111111111111
+[software]= -> 0.125
+
+similarity: 0.00000000 | tag: development | tagto:  treeRoot
+similarity: 1.00000000 | tag: llvm | tagto:  development
+similarity: 1.00000000 | tag: virtual_machine | tagto:  development
+similarity: 0.70710678 | tag: programming | tagto:  development
+similarity: 1.00000000 | tag: vm | tagto:  development
+similarity: 1.00000000 | tag: compiler | tagto:  development
+similarity: 1.00000000 | tag: compilers | tagto:  development
+similarity: 1.00000000 | tag: software | tagto:  opensource

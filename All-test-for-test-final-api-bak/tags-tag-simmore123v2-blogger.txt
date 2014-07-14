@@ -1,0 +1,29 @@
+[TagSet]:
+comment: 5
+reference: 13
+doc: 13
+patch: 4
+blog: 41
+identification: 5
+user: 9
+path: 3
+id: 18
+
+[TagPair]:
+blog,bypath: 2
+blog,reference: 16
+blog,URL: 2
+id,patch: 2
+doc,user: 2
+doc,reference: 13
+identification,user: 2
+comment,id: 3
+blog,patch: 3
+blog,doc: 16
+comment,identification: 2
+blog,comment: 3
+user,id: 4
+blog,id: 22
+comment,resource: 2
+user,reference: 2
+blog,user: 5

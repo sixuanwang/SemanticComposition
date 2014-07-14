@@ -1,0 +1,10 @@
+root
+- blog
+-- id
+-- reference
+-- doc
+-- user
+- comment
+- patch
+- identification
+- path

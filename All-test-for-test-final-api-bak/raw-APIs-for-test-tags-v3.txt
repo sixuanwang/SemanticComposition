@@ -1,0 +1,44 @@
+fire model, weather, geography information; fire simulation framework existing 
+fire simulation framework existing; fire simulation execution
+fire simulation completion;  fire simulation Simulation Results, log zip
+fire simulation completion;  fire log zip removal
+fire simulation completion;  fire simulation debug obtaining
+fire simulation completion;  fire simulation debug removal
+fire simulation framework existing, external events message; fire simulation external events message updating
+fire simulation framework existing; fire framework state xml obtaining
+fire simulation execution; fire simulation stopping
+cell devs model fire; fire cell devs model geographical information system 
+cell devs model evacuation; evacuation cell devs model building information model
+cell devs model landuse; landuse cell devs model geographical information system	
+fire spreading; creating advanced fire spreading models using the CD++ toolkit
+fire spreading, cell analysis; improved cell devs models for fire spreading analysis
+emergency, evacuation; building information modeling simulation  emergency evacuation
+cell devs, landuse; simulation using cell devs modeling GIS visualization
+ zip code; Date, weather ID, description, temperature, probability
+ weather ID; weather ID, description, photo
+ city name; latitude longitude information
+ zip code; latitude longitude information
+ IP; city, state province, country, organization, latitude, areaCode, timeZone, certainty, regionName, zip code
+ word; definition information
+ query   ; search  web content
+ query  ;  search images web
+ query  ; search news story
+user name id; direct message list 
+user name ; recent status
+ query ; search status 
+ url ;   popular tag
+ user ; update time
+ tag count ;  recent posts
+ query ; posts day
+ user ; tags time
+ ip ; nearby places
+ user name; top topics, trend, url
+ query; tweet, content 
+photo id, api key; photo, user, id, title, description, visibility, dates, permissions, editability, comments, note, tag, url
+ api key, photo id; people, person
+ api key, request; photo id list 
+request; channel activity event
+request; channel resource collection
+request; item playlist collection
+request; search results collection
+request; video list

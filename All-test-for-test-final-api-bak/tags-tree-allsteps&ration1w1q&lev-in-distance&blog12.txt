@@ -1,0 +1,17 @@
+root
+- blog
+-- id
+--- bypath
+-- reference
+--- doc
+-- comment
+--- resource
+---- locator
+-- user
+-- patch
+--- method
+-- identification
+-- URL
+-- path
+-- query
+--- match

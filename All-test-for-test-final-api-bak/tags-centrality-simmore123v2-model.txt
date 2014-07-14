@@ -1,0 +1,398 @@
+
+centrality decreasing tag list (with22 tags removed):
+[model]= -> 0.0154170533639
+[use]= -> 0.0142945091683
+[system]= -> 0.0142294520872
+[simulation]= -> 0.0138317510911
+[cell]= -> 0.0137591765075
+[dimension]= -> 0.0136556520586
+[are]= -> 0.0136512320194
+[time]= -> 0.0132616972189
+[network]= -> 0.0131422245624
+[implement]= -> 0.0130218856896
+[node]= -> 0.0128920131547
+[sample]= -> 0.0128878938404
+[three]= -> 0.0128465385179
+[base]= -> 0.0128363213572
+[output]= -> 0.0126343023924
+[download]= -> 0.0122847760424
+[four]= -> 0.0117619967707
+[documentation]= -> 0.0116747547044
+[Spanish]= -> 0.0116747547044
+[area]= -> 0.0115924236603
+[form]= -> 0.0115583173917
+[robot]= -> 0.0113537919861
+[population]= -> 0.0113088653621
+[input]= -> 0.0112539509658
+[vehicle]= -> 0.0112532473909
+[performance]= -> 0.0112291779209
+[level]= -> 0.0112251763494
+[machine]= -> 0.0110238241049
+[value]= -> 0.0110140810314
+[behavior]= -> 0.0110004148969
+[queue]= -> 0.0109781430498
+[process]= -> 0.0109669643938
+[study]= -> 0.010916587935
+[environment]= -> 0.0109099397985
+[cel]= -> 0.0109076258796
+[temperature]= -> 0.0108768671543
+[diffusion]= -> 0.0108709550576
+[version]= -> 0.0105126286091
+[sensor]= -> 0.0104546807233
+[analysis]= -> 0.0104540301665
+[case]= -> 0.010447095928
+[evolution]= -> 0.010435674524
+[component]= -> 0.0104303499378
+[Internet]= -> 0.0104160053546
+[service]= -> 0.0101111821588
+[space]= -> 0.00995618385554
+[product]= -> 0.00994728886242
+[delay]= -> 0.00993299188451
+[ad]= -> 0.00993143559962
+[button]= -> 0.0099255975685
+[capture]= -> 0.00992037590477
+[function]= -> 0.0099188850098
+[information]= -> 0.00988990186453
+[train]= -> 0.00988501377373
+[topology]= -> 0.0096784095149
+[automaton]= -> 0.00953602561322
+[load]= -> 0.00951403094925
+[water]= -> 0.009500886572
+[motion]= -> 0.0094627881052
+[position]= -> 0.00944495811694
+[fire]= -> 0.00942887990862
+[particle]= -> 0.00934280491609
+[alarm]= -> 0.00933720592305
+[effect]= -> 0.00932466969642
+[classifier]= -> 0.00930983945354
+[variation]= -> 0.0092854578947
+[membrane]= -> 0.00928185356552
+[algorithm]= -> 0.00927619023589
+[intersection]= -> 0.00926698071841
+[test]= -> 0.00926670369173
+[brain]= -> 0.00925831926819
+[heart]= -> 0.00924208114882
+[nerve]= -> 0.00922619007113
+[device]= -> 0.0092197136965
+[building]= -> 0.00919856978126
+[random]= -> 0.00890832822801
+[interaction]= -> 0.00868653604023
+[elevator]= -> 0.00865173412141
+[computer]= -> 0.00861939611691
+[ion]= -> 0.00858095822573
+[revenue]= -> 0.00856363145367
+[gas]= -> 0.00850919341851
+[station]= -> 0.00850123957607
+[movement]= -> 0.00850036365331
+[channel]= -> 0.0084997341953
+[top]= -> 0.00848844109914
+[tank]= -> 0.00848667675004
+[rain]= -> 0.00847237473619
+[traffic]= -> 0.00846850950327
+[generator]= -> 0.00845452153259
+[net]= -> 0.00845121361742
+[enzyme]= -> 0.00845008350542
+[virus]= -> 0.00844911679539
+[city]= -> 0.00844811903886
+[shark]= -> 0.00843906274775
+[path]= -> 0.00842887512293
+[hospital]= -> 0.00842188681352
+[complex]= -> 0.00842108088864
+[average]= -> 0.00841835278016
+[aircraft]= -> 0.0084130301151
+[protocol]= -> 0.00840713599108
+[user]= -> 0.00840582753677
+[land]= -> 0.00840041298137
+[spike]= -> 0.0083997799398
+[formalism]= -> 0.00839831027401
+[unit]= -> 0.00839537248471
+[request]= -> 0.00839537248471
+[resource]= -> 0.00839369467059
+[surface]= -> 0.00838287920051
+[running]= -> 0.00837778882028
+[landslide]= -> 0.00837778882028
+[influence]= -> 0.00837778882028
+[wire]= -> 0.00834152457038
+[rule]= -> 0.00816014803266
+[group]= -> 0.00803107445331
+[access]= -> 0.00803040150624
+[tunnel]= -> 0.00800056408542
+[direction]= -> 0.00795777338007
+[region]= -> 0.00791504641459
+[voltage]= -> 0.00767535687137
+[router]= -> 0.00767345420848
+[bit]= -> 0.00765751788923
+[series]= -> 0.00761876292036
+[propagation]= -> 0.00761607657398
+[action]= -> 0.00761513680024
+[state]= -> 0.00758315795926
+[force]= -> 0.00752475086021
+[game]= -> 0.00743601562188
+[barrel]= -> 0.00740790058569
+[people]= -> 0.00738668495945
+[step]= -> 0.00737321340743
+[cable]= -> 0.00736802628429
+[car]= -> 0.00736543541898
+[minefield]= -> 0.00736152317119
+[dish]= -> 0.00735813631086
+[petri]= -> 0.00735813631086
+[army]= -> 0.00734796909888
+[controller]= -> 0.00733249477561
+[image]= -> 0.00733235918145
+[lock]= -> 0.00733225039522
+[press]= -> 0.00733179788193
+[substrate]= -> 0.00732554082903
+[section]= -> 0.0073210211139
+[herring]= -> 0.00731725675019
+[day]= -> 0.00731547244385
+[printer]= -> 0.0073142001933
+[tool]= -> 0.00731279761538
+[forest]= -> 0.00731007526302
+[room]= -> 0.00730656394932
+[market]= -> 0.0073052930781
+[transmission]= -> 0.00730373397662
+[neighborhood]= -> 0.00730319882297
+[event]= -> 0.00730319882297
+[passenger]= -> 0.00729989680396
+[logic]= -> 0.00729843258724
+[program]= -> 0.00729403009334
+[schedule]= -> 0.00729102618084
+[showing]= -> 0.00727114588771
+[decision]= -> 0.00727114588771
+[world]= -> 0.00724381372553
+[reference]= -> 0.00710375573826
+[library]= -> 0.00706407876383
+[neighbor]= -> 0.0070528720238
+[collision]= -> 0.0070421890028
+[planning]= -> 0.00703607663701
+[rout]= -> 0.00702644183975
+[ball]= -> 0.00700715144482
+[leader]= -> 0.00698639777554
+[floor]= -> 0.00698529613204
+[size]= -> 0.0069670706564
+[grass]= -> 0.00695540469479
+[server]= -> 0.00691415854477
+[signal]= -> 0.00690138435099
+[switch]= -> 0.00672612778044
+[ground]= -> 0.00642364559688
+[toll]= -> 0.00635203332414
+[food]= -> 0.00634510555744
+[ant]= -> 0.00626451443802
+[substance]= -> 0.00623082715388
+[quantum]= -> 0.00620538982455
+[target]= -> 0.00619800346527
+[sort]= -> 0.00618600845708
+[way]= -> 0.00617599411913
+[solution]= -> 0.0059684845528
+[factory]= -> 0.00589339717738
+[line]= -> 0.00588433186964
+[class]= -> 0.00587185571836
+[layer]= -> 0.00586154102776
+[structure]= -> 0.00582282791454
+[type]= -> 0.00581870266214
+[circuit]= -> 0.00580779495526
+[clock]= -> 0.0057958930419
+[destination]= -> 0.00579525406546
+[terrain]= -> 0.00579367136793
+[emergency]= -> 0.00579329842941
+[feature]= -> 0.00578895899192
+[field]= -> 0.00578433633521
+[condition]= -> 0.00577736917735
+
+similarity: 0.02432432 | tag: use | tagto:  model
+similarity: 0.02777778 | tag: system | tagto:  model
+similarity: 0.00703704 | tag: simulation | tagto:  model
+similarity: 0.03750000 | tag: cell | tagto:  model
+similarity: 0.03935185 | tag: dimension | tagto:  model
+similarity: 0.04090909 | tag: are | tagto:  model
+similarity: 0.04500000 | tag: time | tagto:  model
+similarity: 0.05555556 | tag: network | tagto:  model
+similarity: 0.04938272 | tag: implement | tagto:  model
+similarity: 0.04375000 | tag: node | tagto:  model
+similarity: 0.05392157 | tag: sample | tagto:  model
+similarity: 0.05625000 | tag: three | tagto:  model
+similarity: 0.05625000 | tag: base | tagto:  model
+similarity: 0.06666667 | tag: output | tagto:  model
+similarity: 0.06730769 | tag: download | tagto:  model
+similarity: 0.09000000 | tag: four | tagto:  model
+similarity: 0.09230769 | tag: documentation | tagto:  model
+similarity: 0.04615385 | tag: Spanish | tagto:  documentation
+similarity: 0.09000000 | tag: area | tagto:  model
+similarity: 0.09000000 | tag: form | tagto:  model
+similarity: 0.10000000 | tag: robot | tagto:  model
+similarity: 0.09629630 | tag: population | tagto:  simulation
+similarity: 0.11111111 | tag: input | tagto:  model
+similarity: 0.10317460 | tag: vehicle | tagto:  model
+similarity: 0.10606061 | tag: performance | tagto:  model
+similarity: 0.08888889 | tag: level | tagto:  model
+similarity: 0.11607143 | tag: machine | tagto:  model
+similarity: 0.12500000 | tag: value | tagto:  model
+similarity: 0.12500000 | tag: behavior | tagto:  model
+similarity: 0.11458333 | tag: queue | tagto:  system
+similarity: 0.10714286 | tag: process | tagto:  model
+similarity: 0.12500000 | tag: study | tagto:  model
+similarity: 0.11363636 | tag: environment | tagto:  model
+similarity: 0.10000000 | tag: cel | tagto:  model
+similarity: 0.11931818 | tag: temperature | tagto:  model
+similarity: 0.11111111 | tag: diffusion | tagto:  dimension
+similarity: 0.13326720 | tag: version | tagto:  dimension
+similarity: 0.11224490 | tag: sensor | tagto:  network
+similarity: 0.14285714 | tag: analysis | tagto:  model
+similarity: 0.12741313 | tag: case | tagto:  use
+similarity: 0.13492063 | tag: evolution | tagto:  model
+similarity: 0.11904762 | tag: component | tagto:  model
+similarity: 0.13392857 | tag: Internet | tagto:  model
+similarity: 0.13265306 | tag: service | tagto:  system
+similarity: 0.16414141 | tag: space | tagto:  system
+similarity: 0.14285714 | tag: product | tagto:  model
+similarity: 0.15000000 | tag: delay | tagto:  model
+similarity: 0.15000000 | tag: ad | tagto:  model
+similarity: 0.16296296 | tag: button | tagto:  simulation
+similarity: 0.16602317 | tag: capture | tagto:  use
+similarity: 0.03631757 | tag: function | tagto:  use
+similarity: 0.15740741 | tag: information | tagto:  simulation
+similarity: 0.16666667 | tag: train | tagto:  model
+similarity: 0.11718750 | tag: topology | tagto:  network
+similarity: 0.05185185 | tag: automaton | tagto:  robot
+similarity: 0.16666667 | tag: load | tagto:  system
+similarity: 0.16666667 | tag: water | tagto:  cell
+similarity: 0.16414141 | tag: motion | tagto:  model
+similarity: 0.17500000 | tag: position | tagto:  system
+similarity: 0.15000000 | tag: fire | tagto:  value
+similarity: 0.18750000 | tag: particle | tagto:  model
+similarity: 0.18333333 | tag: alarm | tagto:  system
+similarity: 0.18333333 | tag: effect | tagto:  model
+similarity: 0.19000000 | tag: classifier | tagto:  model
+similarity: 0.04952381 | tag: variation | tagto:  version
+similarity: 0.15625000 | tag: membrane | tagto:  cell
+similarity: 0.18888889 | tag: algorithm | tagto:  model
+similarity: 0.06722222 | tag: intersection | tagto:  product
+similarity: 0.19191919 | tag: test | tagto:  system
+similarity: 0.20000000 | tag: brain | tagto:  model
+similarity: 0.19636364 | tag: heart | tagto:  are
+similarity: 0.07350000 | tag: nerve | tagto:  heart
+similarity: 0.20000000 | tag: device | tagto:  model
+similarity: 0.16666667 | tag: building | tagto:  are
+similarity: 0.15476190 | tag: random | tagto:  network
+similarity: 0.19090909 | tag: interaction | tagto:  cell
+similarity: 0.18750000 | tag: elevator | tagto:  are
+similarity: 0.21875000 | tag: computer | tagto:  model
+similarity: 0.21875000 | tag: ion | tagto:  node
+similarity: 0.19642857 | tag: revenue | tagto:  value
+similarity: 0.13392857 | tag: gas | tagto:  particle
+similarity: 0.19230769 | tag: station | tagto:  documentation
+similarity: 0.07263258 | tag: movement | tagto:  motion
+similarity: 0.21428571 | tag: channel | tagto:  model
+similarity: 0.22500000 | tag: top | tagto:  model
+similarity: 0.25000000 | tag: tank | tagto:  model
+similarity: 0.24398148 | tag: rain | tagto:  simulation
+similarity: 0.25000000 | tag: traffic | tagto:  model
+similarity: 0.23611111 | tag: generator | tagto:  model
+similarity: 0.04801587 | tag: net | tagto:  network
+similarity: 0.22916667 | tag: enzyme | tagto:  are
+similarity: 0.22222222 | tag: virus | tagto:  evolution
+similarity: 0.25000000 | tag: city | tagto:  model
+similarity: 0.22500000 | tag: shark | tagto:  area
+similarity: 0.14285714 | tag: path | tagto:  robot
+similarity: 0.21875000 | tag: hospital | tagto:  model
+similarity: 0.21428571 | tag: complex | tagto:  model
+similarity: 0.16363636 | tag: average | tagto:  temperature
+similarity: 0.25000000 | tag: aircraft | tagto:  model
+similarity: 0.21875000 | tag: protocol | tagto:  model
+similarity: 0.17314189 | tag: user | tagto:  use
+similarity: 0.25000000 | tag: land | tagto:  model
+similarity: 0.23358586 | tag: spike | tagto:  system
+similarity: 0.22222222 | tag: formalism | tagto:  model
+similarity: 0.24239865 | tag: unit | tagto:  use
+similarity: 0.23214286 | tag: request | tagto:  model
+similarity: 0.23437500 | tag: resource | tagto:  model
+similarity: 0.23745174 | tag: surface | tagto:  use
+similarity: 0.06770833 | tag: running | tagto:  function
+similarity: 0.22222222 | tag: landslide | tagto:  model
+similarity: 0.23611111 | tag: influence | tagto:  model
+similarity: 0.18750000 | tag: wire | tagto:  time
+similarity: 0.18750000 | tag: rule | tagto:  use
+similarity: 0.22500000 | tag: group | tagto:  are
+similarity: 0.25000000 | tag: access | tagto:  system
+similarity: 0.20833333 | tag: tunnel | tagto:  three
+similarity: 0.22222222 | tag: direction | tagto:  dimension
+similarity: 0.07180556 | tag: region | tagto:  area
+similarity: 0.21428571 | tag: voltage | tagto:  node
+similarity: 0.23214286 | tag: router | tagto:  network
+similarity: 0.23214286 | tag: bit | tagto:  network
+similarity: 0.22916667 | tag: series | tagto:  node
+similarity: 0.21590909 | tag: propagation | tagto:  ion
+similarity: 0.08750000 | tag: action | tagto:  process
+similarity: 0.10350000 | tag: state | tagto:  land
+similarity: 0.08888889 | tag: force | tagto:  effect
+similarity: 0.28409091 | tag: game | tagto:  are
+similarity: 0.25000000 | tag: barrel | tagto:  load
+similarity: 0.28333333 | tag: people | tagto:  population
+similarity: 0.25000000 | tag: step | tagto:  wire
+similarity: 0.10500000 | tag: cable | tagto:  wire
+similarity: 0.08511905 | tag: car | tagto:  machine
+similarity: 0.27777778 | tag: minefield | tagto:  model
+similarity: 0.31250000 | tag: dish | tagto:  dimension
+similarity: 0.26666667 | tag: petri | tagto:  net
+similarity: 0.25000000 | tag: army | tagto:  are
+similarity: 0.30000000 | tag: controller | tagto:  model
+similarity: 0.30000000 | tag: image | tagto:  model
+similarity: 0.18750000 | tag: lock | tagto:  load
+similarity: 0.25000000 | tag: press | tagto:  load
+similarity: 0.23611111 | tag: substrate | tagto:  enzyme
+similarity: 0.21428571 | tag: section | tagto:  city
+similarity: 0.23214286 | tag: herring | tagto:  shark
+similarity: 0.30000000 | tag: day | tagto:  model
+similarity: 0.25000000 | tag: printer | tagto:  gas
+similarity: 0.26666667 | tag: tool | tagto:  model
+similarity: 0.25000000 | tag: forest | tagto:  fire
+similarity: 0.25000000 | tag: room | tagto:  shark
+similarity: 0.27777778 | tag: market | tagto:  model
+similarity: 0.29687500 | tag: transmission | tagto:  dimension
+similarity: 0.10937500 | tag: neighborhood | tagto:  region
+similarity: 0.08000000 | tag: event | tagto:  effect
+similarity: 0.31481481 | tag: passenger | tagto:  model
+similarity: 0.23611111 | tag: logic | tagto:  automaton
+similarity: 0.30952381 | tag: program | tagto:  model
+similarity: 0.29166667 | tag: schedule | tagto:  model
+similarity: 0.30952381 | tag: showing | tagto:  model
+similarity: 0.27083333 | tag: decision | tagto:  dimension
+similarity: 0.20000000 | tag: world | tagto:  wire
+similarity: 0.18055556 | tag: reference | tagto:  revenue
+similarity: 0.25000000 | tag: library | tagto:  machine
+similarity: 0.33333333 | tag: neighbor | tagto:  use
+similarity: 0.22222222 | tag: collision | tagto:  robot
+similarity: 0.27083333 | tag: planning | tagto:  land
+similarity: 0.32083333 | tag: rout | tagto:  robot
+similarity: 0.25000000 | tag: ball | tagto:  cell
+similarity: 0.27083333 | tag: leader | tagto:  behavior
+similarity: 0.08825758 | tag: floor | tagto:  base
+similarity: 0.25000000 | tag: size | tagto:  fire
+similarity: 0.20000000 | tag: grass | tagto:  group
+similarity: 0.31666667 | tag: server | tagto:  simulation
+similarity: 0.30555556 | tag: signal | tagto:  cell
+similarity: 0.33333333 | tag: switch | tagto:  network
+similarity: 0.09916667 | tag: ground | tagto:  base
+similarity: 0.30952381 | tag: toll | tagto:  station
+similarity: 0.30769231 | tag: food | tagto:  documentation
+similarity: 0.22500000 | tag: ant | tagto:  grass
+similarity: 0.12435185 | tag: substance | tagto:  heart
+similarity: 0.30952381 | tag: quantum | tagto:  brain
+similarity: 0.30555556 | tag: target | tagto:  space
+similarity: 0.08250000 | tag: sort | tagto:  form
+similarity: 0.12465278 | tag: way | tagto:  path
+similarity: 0.33333333 | tag: solution | tagto:  case
+similarity: 0.26190476 | tag: factory | tagto:  water
+similarity: 0.12857143 | tag: line | tagto:  channel
+similarity: 0.12000000 | tag: class | tagto:  form
+similarity: 0.09777778 | tag: layer | tagto:  level
+similarity: 0.27777778 | tag: structure | tagto:  force
+similarity: 0.11250000 | tag: type | tagto:  case
+similarity: 0.18571429 | tag: circuit | tagto:  logic
+similarity: 0.11000000 | tag: clock | tagto:  time
+similarity: 0.40909091 | tag: destination | tagto:  button
+similarity: 0.42857143 | tag: terrain | tagto:  train
+similarity: 0.44444444 | tag: emergency | tagto:  model
+similarity: 0.42857143 | tag: feature | tagto:  are
+similarity: 0.11400000 | tag: field | tagto:  area
+similarity: 0.11851852 | tag: condition | tagto:  train

@@ -1,0 +1,30 @@
+digraph unix {
+    size="200,200";
+    node [color=lightblue2, style=filled];
+    " root " -> " model ";
+    " model " -> " simulation ";
+    " simulation " -> " framework ";
+    " simulation " -> " event ";
+    " event " -> " external ";
+    " simulation " -> " spread ";
+    " spread " -> " disease ";
+    " simulation " -> " result ";
+    " simulation " -> " evacuation ";
+    " evacuation " -> " crowd ";
+    " evacuation " -> " pedestrian ";
+    " simulation " -> " application ";
+    " model " -> " devs ";
+    " devs " -> " cell ";
+    " cell " -> " parallel ";
+    " devs " -> " dynamic ";
+    " model " -> " time ";
+    " time " -> " real ";
+    " model " -> " cellular ";
+    " cellular " -> " automaton ";
+    " model " -> " environment ";
+    " model " -> " network ";
+    " network " -> " wireless ";
+    " network " -> " sensor ";
+    " network " -> " mobile ";
+
+}

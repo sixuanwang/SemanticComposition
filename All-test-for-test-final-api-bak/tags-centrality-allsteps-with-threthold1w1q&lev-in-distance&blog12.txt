@@ -1,0 +1,33 @@
+
+centrality decreasing tag list: 
+[blog]= -> 0.000499306263786
+[id]= -> 0.000499228367582
+[reference]= -> 0.000499221977178
+[doc]= -> 0.00049919002761
+[comment]= -> 0.000498908876692
+[user]= -> 0.00049884961943
+[patch]= -> 0.000498683773956
+[resource]= -> 0.000497954272066
+[identification]= -> 0.000497923165668
+[URL]= -> 0.000497837132445
+[path]= -> 0.000497837132445
+[locator]= -> 0.00049773887757
+[bypath]= -> 0.000497737459625
+[method]= -> 0.000496899644269
+[query]= -> 7.14975154613e-05
+[match]= -> 7.14975154613e-05
+similarity: 0.03125000 | tag: id | tagto:  blog
+similarity: 0.03846154 | tag: reference | tagto:  blog
+similarity: 0.04326923 | tag: doc | tagto:  reference
+similarity: 0.16666667 | tag: comment | tagto:  blog
+similarity: 0.16666667 | tag: user | tagto:  blog
+similarity: 0.25000000 | tag: patch | tagto:  blog
+similarity: 0.50000000 | tag: resource | tagto:  comment
+similarity: 0.53846154 | tag: identification | tagto:  blog
+similarity: 0.50000000 | tag: URL | tagto:  blog
+similarity: 0.50000000 | tag: path | tagto:  blog
+similarity: 0.50000000 | tag: locator | tagto:  resource
+similarity: 0.50000000 | tag: bypath | tagto:  id
+similarity: 0.60000000 | tag: method | tagto:  patch
+similarity: 999.00000000 | tag: query | tagto:  blog
+similarity: 0.50000000 | tag: match | tagto:  query

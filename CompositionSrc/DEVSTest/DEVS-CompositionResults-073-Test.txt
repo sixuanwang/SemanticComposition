@@ -1,0 +1,24 @@
+
+##################First test (internal coupling)######################
+CORRECT:  72
+MISSING:  81
+INCORRECT:  301
+RECALL:  0.4706
+PRECISION:  0.1928
+F_MEASURE:  0.2735
+
+##################Second test (input coupling)######################
+CORRECT:  63
+MISSING:  29
+INCORRECT:  444
+RECALL:  0.6848
+PRECISION:  0.1242
+F_MEASURE:  0.2103
+
+##################Third test (output coupling))######################
+CORRECT:  61
+MISSING:  29
+INCORRECT:  310
+RECALL:  0.6778
+PRECISION:  0.1641
+F_MEASURE:  0.2642

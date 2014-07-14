@@ -1,0 +1,41 @@
+[TagSet]:
+vm: 157
+opensource: 59
+compilers: 131
+development: 145
+llvm: 200
+virtual_machine: 101
+compiler: 306
+programming: 250
+software: 96
+
+[TagPair]:
+virtual_machine,software: 73
+vm,compilers: 131
+development,programming: 145
+compilers,software: 73
+vm,compiler: 157
+vm,virtual_machine: 101
+compilers,compiler: 131
+development,software: 73
+development,llvm: 145
+llvm,virtual_machine: 101
+development,virtual_machine: 101
+compilers,development: 131
+compilers,llvm: 131
+vm,software: 73
+llvm,programming: 200
+virtual_machine,compiler: 101
+compiler,programming: 236
+llvm,software: 73
+compilers,programming: 131
+llvm,compiler: 200
+compilers,virtual_machine: 101
+programming,software: 73
+virtual_machine,programming: 101
+vm,llvm: 157
+vm,development: 145
+opensource,software: 59
+development,compiler: 145
+compiler,software: 73
+vm,programming: 157

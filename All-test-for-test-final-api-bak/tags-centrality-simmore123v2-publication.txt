@@ -1,0 +1,164 @@
+
+centrality decreasing tag list (with9 tags removed):
+[model]= -> 0.000331316815595
+[simulation]= -> 0.000331292017169
+[cell]= -> 0.000331224486521
+[system]= -> 0.00033109741931
+[use]= -> 0.000331094374185
+[base]= -> 0.000330966328883
+[event]= -> 0.000330923320415
+[environment]= -> 0.000330768869153
+[time]= -> 0.000330741045409
+[complex]= -> 0.000330549322672
+[traffic]= -> 0.000330541092688
+[visualization]= -> 0.000330470752507
+[tool]= -> 0.000330456447008
+[web]= -> 0.000330453801578
+[service]= -> 0.000330453801578
+[application]= -> 0.000330418590071
+[language]= -> 0.000330297870551
+[specification]= -> 0.000330285749142
+[development]= -> 0.000330284057544
+[proceeding]= -> 0.000330283353622
+[space]= -> 0.000330191570927
+[performance]= -> 0.000330047571084
+[Spanish]= -> 0.000330046027464
+[verification]= -> 0.000330004781993
+[computer]= -> 0.000329993306913
+[theory]= -> 0.000329980611669
+[analysis]= -> 0.000329961119091
+[information]= -> 0.00032978711934
+[interoperability]= -> 0.000329753487671
+[technique]= -> 0.000329750467216
+[protocol]= -> 0.000329744426473
+[architecture]= -> 0.000329744426473
+[study]= -> 0.000329744426473
+[dimension]= -> 0.000329710134617
+[formalism]= -> 0.000329677525211
+[hybrid]= -> 0.000329461163197
+[framework]= -> 0.000329461163197
+[definition]= -> 0.000329461163197
+[fire]= -> 0.000329461163197
+[conference]= -> 0.00032944870093
+[structure]= -> 0.000329436641766
+[algorithm]= -> 0.000329436641766
+[scale]= -> 0.000329436641766
+[schedule]= -> 0.000329418055961
+[execution]= -> 0.000329369865325
+[implement]= -> 0.000329241205699
+[symposium]= -> 0.000329068974779
+[hardware]= -> 0.000329047400345
+[construction]= -> 0.000329039523386
+[building]= -> 0.000329018534644
+[apparatus]= -> 0.000329012520688
+[methodology]= -> 0.000329000493434
+[research]= -> 0.000328985059544
+[method]= -> 0.000328976040528
+[warp]= -> 0.000328976040528
+[optimism]= -> 0.000328976040528
+[network]= -> 0.000328939413584
+[paradigm]= -> 0.000328909450663
+[share]= -> 0.000328432738926
+[three]= -> 0.000328326610175
+[resource]= -> 0.000328292376979
+[representation]= -> 0.000328292376979
+[benchmark]= -> 0.000328276358631
+[element]= -> 0.000328271436794
+[platform]= -> 0.000328244545113
+[software]= -> 0.000328243880665
+[experience]= -> 0.000328211227315
+[cloud]= -> 0.000328211227315
+[nitrogen]= -> 0.00032814494668
+[simulator]= -> 0.00032814494668
+[engine]= -> 0.00032814494668
+[course]= -> 0.000328117861662
+[teaching]= -> 0.000328117861662
+[extension]= -> 0.000328044143087
+[problem]= -> 0.000328041580894
+[supervisor]= -> 0.000327395503516
+[state]= -> 0.00032677454562
+[emergency]= -> 0.000326756749655
+[rout]= -> 0.000326734079784
+[principle]= -> 0.000326731584228
+[graph]= -> 0.000326722716383
+
+similarity: 0.00237975 | tag: simulation | tagto:  model
+similarity: 0.01257143 | tag: cell | tagto:  model
+similarity: 0.02500000 | tag: system | tagto:  model
+similarity: 0.02444444 | tag: use | tagto:  model
+similarity: 0.03384615 | tag: base | tagto:  model
+similarity: 0.04272727 | tag: event | tagto:  simulation
+similarity: 0.05240642 | tag: environment | tagto:  model
+similarity: 0.06285714 | tag: time | tagto:  simulation
+similarity: 0.06904762 | tag: complex | tagto:  model
+similarity: 0.08333333 | tag: traffic | tagto:  model
+similarity: 0.06532708 | tag: visualization | tagto:  simulation
+similarity: 0.07600000 | tag: tool | tagto:  model
+similarity: 0.09090909 | tag: web | tagto:  simulation
+similarity: 0.08000000 | tag: service | tagto:  simulation
+similarity: 0.08193326 | tag: application | tagto:  simulation
+similarity: 0.11111111 | tag: language | tagto:  model
+similarity: 0.08378232 | tag: specification | tagto:  simulation
+similarity: 0.09898990 | tag: development | tagto:  model
+similarity: 0.10444444 | tag: proceeding | tagto:  simulation
+similarity: 0.11111111 | tag: space | tagto:  cell
+similarity: 0.13506494 | tag: performance | tagto:  model
+similarity: 0.13685353 | tag: Spanish | tagto:  simulation
+similarity: 0.10886076 | tag: verification | tagto:  simulation
+similarity: 0.12571429 | tag: computer | tagto:  simulation
+similarity: 0.14285714 | tag: theory | tagto:  simulation
+similarity: 0.13214286 | tag: analysis | tagto:  cell
+similarity: 0.13041811 | tag: information | tagto:  simulation
+similarity: 0.15416667 | tag: interoperability | tagto:  simulation
+similarity: 0.16666667 | tag: technique | tagto:  simulation
+similarity: 0.15242616 | tag: protocol | tagto:  model
+similarity: 0.15833333 | tag: architecture | tagto:  simulation
+similarity: 0.14666667 | tag: study | tagto:  simulation
+similarity: 0.13552743 | tag: dimension | tagto:  simulation
+similarity: 0.15555556 | tag: formalism | tagto:  cell
+similarity: 0.19989873 | tag: hybrid | tagto:  simulation
+similarity: 0.03733333 | tag: framework | tagto:  model
+similarity: 0.16162025 | tag: definition | tagto:  simulation
+similarity: 0.17600000 | tag: fire | tagto:  model
+similarity: 0.17600000 | tag: conference | tagto:  proceeding
+similarity: 0.16400000 | tag: structure | tagto:  simulation
+similarity: 0.18800000 | tag: algorithm | tagto:  simulation
+similarity: 0.17247740 | tag: scale | tagto:  cell
+similarity: 0.13214286 | tag: schedule | tagto:  time
+similarity: 0.06753247 | tag: execution | tagto:  performance
+similarity: 0.18666667 | tag: implement | tagto:  use
+similarity: 0.20370370 | tag: symposium | tagto:  system
+similarity: 0.23125000 | tag: hardware | tagto:  model
+similarity: 0.06300000 | tag: construction | tagto:  structure
+similarity: 0.09740506 | tag: building | tagto:  construction
+similarity: 0.23113924 | tag: apparatus | tagto:  simulation
+similarity: 0.19545455 | tag: methodology | tagto:  model
+similarity: 0.23500000 | tag: research | tagto:  simulation
+similarity: 0.20500000 | tag: method | tagto:  simulation
+similarity: 0.23500000 | tag: warp | tagto:  simulation
+similarity: 0.23500000 | tag: optimism | tagto:  simulation
+similarity: 0.06726455 | tag: network | tagto:  web
+similarity: 0.24371067 | tag: paradigm | tagto:  simulation
+similarity: 0.22000000 | tag: share | tagto:  time
+similarity: 0.18666667 | tag: three | tagto:  dimension
+similarity: 0.30000000 | tag: resource | tagto:  construction
+similarity: 0.26190476 | tag: representation | tagto:  simulation
+similarity: 0.32222222 | tag: benchmark | tagto:  base
+similarity: 0.25034014 | tag: element | tagto:  event
+similarity: 0.28371308 | tag: platform | tagto:  simulation
+similarity: 0.29333333 | tag: software | tagto:  simulation
+similarity: 0.31060606 | tag: experience | tagto:  event
+similarity: 0.31333333 | tag: cloud | tagto:  simulation
+similarity: 0.29547619 | tag: nitrogen | tagto:  model
+similarity: 0.18734418 | tag: simulator | tagto:  simulation
+similarity: 0.29559460 | tag: engine | tagto:  environment
+similarity: 0.23333333 | tag: course | tagto:  use
+similarity: 0.30833333 | tag: teaching | tagto:  tool
+similarity: 0.30649086 | tag: extension | tagto:  simulation
+similarity: 0.29920635 | tag: problem | tagto:  model
+similarity: 0.31333333 | tag: supervisor | tagto:  tool
+similarity: 0.36944444 | tag: state | tagto:  system
+similarity: 0.43333333 | tag: emergency | tagto:  model
+similarity: 0.44000000 | tag: rout | tagto:  model
+similarity: 0.42500000 | tag: principle | tagto:  verification
+similarity: 0.47000000 | tag: graph | tagto:  simulation

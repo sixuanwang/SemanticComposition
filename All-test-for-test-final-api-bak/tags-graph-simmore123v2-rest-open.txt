@@ -1,0 +1,101 @@
+rating: { kind:2,  resource:2,  video:7,  user:4,  activity:3,  id:5, }
+text: { comment:3,  request:2,  user:4,  format:7, }
+query: { image:2,  topic:3,  video:2,  web:6,  playlist:2,  index:2,  source:21,  performance:2,  type:4,  channel:2,  format:27,  collection:2,  part:2,  kind:2,  resource:2,  name:3,  parameter:2,  request:5,  academic:2,  token:2,  match:3,  suggestion:2,  page:4, }
+web: { query:6,  type:2,  source:8,  format:6, }
+tweet: { status:7,  format:13,  id:6,  member:2,  user:3,  time:2,  line:2,  parameter:3,  page:4,  are:3, }
+source: { web:8,  name:4,  format:20,  image:2,  request:4,  suggestion:2,  query:21,  type:4, }
+location: { information:3,  account:2,  format:5,  photo:2,  topic:4,  suggestion:2,  lat:4,  response:2, }
+photo: { comment:22,  people:15,  image:7,  lat:2,  tag:28,  are:8,  check:2,  size:7,  information:4,  permission:13,  criterion:5,  location:2,  match:5,  status:2,  description:4,  format:4,  URL:4,  part:4,  user:25,  date:6,  ticket:4,  box:7,  favorite:3,  calling:25,  person:14,  contact:14,  suggestion:13,  page:3,  view:11, }
+match: { photo:5,  video:4,  query:3,  event:3,  index:6,  playlist:11,  criterion:4,  performance:6,  parameter:5,  channel:6,  format:2,  URL:2,  collection:5,  part:8,  user:3,  date:2,  subscription:3,  kind:8,  resource:4,  type:2,  request:8,  page:16,  academic:6,  token:13,  activity:2,  example:2, }
+format: { profile:8,  identification:20,  photo:4,  image:10,  sent:4,  number:2,  watcher:3,  topic:13,  date:4,  follower:7,  tag:5,  are:15,  request:29,  query:27,  message:8,  callback:6,  id:62,  size:2,  category:4,  web:6,  use:8,  friend:8,  place:12,  network:3,  source:20,  notification:4,  tweet:13,  day:4,  check:8,  access:8,  e-mail:3,  setting:2,  device:5,  location:5,  text:7,  performance:2,  type:4,  method:8,  match:2,  accuracy:6,  status:55,  project:6,  object:4,  description:8,  repository:30,  information:19,  URL:4,  screen:10,  time:10,  part:2,  user:203,  lat:14,  line:6,  member:40,  response:8,  subscription:4,  account:20,  name:36,  language:7,  parameter:26,  slug:28,  privacy:3,  favorite:7,  page:38,  cursor:46,  academic:2,  token:2,  index:2,  mode:6,  suggestion:6,  team:32,  organization:16,  friendship:16,  top:9,  block:12, }
+URL: { user:4,  information:2,  account:2,  name:2,  permission:2,  photo:4,  description:4,  format:4,  comment:2,  calling:2,  topic:2,  tag:8,  are:2,  date:4,  view:2,  day:2,  match:2,  page:2, }
+account: { profile:3,  index:2,  description:4,  format:20,  URL:2,  user:11,  request:3,  location:2,  method:3,  academic:2,  setting:2,  mode:2,  image:4,  device:3,  performance:2,  page:2,  are:3,  name:3, }
+ticket: { status:4,  photo:4,  check:4, }
+banner: { resource:4,  tube:4,  method:4,  step:4,  image:4,  channel:4, }
+day: { URL:2,  date:4,  topic:2,  top:2,  format:4, }
+resource: { rating:2,  favorite:2,  image:4,  video:4,  need:2,  query:2,  index:5,  playlist:4,  tube:2,  criterion:2,  performance:5,  type:2,  method:4,  match:4,  information:2,  use:2,  collection:3,  step:3,  part:7,  user:2,  banner:4,  subscription:2,  kind:4,  parameter:2,  request:6,  academic:5,  token:6,  channel:10,  activity:3,  page:7, }
+name: { topic:5,  tag:4,  are:5,  query:3,  id:5,  information:3,  top:2,  member:9,  source:4,  identification:2,  type:2,  description:3,  repository:5,  format:36,  URL:2,  screen:5,  team:12,  user:16,  lat:3,  response:2,  account:3,  request:3,  callback:3,  place:4,  mode:2,  time:2,  organization:2,  page:3, }
+calling: { permission:4,  URL:2,  photo:25,  image:2,  contact:2,  tag:4,  user:6,  suggestion:3,  date:2,  size:4,  view:3, }
+token: { video:4,  query:2,  event:3,  index:10,  playlist:11,  criterion:5,  performance:10,  parameter:8,  match:13,  format:2,  collection:8,  part:13,  user:3,  subscription:3,  kind:13,  resource:6,  type:2,  request:13,  page:15,  academic:10,  place:2,  channel:6,  activity:2,  example:3, }
+academic: { index:8,  playlist:10,  resource:5,  query:2,  format:2,  request:8,  number:2,  kind:5,  collection:3,  token:10,  part:6,  video:5,  user:5,  activity:3,  account:2,  performance:8,  match:6,  parameter:4,  page:10,  channel:2,  subscription:2, }
+mode: { account:2,  description:3,  format:6,  user:6,  id:2,  name:2, }
+team: { information:6,  name:12,  repository:9,  format:32,  member:11,  user:9,  organization:7,  type:3, }
+friendship: { format:16,  request:2,  cursor:2,  identification:3,  user:11,  parameter:3,  block:2, }
+page: { photo:3,  sent:3,  request:18,  topic:5,  video:4,  are:4,  query:4,  message:2,  id:8,  size:2,  index:10,  playlist:11,  channel:7,  tweet:4,  event:3,  member:3,  criterion:7,  performance:10,  type:2,  friend:4,  status:18,  object:2,  format:38,  URL:2,  activity:2,  kind:15,  collection:9,  top:2,  part:15,  user:22,  line:3,  response:2,  subscription:4,  account:2,  resource:7,  name:3,  language:2,  parameter:9,  favorite:3,  example:4,  academic:10,  token:15,  match:16,  time:5,  tube:2,  block:3, }
+view: { permission:4,  URL:2,  photo:11,  image:2,  calling:3,  tag:4,  user:3,  size:4, }
+status: { photo:2,  follower:2,  ticket:4,  id:22,  use:2,  favorite:7,  tweet:7,  check:2,  member:4,  identification:4,  parameter:13,  friend:5,  accuracy:3,  format:55,  object:2,  playlist:2,  user:24,  lat:7,  line:4,  request:7,  cursor:4,  place:3,  time:4,  page:18, }
+people: { box:3,  photo:15,  size:2,  are:2,  person:8, }
+video: { rating:7,  favorite:2,  need:2,  query:2,  id:10,  category:2,  information:2,  use:2,  tube:9,  performance:5,  parameter:3,  method:2,  channel:3,  index:5,  part:10,  user:4,  kind:7,  resource:4,  request:5,  academic:5,  token:4,  match:4,  activity:3,  page:4, }
+are: { box:2,  account:3,  description:2,  people:2,  URL:2,  photo:8,  image:2,  format:15,  request:2,  id:3,  topic:2,  person:2,  tweet:3,  user:10,  suggestion:2,  size:2,  page:4,  name:5, }
+event: { kind:3,  friend:3,  tube:3,  request:3,  example:3,  token:3,  part:3,  criterion:3,  user:3,  activity:3,  match:3,  page:3,  channel:3,  subscription:3, }
+category: { kind:4,  format:4,  tube:4,  access:2,  part:4,  video:2,  user:6,  suggestion:2,  slug:2,  channel:2, }
+index: { academic:8,  account:2,  resource:5,  format:2,  request:8,  number:2,  playlist:10,  collection:3,  page:10,  performance:8,  token:10,  part:6,  video:5,  user:5,  activity:3,  query:2,  match:6,  parameter:4,  kind:5,  channel:2,  subscription:2, }
+network: { tag:3,  format:3, }
+notification: { device:2,  user:4,  format:4, }
+tube: { category:4,  kind:3,  resource:2,  image:4,  event:3,  method:2,  step:3,  part:4,  video:9,  activity:2,  banner:4,  id:2,  channel:7,  page:2, }
+access: { category:2,  repository:2,  format:8,  user:8,  suggestion:2,  organization:2,  slug:2,  size:2, }
+e-mail: { use:3,  user:3,  format:3, }
+identification: { status:4,  information:2,  name:2,  format:20,  friendship:3,  screen:2,  favorite:4,  user:16,  parameter:8,  id:8,  block:4, }
+method: { profile:2,  account:3,  resource:4,  format:8,  tube:2,  use:2,  id:3,  step:3,  part:2,  video:2,  user:4,  activity:3,  banner:4,  image:8,  channel:7, }
+repository: { name:5,  language:3,  format:30,  access:2,  tag:3,  user:3,  team:9,  organization:4, }
+screen: { information:3,  name:5,  format:10,  member:6,  identification:2,  user:6,  organization:2,  id:3, }
+activity: { rating:3,  request:5,  video:3,  need:3,  event:3,  index:3,  use:3,  channel:5,  tube:2,  criterion:2,  performance:3,  method:3,  friend:2,  information:3,  part:5,  user:5,  subscription:2,  kind:2,  resource:3,  favorite:3,  example:2,  academic:3,  token:2,  match:2,  page:2, }
+use: { status:2,  resource:2,  format:8,  request:2,  e-mail:3,  video:2,  user:11,  activity:3,  need:2,  method:2, }
+step: { resource:3,  image:4,  method:3,  banner:4,  tube:3,  channel:4, }
+collection: { index:3,  kind:4,  resource:3,  request:4,  playlist:10,  academic:3,  token:8,  part:4,  channel:3,  query:2,  performance:3,  parameter:3,  page:9,  match:5, }
+slug: { category:2,  access:2,  format:28,  member:13,  cursor:8,  user:11,  suggestion:2,  check:2, }
+box: { person:3,  photo:7,  size:2,  are:2,  people:3, }
+language: { repository:3,  format:7,  user:2,  message:2,  page:2,  sent:3, }
+favorite: { status:7,  resource:2,  format:7,  photo:3,  id:7,  video:2,  user:9,  activity:3,  identification:4,  parameter:4,  page:3, }
+place: { status:3,  name:4,  format:12,  callback:3,  token:2,  lat:6,  id:3,  accuracy:3, }
+suggestion: { category:2,  format:6,  photo:13,  user:11,  calling:3,  access:2,  source:2,  location:2,  query:2,  slug:2,  are:2, }
+block: { format:12,  friendship:2,  object:3,  page:3,  identification:4,  user:12,  parameter:4,  id:3, }
+comment: { permission:2,  URL:2,  text:3,  contact:2,  tag:2,  user:11,  photo:22, }
+image: { profile:5,  tube:4,  account:4,  resource:4,  permission:2,  photo:7,  user:4,  format:10,  calling:2,  source:2,  step:4,  tag:2,  are:2,  query:2,  size:4,  banner:4,  method:8,  channel:4,  view:2, }
+number: { index:2,  format:2,  request:2,  academic:2,  tag:4,  user:3,  date:4,  performance:2, }
+device: { notification:2,  account:3,  parameter:3,  user:5,  format:5, }
+follower: { cursor:3,  status:2,  user:5,  format:7, }
+message: { language:2,  format:8,  page:2,  user:5,  id:2,  sent:3, }
+size: { box:2,  profile:2,  format:2,  photo:7,  image:4,  people:2,  calling:4,  access:2,  person:2,  user:6,  permission:4,  page:2,  are:2,  view:4, }
+playlist: { status:2,  index:10,  kind:10,  resource:4,  description:2,  privacy:2,  request:10,  collection:10,  example:9,  academic:10,  token:11,  part:19,  user:4,  query:2,  id:4,  performance:10,  parameter:10,  page:11,  match:11, }
+privacy: { playlist:2,  request:2,  format:3, }
+top: { name:2,  format:9,  request:2,  page:2,  topic:9,  time:2,  date:2,  response:2,  day:2, }
+type: { web:2,  resource:2,  name:2,  format:4,  request:3,  source:4,  token:2,  team:3,  query:4,  page:2,  match:2, }
+friend: { status:5,  format:8,  event:3,  cursor:3,  user:4,  activity:2,  page:4,  channel:2, }
+project: { watcher:3,  format:6, }
+part: { photo:4,  video:10,  query:2,  event:3,  category:4,  index:6,  playlist:19,  tube:4,  criterion:3,  performance:6,  parameter:4,  method:2,  match:8,  format:2,  collection:4,  user:6,  subscription:5,  kind:9,  resource:7,  request:8,  example:4,  academic:6,  token:13,  channel:10,  activity:5,  organization:2,  page:15, }
+line: { status:4,  format:6,  tweet:2,  member:2,  user:3,  time:3,  page:3, }
+subscription: { index:2,  kind:3,  resource:2,  format:4,  request:3,  id:2,  cursor:2,  academic:2,  token:3,  part:5,  criterion:3,  user:5,  activity:2,  performance:2,  match:3,  event:3,  channel:4,  page:4, }
+kind: { rating:2,  video:7,  query:2,  event:3,  category:4,  index:5,  playlist:10,  tube:3,  criterion:3,  performance:5,  parameter:4,  match:8,  collection:4,  part:9,  user:3,  subscription:3,  resource:4,  request:7,  example:2,  academic:5,  token:13,  channel:6,  activity:2,  page:15, }
+cursor: { status:4,  slug:8,  format:46,  request:2,  check:2,  member:9,  follower:3,  user:30,  friendship:2,  id:2,  friend:3,  subscription:2, }
+sent: { user:3,  message:3,  page:3,  language:3,  format:4, }
+example: { kind:2,  request:2,  playlist:9,  page:4,  token:3,  part:4,  user:2,  activity:2,  match:2,  event:3,  channel:2, }
+watcher: { project:3,  format:3, }
+topic: { information:3,  name:5,  format:13,  URL:2,  top:9,  request:5,  page:5,  are:2,  time:5,  date:2,  query:3,  response:6,  day:2,  location:4, }
+lat: { status:7,  name:3,  format:14,  photo:2,  callback:2,  place:6,  location:4,  accuracy:3, }
+tag: { comment:2,  information:2,  name:4,  repository:3,  format:5,  URL:8,  photo:28,  image:2,  permission:4,  number:4,  bundle:13,  calling:4,  setting:4,  user:10,  description:3,  date:8,  view:4,  network:3, }
+need: { video:2,  use:2,  resource:2,  user:2,  activity:3, }
+check: { status:2,  cursor:2,  format:8,  photo:2,  slug:2,  member:4,  user:8,  ticket:4,  id:4, }
+information: { activity:3,  resource:2,  name:3,  format:19,  URL:2,  photo:4,  screen:3,  permission:2,  topic:3,  tag:2,  video:2,  location:3,  organization:2,  identification:2,  team:6,  user:11, }
+callback: { lat:2,  place:3,  name:3,  format:6, }
+permission: { comment:2,  information:2,  description:2,  URL:2,  photo:13,  image:2,  calling:4,  tag:4,  user:4,  date:2,  view:4,  size:4, }
+id: { rating:5,  video:10,  are:3,  message:2,  check:4,  playlist:4,  tweet:6,  member:16,  identification:8,  parameter:14,  method:3,  status:22,  description:2,  format:62,  screen:3,  object:2,  user:56,  subscription:2,  name:5,  favorite:7,  page:8,  cursor:2,  place:3,  mode:2,  tube:2,  block:3, }
+member: { status:4,  name:9,  format:40,  check:4,  tweet:2,  team:11,  slug:13,  cursor:9,  user:27,  time:2,  screen:6,  organization:4,  line:2,  id:16,  page:3, }
+setting: { account:2,  tag:4,  bundle:5,  channel:2,  format:2, }
+criterion: { kind:3,  resource:2,  channel:4,  photo:5,  request:3,  page:7,  token:5,  part:3,  user:2,  activity:2,  event:3,  match:4,  subscription:3, }
+performance: { index:8,  playlist:10,  resource:5,  format:2,  request:8,  kind:5,  collection:3,  number:2,  academic:8,  token:10,  part:6,  video:5,  user:5,  channel:2,  activity:3,  account:2,  query:2,  parameter:4,  page:10,  match:6,  subscription:2, }
+parameter: { request:6,  video:3,  query:2,  id:14,  index:4,  playlist:10,  tweet:3,  identification:8,  performance:4,  match:5,  status:13,  format:26,  collection:3,  part:4,  user:15,  device:3,  kind:4,  resource:2,  favorite:4,  academic:4,  token:8,  friendship:3,  page:9,  block:4, }
+channel: { image:4,  video:3,  query:2,  event:3,  category:2,  index:2,  tube:7,  setting:2,  criterion:4,  performance:2,  method:7,  friend:2,  object:2,  collection:3,  step:4,  part:10,  user:4,  banner:4,  subscription:4,  kind:6,  resource:10,  request:6,  example:2,  academic:2,  token:6,  match:6,  activity:5,  page:7, }
+accuracy: { lat:3,  status:3,  place:3,  format:6, }
+profile: { account:3,  format:8,  image:5,  user:2,  method:2,  size:2, }
+description: { are:2,  account:4,  name:3,  format:8,  URL:4,  photo:4,  permission:2,  playlist:2,  tag:3,  user:8,  id:2,  mode:3, }
+object: { status:2,  format:4,  page:2,  user:3,  channel:2,  id:2,  block:3, }
+bundle: { tag:13,  setting:5, }
+user: { comment:11,  rating:4,  identification:16,  index:5,  photo:25,  format:203,  sent:3,  request:10,  date:2,  follower:5,  tag:10,  video:4,  are:10,  need:2,  message:5,  calling:6,  id:56,  size:6,  category:6,  access:8,  playlist:4,  friend:4,  team:9,  notification:4,  tweet:3,  permission:4,  kind:3,  check:8,  member:27,  e-mail:3,  criterion:2,  text:4,  performance:5,  match:3,  parameter:15,  method:4,  channel:4,  mode:6,  profile:2,  description:8,  repository:3,  information:11,  URL:4,  screen:6,  object:3,  use:11,  number:3,  part:6,  device:5,  line:3,  slug:11,  subscription:5,  account:11,  resource:2,  name:16,  language:2,  favorite:9,  event:3,  page:22,  cursor:30,  academic:5,  token:3,  status:24,  time:4,  image:4,  activity:5,  suggestion:11,  organization:2,  friendship:11,  example:2,  block:12,  view:3, }
+date: { format:4,  URL:4,  photo:6,  top:2,  permission:2,  number:4,  calling:2,  topic:2,  tag:8,  user:2,  day:4,  match:2, }
+response: { name:2,  format:8,  top:2,  request:3,  topic:6,  location:2,  time:2,  page:2, }
+request: { text:2,  number:2,  topic:5,  video:5,  are:2,  query:5,  event:3,  index:8,  playlist:10,  privacy:2,  top:2,  source:4,  criterion:3,  performance:8,  type:3,  channel:6,  status:7,  format:29,  activity:5,  use:2,  collection:4,  part:8,  user:10,  account:3,  response:3,  subscription:3,  kind:7,  resource:6,  name:3,  parameter:6,  example:2,  cursor:2,  academic:8,  token:13,  match:8,  time:3,  friendship:2,  page:18, }
+person: { box:3,  photo:14,  size:2,  are:2,  people:8, }
+contact: { comment:2,  photo:14,  calling:2, }
+time: { status:4,  member:2,  name:2,  format:10,  tweet:2,  top:2,  request:3,  response:2,  topic:5,  user:4,  line:3,  page:5, }
+organization: { access:2,  name:2,  repository:4,  information:2,  screen:2,  format:16,  member:4,  part:2,  user:2,  team:7, }

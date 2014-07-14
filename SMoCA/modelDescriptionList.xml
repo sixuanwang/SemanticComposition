@@ -1,0 +1,43 @@
+<?xml version = "1.0"?>
+<ModelDescriptionList>
+	<ModelDescription id='1'>
+		<Model name="model1" type="modeltype" description="modeldes"/>
+		<Inputs>
+			<Port>
+				<PortName> tip1tip2 </PortName>
+				<Type> tipp1 </Type>
+				<Description>inputportdescription  </Description>
+			</Port>
+		</Inputs>
+		<Outputs>
+			<Port>
+				<PortName> top1, top2 </PortName>
+				<Type> topp1, topp2 </Type>
+				<Description> outputportdescription </Description>
+			</Port>
+		</Outputs>
+		<Files>
+			<File name="fileName" type="filetype" location="filelocation"/>
+		</Files>
+	</ModelDescription>
+	<ModelDescription id='2'>
+		<Model name="model2" type="modeltype2" description="modeldes2"/>
+		<Inputs>
+			<Port>
+				<PortName> tip1 </PortName>
+				<Type> tipp1, tipp2 </Type>
+				<Description>inputport, description  </Description>
+			</Port>
+		</Inputs>
+		<Outputs>
+			<Port>
+				<PortName> top1, top2 </PortName>
+				<Type> topp1, topp2 </Type>
+				<Description> outputportdescription </Description>
+			</Port>
+		</Outputs>
+		<Files>
+			<File name="fileName2" type="filetype2" location="filelocation2"/>
+		</Files>
+	</ModelDescription>
+</ModelDescriptionList>

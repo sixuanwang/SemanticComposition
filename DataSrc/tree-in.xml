@@ -1,0 +1,8 @@
+<?xml version = "1.0"?>
+<TagTree>
+	<Tree name = "n" type="t" description="d"/>
+	<Tag name="t1" index="0" />
+	<Tag name="t12" index="1" />
+	<Tag name="t23" index="2" />
+	<Tag name="t13" index="1" />
+</TagTree>
